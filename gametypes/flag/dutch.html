@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<link rel="stylesheet" href="../../css/style.css">
+<script src="../../js/jquery-2.2.2.min.js"></script>
+<script src="../../js/jquery.stopwatch.js"></script>
+<script src="../../js/main.js"></script>
+<script>
+$(document).ready(function(){
+
+	function checkCountry(country){
+		switch(country){
+			case "afghanistan":
+			case "afganistan":
+				country = "AFG"; break;
+			case "albanie":
+				country = "ALB"; break;
+			case "algerije":
+			case "algarije":
+				country = "DZA"; break;
+			case "andorra":
+				country = "AND"; break;
+			case "angola":
+				country = "AGO"; break;
+			case "antigua en barbuda":
+			case "antigua":
+				country = "ATG"; break;
+			case "argentinie":
+				country = "ARG"; break;
+			case "armenie":
+				country = "ARM"; break;
+			case "australie":
+				country = "AUS"; break;
+			case "oostenrijk":
+				country = "AUT"; break;
+			case "azerbeidzjan":
+			case "azerbaijan":
+			case "azerbeidjan":
+				country = "AZE"; break;
+			case "bahamas":
+			case "bahama's":
+				country = "BHS"; break;
+			case "bahrein":
+				country = "BHR"; break;
+			case "bangladesh":
+				country = "BGD"; break;
+			case "barbados":
+				country = "BRB"; break;
+			case "wit-rusland":
+			case "wit rusland":
+				country = "BLR"; break;
+			case "belgie":
+				country = "BEL"; break;
+			case "belize":
+				country = "BLZ"; break;
+			case "benin":
+				country = "BEN"; break;
+			case "bhutan":
+				country = "BTN"; break;
+			case "bolivie":
+			case "bolivia":
+				country = "BOL"; break;
+			case "bosnie en herzegovina":
+			case "bosnie":
+				country = "BIH"; break;
+			case "botswana":
+				country = "BWA"; break;
+			case "brazilie":
+				country = "BRA"; break;
+			case "brunei":
+				country = "BRN"; break;
+			case "bulgarije":
+				country = "BGR"; break;
+			case "burkina faso":
+				country = "BFA"; break;
+			case "myanmar":
+			case "burma":
+				country = "MMR"; break;
+			case "burundi":
+				country = "BDI"; break;
+			case "cambodja":
+			case "cambodia":
+				country = "KHM"; break;
+			case "kameroen":
+			case "cameroen":
+				country = "CMR"; break;
+			case "canada":
+				country = "CAN"; break;
+			case "kaapverdie":
+			case "kaap verdie":
+				country = "CPV"; break;
+			case "centraal-afrikaanse republiek":
+			case "centraal afrikaanse republiek":
+			case "car":
+				country = "CAF"; break;
+			case "tsjaad":
+				country = "TCD"; break;
+			case "chili":
+			case "chile":
+				country = "CHL"; break;
+			case "china":
+				country = "CHN"; break;
+			case "colombia":
+			case "colombie":
+				country = "COL"; break;
+			case "comoren":
+			case "comoros":
+				country = "COM"; break;
+			case "democratische republiek congo":
+			case "congo":
+			case "democratische republiek kongo":
+			case "kongo":
+			case "congo-kinshasa":
+			case "congo kinshasa":
+			case "kongo-kinshasa":
+			case "kongo kinshasa":
+				country = "COD"; break;
+			case "republiek congo":
+			case "republiek kongo":
+			case "congo-brazzaville":
+			case "congo brazzaville":
+			case "kongo-brazzaville":
+			case "kongo brazzaville":
+				country = "COG"; break;
+			case "costa rica":
+				country = "CRI"; break;
+			case "ivoorkust":
+				country = "CIV"; break;
+			case "kroatie":
+			case "croatie":
+				country = "HRV"; break;
+			case "cuba":
+				country = "CUB"; break;
+			case "cyprus":
+				country = "CYP"; break;
+			case "tsjechie":
+				country = "CZE"; break;
+			case "denemarken":
+				country = "DNK"; break;
+			case "djibouti":
+				country = "DJI"; break;
+			case "dominica":
+				country = "DMA"; break;
+			case "dominicaanse republiek":
+				country = "DOM"; break;
+			case "oost-timor":
+			case "oost timor":
+				country = "TLS"; break;
+			case "ecuador":
+				country = "ECU"; break;
+			case "egypte":
+				country = "EGY"; break;
+			case "el salvador":
+				country = "SLV"; break;
+			case "equatoriaal-guinea":
+			case "equatoriaal guinea":
+				country = "GNQ"; break;
+			case "eritrea":
+				country = "ERI"; break;
+			case "estland":
+				country = "EST"; break;
+			case "ethiopie":
+				country = "ETH"; break;
+			case "fiji":
+				country = "FJI"; break;
+			case "finland":
+				country = "FIN"; break;
+			case "frankrijk":
+				country = "FRA"; break;
+			case "gabon":
+				country = "GAB"; break;
+			case "gambia":
+				country = "GMB"; break;
+			case "georgie":
+				country = "GEO"; break;
+			case "duitsland":
+				country = "DEU"; break;
+			case "ghana":
+				country = "GHA"; break;
+			case "griekenland":
+				country = "GRC"; break;
+			case "grenada":
+				country = "GRD"; break;
+			case "guatemala":
+				country = "GTM"; break;
+			case "guinee":
+				country = "GIN"; break;
+			case "guinee-bissau":
+			case "guinee bissau":
+				country = "GNB"; break;
+			case "guyana":
+				country = "GUY"; break;
+			case "haiti":
+				country = "HTI"; break;
+			case "vaticaanstad":
+				country = "VAT"; break;
+			case "honduras":
+				country = "HND"; break;
+			case "hongarije":
+				country = "HUN"; break;
+			case "ijsland":
+				country = "ISL"; break;
+			case "india":
+				country = "IND"; break;
+			case "indonesie":
+				country = "IDN"; break;
+			case "iran":
+				country = "IRN"; break;
+			case "irak":
+			case "iraq":
+				country = "IRQ"; break;
+			case "ierland":
+				country = "IRL"; break;
+			case "israel":
+				country = "ISR"; break;
+			case "italie":
+				country = "ITA"; break;
+			case "jamaica":
+				country = "JAM"; break;
+			case "japan":
+				country = "JPN"; break;
+			case "jordanie":
+				country = "JOR"; break;
+			case "kazachstan":
+			case "kazakstan":
+				country = "KAZ"; break;
+			case "kenia":
+				country = "KEN"; break;
+			case "kiribati":
+				country = "KIR"; break;
+			case "kosovo":
+				country = "UNK"; break;
+			case "koeweit":
+			case "kuweit":
+				country = "KWT"; break;
+			case "kirgistan":
+			case "kirgizie":
+				country = "KGZ"; break;
+			case "laos":
+				country = "LAO"; break;
+			case "letland":
+				country = "LVA"; break;
+			case "libanon":
+			case "liebanon":
+				country = "LBN"; break;
+			case "lesotho":
+				country = "LSO"; break;
+			case "liberia":
+				country = "LBR"; break;
+			case "libie":
+				country = "LBY"; break;
+			case "liechtenstein":
+				country = "LIE"; break;
+			case "litouwen":
+				country = "LTU"; break;
+			case "luxemburg":
+			case "luxembourg":
+				country = "LUX"; break;
+			case "macedonie":
+				country = "MKD"; break;
+			case "madagaskar":
+			case "madagascar":
+				country = "MDG"; break;
+			case "malawi":
+				country = "MWI"; break;
+			case "maleisie":
+				country = "MYS"; break;
+			case "maldiven":
+				country = "MDV"; break;
+			case "mali":
+				country = "MLI"; break;
+			case "malta":
+				country = "MLT"; break;
+			case "marshalleilanden":
+			case "marshall eilanden":
+				country = "MHL"; break;
+			case "mauritanie":
+				country = "MRT"; break;
+			case "mauritius":
+				country = "MUS"; break;
+			case "mexico":
+				country = "MEX"; break;
+			case "micronesia":
+			case "micronesie":
+				country = "FSM"; break;
+			case "moldavie":
+				country = "MDA"; break;
+			case "monaco":
+				country = "MCO"; break;
+			case "mongolie":
+				country = "MNG"; break;
+			case "montenegro":
+				country = "MNE"; break;
+			case "marokko":
+			case "marocco":
+				country = "MAR"; break;
+			case "mozambique":
+				country = "MOZ"; break;
+			case "namibie":
+				country = "NAM"; break;
+			case "nauru":
+				country = "NRU"; break;
+			case "nepal":
+				country = "NPL"; break;
+			case "nederland":
+			case "holland":
+				country = "NLD"; break;
+			case "nieuw-zeeland":
+			case "nieuw zeeland":
+				country = "NZL"; break;
+			case "nicaragua":
+				country = "NIC"; break;
+			case "niger":
+				country = "NER"; break;
+			case "nigeria":
+				country = "NGA"; break;
+			case "noord-korea":
+			case "noord korea":
+				country = "PRK"; break;
+			case "noorwegen":
+				country = "NOR"; break;
+			case "oman":
+				country = "OMN"; break;
+			case "pakistan":
+				country = "PAK"; break;
+			case "palau":
+				country = "PLW"; break;
+			case "palestina":
+				country = "PSE"; break;
+			case "panama":
+				country = "PAN"; break;
+			case "papoea-nieuw-guinea":
+			case "papoea nieuw guinea":
+			case "nieuw guinea":
+				country = "PNG"; break;
+			case "paraguay":
+				country = "PRY"; break;
+			case "peru":
+				country = "PER"; break;
+			case "filipijnen":
+			case "philipijnen":
+				country = "PHL"; break;
+			case "polen":
+				country = "POL"; break;
+			case "portugal":
+				country = "PRT"; break;
+			case "qatar":
+				country = "QAT"; break;
+			case "roemenie":
+				country = "ROU"; break;
+			case "rusland":
+				country = "RUS"; break;
+			case "rwanda":
+				country = "RWA"; break;
+			case "saint kitts en nevis":
+			case "saint kitts":
+				country = "KNA"; break;
+			case "saint lucia":
+				country = "LCU"; break;
+			case "saint vincent en de grenadines":
+			case "saint vincent":
+				country = "VCT"; break;
+			case "samoa":
+				country = "WSM"; break;
+			case "san marino":
+				country = "SMR"; break;
+			case "sao tome en principe":
+			case "sao tome":
+				country = "STP"; break;
+			case "saoedi-arabie":
+			case "saoedi arabie":
+			case "saudi-arabie":
+			case "saudi arabie":
+				country = "SAU"; break;
+			case "senegal":
+				country = "SEN"; break;
+			case "servie":
+				country = "SRB"; break;
+			case "seychellen":
+				country = "SYC"; break;
+			case "sierra leone":
+				country = "SLE"; break;
+			case "singapore":
+				country = "SGP"; break;
+			case "slovakije":
+			case "slowakije":
+				country = "SVK"; break;
+			case "slovenie":
+				country = "SVN"; break;
+			case "salomoneilanden":
+			case "salomon eilanden":
+			case "solomoneilanden":
+			case "solomon eilanden":
+				country = "SLB"; break;
+			case "somalie":
+				country = "SOM"; break;
+			case "zuid-afrika":
+			case "zuid afrika":
+				country = "ZAF"; break;
+			case "zuid-korea":
+			case "zuid korea":
+				country = "KOR"; break;
+			case "zuid-soedan":
+			case "zuid soedan":
+			case "zuid-sudan":
+			case "zuid sudan":
+				country = "SSD"; break;
+			case "spanje":
+				country = "ESP"; break;
+			case "sri lanka":
+				country = "LKA"; break;
+			case "soedan":
+			case "sudan":
+				country = "SDN"; break;
+			case "suriname":
+				country = "SUR"; break;
+			case "swaziland":
+				country = "SWZ"; break;
+			case "zweden":
+				country = "SWE"; break;
+			case "zwitserland":
+				country = "CHE"; break;
+			case "syrie":
+				country = "SYR"; break;
+			case "taiwan":
+				country = "TWN"; break;
+			case "tadzjikistan":
+			case "tajikistan":
+			case "tadjikistan":
+				country = "TJK"; break;
+			case "tanzania":
+				country = "TZA"; break;
+			case "thailand":
+				country = "THA"; break;
+			case "togo":
+				country = "TGO"; break;
+			case "tonga":
+				country = "TON"; break;
+			case "trinidad en tobago":
+			case "trinidad":
+				country = "TTO"; break;
+			case "tunesie":
+				country = "TUN"; break;
+			case "turkije":
+				country = "TUR"; break;
+			case "turkmenistan":
+				country = "TKM"; break;
+			case "tuvalu":
+				country = "TUV"; break;
+			case "oeganda":
+			case "uganda":
+				country = "UGA"; break;
+			case "oekraine":
+			case "ukraine":
+				country = "UKR"; break;
+			case "verenigde arabische emiraten":
+			case "arabische emiraten":
+			case "vae":
+				country = "ARE"; break;
+			case "verenigd koninkrijk":
+			case "engeland":
+			case "brittannie":
+			case "groot brittannie":
+			case "groot-brittannie":
+			case "vk":
+				country = "GBR"; break;
+			case "verenigde staten":
+			case "vs":
+			case "amerika":
+			case "usa":
+				country = "USA"; break;
+			case "uruguay":
+				country = "URY"; break;
+			case "oezbekistan":
+			case "uzbekistan":
+				country = "UZB"; break;
+			case "vanuatu":
+				country = "VUT"; break;
+			case "venezuela":
+				country = "VEN"; break;
+			case "vietnam":
+				country = "VNM"; break;
+			case "jemen":
+			case "yemen":
+				country = "YEM"; break;
+			case "zambia":
+				country = "ZMB"; break;
+			case "zimbabwe":
+				country = "ZWE"; break;
+			default:
+				country = "ZZZ"; break;
+		}
+
+		return country;
+
+	}
+	function shuffleArray(array) {
+	    for (var i = array.length - 1; i > 0; i--) {
+	        var j = Math.floor(Math.random() * (i + 1));
+	        var temp = array[i];
+	        array[i] = array[j];
+	        array[j] = temp;
+	    }
+	    return array;
+	}
+
+	var countryArray = ['AND','ARE','AFG','ATG','ALB','ARM','AGO','ARG','AUT','AUS','AZE','BIH','BRB','BGD','BEL','BFA','BGR','BHR','BDI','BEN','BRN','BOL','BRA','BHS','BTN','BWA','BLR','BLZ','CAN','COD','CAF','COG','CHE','CIV','CHL','CMR','CHN','COL','CRI','CUB','CPV','CYP','CZE','DEU','DJI','DNK','DMA','DOM','DZA','ECU','EST','EGY','ERI','ESP','ETH','FIN','FJI','FSM','FRA','GAB','GBR','GRD','GEO','GHA','GMB','GIN','GNQ','GRC','GTM','GNB','GUY','HND','HRV','HTI','HUN','IDN','IRL','ISR','IND','IRQ','IRN','ISL','ITA','JAM','JOR','JPN','KEN','KGZ','KHM','KIR','COM','KNA','PRK','KOR','KWT','KAZ','LAO','LBN','LIE','LKA','LBR','LSO','LTU','LUX','LVA','LBY','MAR','MCO','MDA','MNE','MDG','MHL','MKD','MLI','MMR','MNG','MRT','MLT','MUS','MDV','MWI','MEX','MYS','MOZ','NAM','NER','NGA','NIC','NLD','NOR','NPL','NRU','NZL','OMN','PAN','PER','PNG','PHL','PAK','POL','PSE','PRT','PLW','PRY','QAT','ROU','SRB','RUS','RWA','SAU','SLB','SYC','SDN','SSD','SWE','SGP','SVN','SVK','SLE','SMR','SEN','SOM','SUR','STP','SLV','SYR','SWZ','TCD','TGO','THA','TJK','TLS','TKM','TUN','TON','TUR','TTO','TUV','TWN','TZA','UNK', 'UKR','UGA','USA','URY','UZB','VAT','VCT','VEN','VNM','VUT','WSM','YEM','ZAF','ZMB','ZWE'];
+
+	var correctCountries = [];
+
+	//var randomizedCountries = shuffleArray(countryArray);
+
+	var countryNumber = 0;
+
+	$('.flagDisplay').css('background-image', 'url("flags/' + countryArray[countryNumber].toLowerCase() + '.svg")');
+
+	$('.nextFlag').click(function(){
+		if(countryNumber < 195){
+			countryNumber++;
+			$('.flagDisplay').css('background-image', 'url("flags/' + countryArray[countryNumber].toLowerCase() + '.svg")');
+			$('.input').val('');
+			if($('.list li#'+countryArray[countryNumber]).hasClass('correct')){
+				$('.input').val($('.list li#'+countryArray[countryNumber]).text());
+				$('.input').attr('disabled', true);
+			}
+			else{
+				$('.input').attr('disabled', false);
+			}
+			$('.input').focus();
+		}
+	});
+
+	$('.prevFlag').click(function(){
+		if(countryNumber > 0){
+			countryNumber--;
+			$('.flagDisplay').css('background-image', 'url("flags/' + countryArray[countryNumber].toLowerCase() + '.svg")');
+			$('.input').val('');
+			if($('.list li#'+countryArray[countryNumber]).hasClass('correct')){
+				$('.input').val($('.list li#'+countryArray[countryNumber]).text());
+				$('.input').attr('disabled', true);
+			}
+			else{
+				$('.input').attr('disabled', false);
+			}
+			$('.input').focus();
+		}
+	});
+
+	$('.giveuptext').click(function(){
+		$('.list ul li.giveup').each(function(){
+			$(this).prepend('<img class="listImg" src="flags/'+this.id.toLowerCase()+'.svg">&nbsp;');
+			$('.listImg').css('width', '23px');
+			$('.listImg').css('height', '18px');
+		});
+	});
+
+	function addFlag(path){
+		var flagPath = $(".flagDisplay").css("background-image");
+		flagPath = flagPath.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+		$(path).prepend('<img class="listImg" src="'+flagPath+'">&nbsp;');
+	}
+
+	$('.input').keyup(function(){
+
+		var input = makeSortString($('.input').val()).toLowerCase().trim();
+		var counter = 0;
+
+		var guessedCountry = $('.list li#'+countryArray[countryNumber]);
+
+		if(countryArray[countryNumber] == checkCountry(input)){
+			if (!$(guessedCountry).hasClass('correct')){
+				$(guessedCountry).removeClass('incorrect');
+				$(guessedCountry).addClass('correct');
+				counter = (parseInt($('.score').text()) + 1);
+				$('.score').text(counter);
+				$('.input').val('');
+				addFlag(guessedCountry);
+				if($('#forward').prop('checked') === true){
+					$('.nextFlag').trigger('click');
+				}
+				correctCountries.push(guessedCountry);
+			}
+		}
+
+	});
+});
+</script>
+</head>
+<body>
+
+	<div class="topbar noselect">
+		<table class="topbarcontent">
+			<tr>
+				<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Terug</span></a></td>
+				<td class="timer">00:00:00</td>
+				<td class="giveuptext">Opgeven?</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="endmessage_win displaynone">Gefeliciteerd, je hebt alle vlaggen geraden in: </div>
+		<div class="endmessage_loss displaynone">Je hebt verloren. Tijd: </div>
+
+		<div class="flagContainer noselect">
+			<table class="flagDisplay">
+				<tr>
+					<td class="navArrows prevFlag noselect"><img src="../../assets/arrow.svg"></td>
+					<td class="navArrows nextFlag noselect"><img src="../../assets/arrow.svg"></td>
+				</tr>
+			</table>
+		</div>
+
+		<table class="scorecounter noselect">
+			<tr>
+				<td></td>
+				<td><span class="score">0</span><span>/197</span></td>
+				<td><span class="options optionsdutch"><img src="../../assets/forward.png"><div class="switchbox"><label><input type="checkbox" id="forward"><span></span></label></div></span></td>
+			</tr>
+		</table>
+
+		<input type="text" class="input" />
+
+
+		<div class="list">
+			<ul>
+				<li class="incorrect" id="AFG">Afghanistan</li>
+				<li class="incorrect" id="ALB">Albanië</li>
+				<li class="incorrect" id="DZA">Algerije</li>
+				<li class="incorrect" id="AND">Andorra</li>
+				<li class="incorrect" id="AGO">Angola</li>
+				<li class="incorrect" id="ATG">Antigua en Barbuda</li>
+				<li class="incorrect" id="ARG">Argentinië</li>
+				<li class="incorrect" id="ARM">Armenië</li>
+				<li class="incorrect" id="AUS">Australië</li>
+				<li class="incorrect" id="AZE">Azerbeidzjan</li>
+				<li class="incorrect" id="BHS">Bahama's</li>
+				<li class="incorrect" id="BHR">Bahrein</li>
+				<li class="incorrect" id="BGD">Bangladesh</li>
+				<li class="incorrect" id="BRB">Barbados</li>
+				<li class="incorrect" id="BEL">België</li>
+				<li class="incorrect" id="BLZ">Belize</li>
+				<li class="incorrect" id="BEN">Benin</li>
+				<li class="incorrect" id="BTN">Bhutan</li>
+				<li class="incorrect" id="BOL">Bolivië</li>
+				<li class="incorrect" id="BIH">Bosnië en Herzegovina</li>
+				<li class="incorrect" id="BWA">Botswana</li>
+				<li class="incorrect" id="BRA">Brazilië</li>
+				<li class="incorrect" id="BRN">Brunei</li>
+				<li class="incorrect" id="BGR">Bulgarije</li>
+				<li class="incorrect" id="BFA">Burkina Faso</li>
+				<li class="incorrect" id="BDI">Burundi</li>
+				<li class="incorrect" id="KHM">Cambodja</li>
+				<li class="incorrect" id="CAN">Canada</li>
+				<li class="incorrect" id="CAF">Centraal-Afrikaanse Republiek</li>
+				<li class="incorrect" id="CHL">Chili</li>
+				<li class="incorrect" id="CHN">China</li>
+				<li class="incorrect" id="COL">Colombia</li>
+				<li class="incorrect" id="COM">Comoren</li>
+				<li class="incorrect" id="CRI">Costa Rica</li>
+				<li class="incorrect" id="CUB">Cuba</li>
+				<li class="incorrect" id="CYP">Cyprus</li>
+				<li class="incorrect" id="COD">Democratische Republiek Congo</li>
+				<li class="incorrect" id="DNK">Denemarken</li>
+				<li class="incorrect" id="DJI">Djibouti</li>
+				<li class="incorrect" id="DMA">Dominica</li>
+				<li class="incorrect" id="DOM">Dominicaanse Republiek</li>
+				<li class="incorrect" id="DEU">Duitsland</li>
+				<li class="incorrect" id="ECU">Ecuador</li>
+				<li class="incorrect" id="EGY">Egypte</li>
+				<li class="incorrect" id="SLV">El Salvador</li>
+				<li class="incorrect" id="GNQ">Equatoriaal-Guinea</li>
+				<li class="incorrect" id="ERI">Eritrea</li>
+				<li class="incorrect" id="EST">Estland</li>
+				<li class="incorrect" id="ETH">Ethiopië</li>
+				<li class="incorrect" id="FJI">Fiji</li>
+				<li class="incorrect" id="PHL">Filipijnen</li>
+				<li class="incorrect" id="FIN">Finland</li>
+				<li class="incorrect" id="FRA">Frankrijk</li>
+				<li class="incorrect" id="GAB">Gabon</li>
+				<li class="incorrect" id="GMB">Gambia</li>
+				<li class="incorrect" id="GEO">Georgië</li>
+				<li class="incorrect" id="GHA">Ghana</li>
+				<li class="incorrect" id="GRD">Grenada</li>
+				<li class="incorrect" id="GRC">Griekenland</li>
+				<li class="incorrect" id="GTM">Guatemala</li>
+				<li class="incorrect" id="GIN">Guinee</li>
+				<li class="incorrect" id="GNB">Guinee-Bissau</li>
+				<li class="incorrect" id="GUY">Guyana</li>
+				<li class="incorrect" id="HTI">Haïti</li>
+				<li class="incorrect" id="HND">Honduras</li>
+				<li class="incorrect" id="HUN">Hongarije</li>
+				<li class="incorrect" id="IRL">Ierland</li>
+				<li class="incorrect" id="ISL">Ijsland</li>
+				<li class="incorrect" id="IND">India</li>
+				<li class="incorrect" id="IDN">Indonesië</li>
+				<li class="incorrect" id="IRQ">Irak</li>
+				<li class="incorrect" id="IRN">Iran</li>
+				<li class="incorrect" id="ISR">Israël</li>
+				<li class="incorrect" id="ITA">Italië</li>
+				<li class="incorrect" id="CIV">Ivoorkust</li>
+				<li class="incorrect" id="JAM">Jamaica</li>
+				<li class="incorrect" id="JPN">Japan</li>
+				<li class="incorrect" id="YEM">Jemen</li>
+				<li class="incorrect" id="JOR">Jordanië</li>
+				<li class="incorrect" id="CPV">Kaapverdië</li>
+				<li class="incorrect" id="CMR">Kameroen</li>
+				<li class="incorrect" id="KAZ">Kazachstan</li>
+				<li class="incorrect" id="KEN">Kenia</li>
+				<li class="incorrect" id="KGZ">Kirgizië</li>
+				<li class="incorrect" id="KIR">Kiribati</li>
+				<li class="incorrect" id="KWT">Koeweit</li>
+				<li class="incorrect" id="UNK">Kosovo</li>
+				<li class="incorrect" id="HRV">Kroatië</li>
+				<li class="incorrect" id="LAO">Laos</li>
+				<li class="incorrect" id="LSO">Lesotho</li>
+				<li class="incorrect" id="LVA">Letland</li>
+				<li class="incorrect" id="LBN">Libanon</li>
+				<li class="incorrect" id="LBR">Liberia</li>
+				<li class="incorrect" id="LBY">Libië</li>
+				<li class="incorrect" id="LIE">Liechtenstein</li>
+				<li class="incorrect" id="LTU">Litouwen</li>
+				<li class="incorrect" id="LUX">Luxemburg</li>
+				<li class="incorrect" id="MKD">Macedonië</li>
+				<li class="incorrect" id="MDG">Madagaskar</li>
+				<li class="incorrect" id="MWI">Malawi</li>
+				<li class="incorrect" id="MDV">Maldiven</li>
+				<li class="incorrect" id="MYS">Maleisië</li>
+				<li class="incorrect" id="MLI">Mali</li>
+				<li class="incorrect" id="MLT">Malta</li>
+				<li class="incorrect" id="MAR">Marokko</li>
+				<li class="incorrect" id="MHL">Marshalleilanden</li>
+				<li class="incorrect" id="MRT">Mauritanië</li>
+				<li class="incorrect" id="MUS">Mauritius</li>
+				<li class="incorrect" id="MEX">Mexico</li>
+				<li class="incorrect" id="FSM">Micronesia</li>
+				<li class="incorrect" id="MDA">Moldavië</li>
+				<li class="incorrect" id="MCO">Monaco</li>
+				<li class="incorrect" id="MNG">Mongolië</li>
+				<li class="incorrect" id="MNE">Montenegro</li>
+				<li class="incorrect" id="MOZ">Mozambique</li>
+				<li class="incorrect" id="MMR">Myanmar</li>
+				<li class="incorrect" id="NAM">Namibië</li>
+				<li class="incorrect" id="NRU">Nauru</li>
+				<li class="incorrect" id="NLD">Nederland</li>
+				<li class="incorrect" id="NPL">Nepal</li>
+				<li class="incorrect" id="NIC">Nicaragua</li>
+				<li class="incorrect" id="NZL">Nieuw-Zeeland</li>
+				<li class="incorrect" id="NER">Niger</li>
+				<li class="incorrect" id="NGA">Nigeria</li>
+				<li class="incorrect" id="PRK">Noord-Korea</li>
+				<li class="incorrect" id="NOR">Noorwegen</li>
+				<li class="incorrect" id="UGA">Oeganda</li>
+				<li class="incorrect" id="UKR">Oekraïne</li>
+				<li class="incorrect" id="UZB">Oezbekistan</li>
+				<li class="incorrect" id="OMN">Oman</li>
+				<li class="incorrect" id="TLS">Oost-Timor</li>
+				<li class="incorrect" id="AUT">Oostenrijk</li>
+				<li class="incorrect" id="PAK">Pakistan</li>
+				<li class="incorrect" id="PLW">Palau</li>
+				<li class="incorrect" id="PSE">Palestina</li>
+				<li class="incorrect" id="PAN">Panama</li>
+				<li class="incorrect" id="PNG">Papoea-Nieuw-Guinea</li>
+				<li class="incorrect" id="PRY">Paraguay</li>
+				<li class="incorrect" id="PER">Peru</li>
+				<li class="incorrect" id="POL">Polen</li>
+				<li class="incorrect" id="PRT">Portugal</li>
+				<li class="incorrect" id="QAT">Qatar</li>
+				<li class="incorrect" id="COG">Republiek Congo</li>
+				<li class="incorrect" id="ROU">Roemenië</li>
+				<li class="incorrect" id="RUS">Rusland</li>
+				<li class="incorrect" id="RWA">Rwanda</li>
+				<li class="incorrect" id="KNA">Saint Kitts en Nevis</li>
+				<li class="incorrect" id="LCU">Saint Lucia</li>
+				<li class="incorrect" id="VCT">Saint Vincent en de Grenadines</li>
+				<li class="incorrect" id="SLB">Salomoneilanden</li>
+				<li class="incorrect" id="WSM">Samoa</li>
+				<li class="incorrect" id="SMR">San Marino</li>
+				<li class="incorrect" id="STP">Sao Tomé en Principe</li>
+				<li class="incorrect" id="SAU">Saoedi-Arabië</li>
+				<li class="incorrect" id="SEN">Senegal</li>
+				<li class="incorrect" id="SRB">Servië</li>
+				<li class="incorrect" id="SYC">Seychellen</li>
+				<li class="incorrect" id="SLE">Sierra Leone</li>
+				<li class="incorrect" id="SGP">Singapore</li>
+				<li class="incorrect" id="SVK">Slowakije</li>
+				<li class="incorrect" id="SVN">Slovenië</li>
+				<li class="incorrect" id="SOM">Somalië</li>
+				<li class="incorrect" id="ESP">Spanje</li>
+				<li class="incorrect" id="LKA">Sri Lanka</li>
+				<li class="incorrect" id="SDN">Soedan</li>
+				<li class="incorrect" id="SUR">Suriname</li>
+				<li class="incorrect" id="SWZ">Swaziland</li>
+				<li class="incorrect" id="SYR">Syrië</li>
+				<li class="incorrect" id="TWN">Taiwan</li>
+				<li class="incorrect" id="TJK">Tadzjikistan</li>
+				<li class="incorrect" id="TZA">Tanzania</li>
+				<li class="incorrect" id="THA">Thailand</li>
+				<li class="incorrect" id="TGO">Togo</li>
+				<li class="incorrect" id="TON">Tonga</li>
+				<li class="incorrect" id="TTO">Trinidad en Tobago</li>
+				<li class="incorrect" id="TCD">Tsjaad</li>
+				<li class="incorrect" id="CZE">Tsjechië</li>
+				<li class="incorrect" id="TUN">Tunesië</li>
+				<li class="incorrect" id="TUR">Turkije</li>
+				<li class="incorrect" id="TKM">Turkmenistan</li>
+				<li class="incorrect" id="TUV">Tuvalu</li>
+				<li class="incorrect" id="URY">Uruguay</li>
+				<li class="incorrect" id="VUT">Vanuatu</li>
+				<li class="incorrect" id="VAT">Vaticaanstad</li>
+				<li class="incorrect" id="VEN">Venezuela</li>
+				<li class="incorrect" id="GBR">Verenigd Koninkrijk</li>
+				<li class="incorrect" id="ARE">Verenigde Arabische Emiraten</li>
+				<li class="incorrect" id="USA">Verenigde Staten</li>
+				<li class="incorrect" id="VNM">Vietnam</li>
+				<li class="incorrect" id="BLR">Wit-Rusland</li>
+				<li class="incorrect" id="ZMB">Zambia</li>
+				<li class="incorrect" id="ZWE">Zimbabwe</li>
+				<li class="incorrect" id="ZAF">Zuid-Afrika</li>
+				<li class="incorrect" id="KOR">Zuid-Korea</li>
+				<li class="incorrect" id="SSD">Zuid-Soedan</li>
+				<li class="incorrect" id="SWE">Zweden</li>
+				<li class="incorrect" id="CHE">Zwitserland</li>
+			<ul>
+		</div>
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-2.2.2.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+$(document).ready(function(){
+
+});
+</script>
+</head>
+<body>
+
+	<div class="topbar noselect">
+		<table class="topbarcontent">
+			<tr>
+				<td class="langselect">
+					<label for="dropdownToggle" class="hamburger"><img src="assets/hamburger.svg"></label>
+                    <input type="checkbox" id="dropdownToggle">
+					<ul class="langdropdown">
+                        <div class="dropdownarrow"></div>
+						<li id="english"><span class="flag"></span>English</li>
+						<li id="dutch"><span class="flag"></span>Nederlands</li>
+					</ul>
+				</td>
+				<td class="intro">Country Quiz</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="wrapper">
+
+		<ul class="mainmenu noselect" id="mainmenuenglish">
+			<div class="gameselect">Select your game type:</div>
+			<a href="gametypes/country/english.html" class="gametype"><li><img src="assets/country.png">Country Quiz</li></a>
+			<a href="gametypes/capital/english.html" class="gametype"><li><img src="assets/capital.png">Capital City Quiz</li></a>
+			<a href="gametypes/flag/english.html" class="gametype"><li><img src="assets/flag.png">Flag Quiz</li></a>
+			<a href="gametypes/flag/englishRandom.html" class="gametype"><li><img src="assets/flag.png">Flag Quiz (random)</li></a>
+		</ul>
+
+		<ul class="mainmenu noselect vishidden" id="mainmenudutch">
+			<div class="gameselect">Selecteer je speltype:</div>
+			<a href="gametypes/country/dutch.html" class="gametype"><li><img src="assets/country.png">Landen quiz</li></a>
+			<a href="gametypes/capital/dutch.html" class="gametype"><li><img src="assets/capital.png">Hoofdsteden quiz</li></a>
+			<a href="gametypes/flag/dutch.html" class="gametype"><li><img src="assets/flag.png">Vlaggen quiz</li></a>
+			<a href="gametypes/flag/dutchRandom.html" class="gametype"><li><img src="assets/flag.png">Vlaggen quiz (willekeurig)</li></a>
+		</ul>
+
+
+
+	</div>
+
+</body>
+</html>
