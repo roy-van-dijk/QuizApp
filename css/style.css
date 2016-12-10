@@ -134,6 +134,7 @@ td.langselect{
 }
 #dropdownToggle{
     display: none;
+	transition: 0.2s linear;
 }
 #dropdownToggle:checked ~ .langdropdown{
     visibility: visible;
