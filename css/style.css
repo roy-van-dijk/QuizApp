@@ -8,12 +8,12 @@
 }
 body{
 	background-color: #ccc;
-
 }
 .wrapper{
 	max-width: 1000px;
 	margin: 115px auto 0px auto;
 	padding-bottom: 10px;
+	will-change: transform;
 	animation: fadein 0.3s;
 }
 .input{
@@ -40,6 +40,7 @@ body{
 	text-align: center;
 }
 .list ul li{
+	will-change: transform;
 	transition: 0.2s all ease-in-out;
 }
 .listImg{
@@ -102,6 +103,7 @@ body{
 	z-index: 99;
 }
 .topbarcontent{
+	will-change: transform;
 	animation: fadein 0.3s;
 	margin-top: 8px;
 	table-layout: fixed;
@@ -137,16 +139,19 @@ td.langselect{
     display: none;
 }
 #dropdownToggle:checked ~ .langdropdown{
+	will-change: transform;
     visibility: visible;
     opacity: 1;
     animation: menuOpen 0.2s linear;
 }
 #dropdownToggle:not(:checked) ~ .langdropdown{
+	will-change: transform;
     visibility: hidden;
     opacity: 0;
     animation: menuClose 0.2s linear;
 }
 .dropdownarrow{
+	will-change: transform;
     height: 25px;
     width: 25px;
     background-color: white;
@@ -157,6 +162,7 @@ td.langselect{
     border-radius: 2px;
 }
 .langdropdown{
+	will-change: transform;
 	position: absolute;
 	left: 20px;
 	margin-right: 10px;
@@ -191,6 +197,7 @@ td.langselect{
 #english > .flag{ background-image: url('../assets/uk.png');}
 #dutch > .flag{ background-image: url('../assets/nl.png');}
 .mainmenu{
+	will-change: transform;
 	margin: 0px auto;
     left: 0;
     right: 0;
@@ -240,6 +247,7 @@ td.langselect{
 	cursor: pointer;
 }
 .backarrow{
+	will-change: transform;
 	transform: rotate(180deg);
 	height: 35px;
 	float: left;
@@ -279,6 +287,7 @@ td.langselect{
 	margin-top: 10px;
 }
 .prevFlag img{
+	will-change: transform;
 	transform: rotate(180deg);
 }
 .navArrows{
@@ -323,6 +332,7 @@ td.langselect{
 	display: none;
 }
 .switchbox span{
+	will-change: transform;
 	width: 34px;
 	height: 24px;
 	display: block;
@@ -334,6 +344,7 @@ td.langselect{
 	padding-top: 3px;
 }
 .switchbox input:checked + span{
+	will-change: transform;
 	background-color: #2b87ff;
 	transform: translatex(34px);
 }
@@ -377,6 +388,7 @@ td.langselect{
     cursor: grab;
 }
 .map svg{
+	will-change: transform;
 	transition: 0.3s height ease-in-out, 0.3s width ease-in-out;
 }
 @keyframes fadein {
