@@ -1,0 +1,7 @@
+{
+  "short_name": "Country Quiz",
+  "name": "Country Quiz",
+  "start_url": "/index.html",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
