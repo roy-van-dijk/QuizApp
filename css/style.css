@@ -13,7 +13,7 @@ body{
 	max-width: 1000px;
 	margin: 115px auto 0px auto;
 	padding-bottom: 10px;
-	animation: fadein 0.3s;
+	/*animation: fadein 0.3s;*/
 }
 .input{
 	width: 100%;
@@ -101,7 +101,7 @@ body{
 	z-index: 99;
 }
 .topbarcontent{
-	animation: fadein 0.3s;
+	/*animation: fadein 0.3s;*/
 	margin-top: 8px;
 	table-layout: fixed;
 	width: 100%;
