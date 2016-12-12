@@ -514,6 +514,19 @@ $(document).ready(function(){
 
 	//var randomizedCountries = shuffleArray(countryArray);
 
+	var flagPaths = $.each(countryArray, function(key, value) {
+    	var flagPath = 'flags/'+value.toLowerCase()+'.svg';
+		console.log(flagPath);
+	});
+	var images = new Array()
+	function preload(flagPaths) {
+		for (i = 0; i < flagPaths.length; i++) {
+			images[i] = new Image();
+			images[i].src = 'flags/'+flagPaths[i].toLowerCase()+'.svg';
+		}
+	}
+	preload(flagPaths);
+
 	var countryNumber = 0;
 
 	$('.flagDisplay').css('background-image', 'url("flags/' + countryArray[countryNumber].toLowerCase() + '.svg")');

@@ -470,7 +470,9 @@ $(document).ready(function(){
 
 	var correctCountries = [];
 
-	// Preload images?
+	//var randomizedCountries = shuffleArray(countryArray);
+
+	// Preload images
 	var flagPaths = $.each(countryArray, function(key, value) {
     	var flagPath = 'flags/'+value.toLowerCase()+'.svg';
 		console.log(flagPath);
@@ -483,8 +485,6 @@ $(document).ready(function(){
 		}
 	}
 	preload(flagPaths);
-
-	//var randomizedCountries = shuffleArray(countryArray);
 
 	var countryNumber = 0;
 

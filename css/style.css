@@ -404,11 +404,7 @@ td.langselect{
 	top: 0;
 	right: 100%;
 	width: 100%;
-	height: 2px;
-}
-@keyframes fadeout{
-	from { opacity: 1}
-	to   { opacity: 0}
+	height: 3px;
 }
 @keyframes fadein {
     from { opacity: 0; }
