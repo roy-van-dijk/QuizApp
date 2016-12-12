@@ -88,7 +88,7 @@ body{
 	margin: 0px auto;
 	/*height > zoom, max-height > reponsive*/
 	height: 50vw;
-	overflow: auto;
+	overflow: hidden;
 }
 .topbar{
 	height: 75px;
