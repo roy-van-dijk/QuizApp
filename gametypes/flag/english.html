@@ -476,10 +476,10 @@ $(document).ready(function(){
 		console.log(flagPath);
 	});
 	var images = new Array()
-	function preload() {
-		for (i = 0; i < preload.arguments.length; i++) {
-			images[i] = new Image()
-			images[i].src = preload.arguments[i]
+	function preload(flagPaths) {
+		for (i = 0; i < flagPaths.length; i++) {
+			images[i] = new Image();
+			images[i].src = 'flags/'+flagPaths[i]+'.svg';
 		}
 	}
 	preload(flagPaths);
