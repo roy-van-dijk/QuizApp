@@ -5,527 +5,502 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
 <link rel="manifest" href="../../manifest.json">
 <link rel="stylesheet" href="../../css/style.css">
-<script src="../../js/jquery-2.2.2.min.js"></script>
-<script src="../../js/jquery.stopwatch.js"></script>
-<script src="../../js/dragScroll.js"></script>
-<script src="../../js/pace.js"></script>
-<script src="../../js/main.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
 <script>
-$(document).ready(function(){
 
-	function colourCountry(country){
-		switch(country){
-			case "afghanistan":
-			case "afganistan":
-				country = "AFG"; break;
-			case "albanie":
-				country = "ALB"; break;
-			case "algerije":
-			case "algarije":
-				country = "DZA"; break;
-			case "andorra":
-				country = "AND"; break;
-			case "angola":
-				country = "AGO"; break;
-			case "antigua en barbuda":
-			case "antigua":
-				country = "ATG"; break;
-			case "argentinie":
-				country = "ARG"; break;
-			case "armenie":
-				country = "ARM"; break;
-			case "australie":
-				country = "AUS"; break;
-			case "oostenrijk":
-				country = "AUT"; break;
-			case "azerbeidzjan":
-			case "azerbaijan":
-			case "azerbeidjan":
-				country = "AZE"; break;
-			case "bahamas":
-			case "bahama's":
-				country = "BHS"; break;
-			case "bahrein":
-				country = "BHR"; break;
-			case "bangladesh":
-				country = "BGD"; break;
-			case "barbados":
-				country = "BRB"; break;
-			case "wit-rusland":
-			case "wit rusland":
-				country = "BLR"; break;
-			case "belgie":
-				country = "BEL"; break;
-			case "belize":
-				country = "BLZ"; break;
-			case "benin":
-				country = "BEN"; break;
-			case "bhutan":
-				country = "BTN"; break;
-			case "bolivie":
-			case "bolivia":
-				country = "BOL"; break;
-			case "bosnie en herzegovina":
-			case "bosnie":
-				country = "BIH"; break;
-			case "botswana":
-				country = "BWA"; break;
-			case "brazilie":
-				country = "BRA"; break;
-			case "brunei":
-				country = "BRN"; break;
-			case "bulgarije":
-				country = "BGR"; break;
-			case "burkina faso":
-				country = "BFA"; break;
-			case "myanmar":
-			case "burma":
-				country = "MMR"; break;
-			case "burundi":
-				country = "BDI"; break;
-			case "cambodja":
-			case "cambodia":
-				country = "KHM"; break;
-			case "kameroen":
-			case "cameroen":
-				country = "CMR"; break;
-			case "canada":
-				country = "CAN"; break;
-			case "kaapverdie":
-			case "kaap verdie":
-				country = "CPV"; break;
-			case "centraal-afrikaanse republiek":
-			case "centraal afrikaanse republiek":
-			case "car":
-				country = "CAF"; break;
-			case "tsjaad":
-				country = "TCD"; break;
-			case "chili":
-			case "chile":
-				country = "CHL"; break;
-			case "china":
-				country = "CHN"; break;
-			case "colombia":
-			case "colombie":
-				country = "COL"; break;
-			case "comoren":
-			case "comoros":
-				country = "COM"; break;
-			case "democratische republiek congo":
-			case "congo":
-			case "democratische republiek kongo":
-			case "kongo":
-			case "congo-kinshasa":
-			case "congo kinshasa":
-			case "kongo-kinshasa":
-			case "kongo kinshasa":
-				country = "COD"; break;
-			case "republiek congo":
-			case "republiek kongo":
-			case "congo-brazzaville":
-			case "congo brazzaville":
-			case "kongo-brazzaville":
-			case "kongo brazzaville":
-				country = "COG"; break;
-			case "costa rica":
-				country = "CRI"; break;
-			case "ivoorkust":
-				country = "CIV"; break;
-			case "kroatie":
-			case "croatie":
-				country = "HRV"; break;
-			case "cuba":
-				country = "CUB"; break;
-			case "cyprus":
-				country = "CYP"; break;
-			case "tsjechie":
-				country = "CZE"; break;
-			case "denemarken":
-				country = "DNK"; break;
-			case "djibouti":
-				country = "DJI"; break;
-			case "dominica":
-				country = "DMA"; break;
-			case "dominicaanse republiek":
-				country = "DOM"; break;
-			case "oost-timor":
-			case "oost timor":
-				country = "TLS"; break;
-			case "ecuador":
-				country = "ECU"; break;
-			case "egypte":
-				country = "EGY"; break;
-			case "el salvador":
-				country = "SLV"; break;
-			case "equatoriaal-guinea":
-			case "equatoriaal guinea":
-				country = "GNQ"; break;
-			case "eritrea":
-				country = "ERI"; break;
-			case "estland":
-				country = "EST"; break;
-			case "ethiopie":
-				country = "ETH"; break;
-			case "fiji":
-				country = "FJI"; break;
-			case "finland":
-				country = "FIN"; break;
-			case "frankrijk":
-				country = "FRA"; break;
-			case "gabon":
-				country = "GAB"; break;
-			case "gambia":
-				country = "GMB"; break;
-			case "georgie":
-				country = "GEO"; break;
-			case "duitsland":
-				country = "DEU"; break;
-			case "ghana":
-				country = "GHA"; break;
-			case "griekenland":
-				country = "GRC"; break;
-			case "grenada":
-				country = "GRD"; break;
-			case "guatemala":
-				country = "GTM"; break;
-			case "guinee":
-				country = "GIN"; break;
-			case "guinee-bissau":
-			case "guinee bissau":
-				country = "GNB"; break;
-			case "guyana":
-				country = "GUY"; break;
-			case "haiti":
-				country = "HTI"; break;
-			case "vaticaanstad":
-				country = "VAT"; break;
-			case "honduras":
-				country = "HND"; break;
-			case "hongarije":
-				country = "HUN"; break;
-			case "ijsland":
-				country = "ISL"; break;
-			case "india":
-				country = "IND"; break;
-			case "indonesie":
-				country = "IDN"; break;
-			case "iran":
-				country = "IRN"; break;
-			case "irak":
-			case "iraq":
-				country = "IRQ"; break;
-			case "ierland":
-				country = "IRL"; break;
-			case "israel":
-				country = "ISR"; break;
-			case "italie":
-				country = "ITA"; break;
-			case "jamaica":
-				country = "JAM"; break;
-			case "japan":
-				country = "JPN"; break;
-			case "jordanie":
-				country = "JOR"; break;
-			case "kazachstan":
-			case "kazakstan":
-				country = "KAZ"; break;
-			case "kenia":
-				country = "KEN"; break;
-			case "kiribati":
-				country = "KIR"; break;
-			case "kosovo":
-				country = "UNK"; break;
-			case "koeweit":
-			case "kuweit":
-				country = "KWT"; break;
-			case "kirgistan":
-			case "kirgizie":
-				country = "KGZ"; break;
-			case "laos":
-				country = "LAO"; break;
-			case "letland":
-				country = "LVA"; break;
-			case "libanon":
-			case "liebanon":
-				country = "LBN"; break;
-			case "lesotho":
-				country = "LSO"; break;
-			case "liberia":
-				country = "LBR"; break;
-			case "libie":
-				country = "LBY"; break;
-			case "liechtenstein":
-				country = "LIE"; break;
-			case "litouwen":
-				country = "LTU"; break;
-			case "luxemburg":
-			case "luxembourg":
-				country = "LUX"; break;
-			case "macedonie":
-				country = "MKD"; break;
-			case "madagaskar":
-			case "madagascar":
-				country = "MDG"; break;
-			case "malawi":
-				country = "MWI"; break;
-			case "maleisie":
-				country = "MYS"; break;
-			case "maldiven":
-				country = "MDV"; break;
-			case "mali":
-				country = "MLI"; break;
-			case "malta":
-				country = "MLT"; break;
-			case "marshalleilanden":
-			case "marshall eilanden":
-				country = "MHL"; break;
-			case "mauritanie":
-				country = "MRT"; break;
-			case "mauritius":
-				country = "MUS"; break;
-			case "mexico":
-				country = "MEX"; break;
-			case "micronesia":
-			case "micronesie":
-				country = "FSM"; break;
-			case "moldavie":
-				country = "MDA"; break;
-			case "monaco":
-				country = "MCO"; break;
-			case "mongolie":
-				country = "MNG"; break;
-			case "montenegro":
-				country = "MNE"; break;
-			case "marokko":
-			case "marocco":
-				country = "MAR"; break;
-			case "mozambique":
-				country = "MOZ"; break;
-			case "namibie":
-				country = "NAM"; break;
-			case "nauru":
-				country = "NRU"; break;
-			case "nepal":
-				country = "NPL"; break;
-			case "nederland":
-			case "holland":
-				country = "NLD"; break;
-			case "nieuw-zeeland":
-			case "nieuw zeeland":
-				country = "NZL"; break;
-			case "nicaragua":
-				country = "NIC"; break;
-			case "niger":
-				country = "NER"; break;
-			case "nigeria":
-				country = "NGA"; break;
-			case "noord-korea":
-			case "noord korea":
-				country = "PRK"; break;
-			case "noorwegen":
-				country = "NOR"; break;
-			case "oman":
-				country = "OMN"; break;
-			case "pakistan":
-				country = "PAK"; break;
-			case "palau":
-				country = "PLW"; break;
-			case "palestina":
-				country = "PSE"; break;
-			case "panama":
-				country = "PAN"; break;
-			case "papoea-nieuw-guinea":
-			case "papoea nieuw guinea":
-			case "nieuw guinea":
-				country = "PNG"; break;
-			case "paraguay":
-				country = "PRY"; break;
-			case "peru":
-				country = "PER"; break;
-			case "filipijnen":
-			case "philipijnen":
-				country = "PHL"; break;
-			case "polen":
-				country = "POL"; break;
-			case "portugal":
-				country = "PRT"; break;
-			case "qatar":
-				country = "QAT"; break;
-			case "roemenie":
-				country = "ROU"; break;
-			case "rusland":
-				country = "RUS"; break;
-			case "rwanda":
-				country = "RWA"; break;
-			case "saint kitts en nevis":
-			case "saint kitts":
-				country = "KNA"; break;
-			case "saint lucia":
-				country = "LCU"; break;
-			case "saint vincent en de grenadines":
-			case "saint vincent":
-				country = "VCT"; break;
-			case "samoa":
-				country = "WSM"; break;
-			case "san marino":
-				country = "SMR"; break;
-			case "sao tome en principe":
-			case "sao tome":
-				country = "STP"; break;
-			case "saoedi-arabie":
-			case "saoedi arabie":
-			case "saudi-arabie":
-			case "saudi arabie":
-				country = "SAU"; break;
-			case "senegal":
-				country = "SEN"; break;
-			case "servie":
-				country = "SRB"; break;
-			case "seychellen":
-				country = "SYC"; break;
-			case "sierra leone":
-				country = "SLE"; break;
-			case "singapore":
-				country = "SGP"; break;
-			case "slovakije":
-			case "slowakije":
-				country = "SVK"; break;
-			case "slovenie":
-				country = "SVN"; break;
-			case "salomoneilanden":
-			case "salomon eilanden":
-			case "solomoneilanden":
-			case "solomon eilanden":
-				country = "SLB"; break;
-			case "somalie":
-				country = "SOM"; break;
-			case "zuid-afrika":
-			case "zuid afrika":
-				country = "ZAF"; break;
-			case "zuid-korea":
-			case "zuid korea":
-				country = "KOR"; break;
-			case "zuid-soedan":
-			case "zuid soedan":
-			case "zuid-sudan":
-			case "zuid sudan":
-				country = "SSD"; break;
-			case "spanje":
-				country = "ESP"; break;
-			case "sri lanka":
-				country = "LKA"; break;
-			case "soedan":
-			case "sudan":
-				country = "SDN"; break;
-			case "suriname":
-				country = "SUR"; break;
-			case "swaziland":
-				country = "SWZ"; break;
-			case "zweden":
-				country = "SWE"; break;
-			case "zwitserland":
-				country = "CHE"; break;
-			case "syrie":
-				country = "SYR"; break;
-			case "taiwan":
-				country = "TWN"; break;
-			case "tadzjikistan":
-			case "tajikistan":
-			case "tadjikistan":
-				country = "TJK"; break;
-			case "tanzania":
-				country = "TZA"; break;
-			case "thailand":
-				country = "THA"; break;
-			case "togo":
-				country = "TGO"; break;
-			case "tonga":
-				country = "TON"; break;
-			case "trinidad en tobago":
-			case "trinidad":
-				country = "TTO"; break;
-			case "tunesie":
-				country = "TUN"; break;
-			case "turkije":
-				country = "TUR"; break;
-			case "turkmenistan":
-				country = "TKM"; break;
-			case "tuvalu":
-				country = "TUV"; break;
-			case "oeganda":
-			case "uganda":
-				country = "UGA"; break;
-			case "oekraine":
-			case "ukraine":
-				country = "UKR"; break;
-			case "verenigde arabische emiraten":
-			case "arabische emiraten":
-			case "vae":
-				country = "ARE"; break;
-			case "verenigd koninkrijk":
-			case "engeland":
-			case "brittannie":
-			case "groot brittannie":
-			case "groot-brittannie":
-			case "vk":
-				country = "GBR"; break;
-			case "verenigde staten":
-			case "vs":
-			case "amerika":
-			case "usa":
-				country = "USA"; break;
-			case "uruguay":
-				country = "URY"; break;
-			case "oezbekistan":
-			case "uzbekistan":
-				country = "UZB"; break;
-			case "vanuatu":
-				country = "VUT"; break;
-			case "venezuela":
-				country = "VEN"; break;
-			case "vietnam":
-				country = "VNM"; break;
-			case "jemen":
-			case "yemen":
-				country = "YEM"; break;
-			case "zambia":
-				country = "ZMB"; break;
-			case "zimbabwe":
-				country = "ZWE"; break;
-			default:
-				country = "ZZZ"; break;
-		}
-
-		return country;
-
+function colourCountry(country){
+	switch(country){
+		case "afghanistan":
+		case "afganistan":
+			country = "AFG"; break;
+		case "albanie":
+			country = "ALB"; break;
+		case "algerije":
+		case "algarije":
+			country = "DZA"; break;
+		case "andorra":
+			country = "AND"; break;
+		case "angola":
+			country = "AGO"; break;
+		case "antigua en barbuda":
+		case "antigua":
+			country = "ATG"; break;
+		case "argentinie":
+			country = "ARG"; break;
+		case "armenie":
+			country = "ARM"; break;
+		case "australie":
+			country = "AUS"; break;
+		case "oostenrijk":
+			country = "AUT"; break;
+		case "azerbeidzjan":
+		case "azerbaijan":
+		case "azerbeidjan":
+			country = "AZE"; break;
+		case "bahamas":
+		case "bahama's":
+			country = "BHS"; break;
+		case "bahrein":
+			country = "BHR"; break;
+		case "bangladesh":
+			country = "BGD"; break;
+		case "barbados":
+			country = "BRB"; break;
+		case "wit-rusland":
+		case "wit rusland":
+			country = "BLR"; break;
+		case "belgie":
+			country = "BEL"; break;
+		case "belize":
+			country = "BLZ"; break;
+		case "benin":
+			country = "BEN"; break;
+		case "bhutan":
+			country = "BTN"; break;
+		case "bolivie":
+		case "bolivia":
+			country = "BOL"; break;
+		case "bosnie en herzegovina":
+		case "bosnie":
+			country = "BIH"; break;
+		case "botswana":
+			country = "BWA"; break;
+		case "brazilie":
+			country = "BRA"; break;
+		case "brunei":
+			country = "BRN"; break;
+		case "bulgarije":
+			country = "BGR"; break;
+		case "burkina faso":
+			country = "BFA"; break;
+		case "myanmar":
+		case "burma":
+			country = "MMR"; break;
+		case "burundi":
+			country = "BDI"; break;
+		case "cambodja":
+		case "cambodia":
+			country = "KHM"; break;
+		case "kameroen":
+		case "cameroen":
+			country = "CMR"; break;
+		case "canada":
+			country = "CAN"; break;
+		case "kaapverdie":
+		case "kaap verdie":
+			country = "CPV"; break;
+		case "centraal-afrikaanse republiek":
+		case "centraal afrikaanse republiek":
+		case "car":
+			country = "CAF"; break;
+		case "tsjaad":
+			country = "TCD"; break;
+		case "chili":
+		case "chile":
+			country = "CHL"; break;
+		case "china":
+			country = "CHN"; break;
+		case "colombia":
+		case "colombie":
+			country = "COL"; break;
+		case "comoren":
+		case "comoros":
+			country = "COM"; break;
+		case "democratische republiek congo":
+		case "congo":
+		case "democratische republiek kongo":
+		case "kongo":
+		case "congo-kinshasa":
+		case "congo kinshasa":
+		case "kongo-kinshasa":
+		case "kongo kinshasa":
+			country = "COD"; break;
+		case "republiek congo":
+		case "republiek kongo":
+		case "congo-brazzaville":
+		case "congo brazzaville":
+		case "kongo-brazzaville":
+		case "kongo brazzaville":
+			country = "COG"; break;
+		case "costa rica":
+			country = "CRI"; break;
+		case "ivoorkust":
+			country = "CIV"; break;
+		case "kroatie":
+		case "croatie":
+			country = "HRV"; break;
+		case "cuba":
+			country = "CUB"; break;
+		case "cyprus":
+			country = "CYP"; break;
+		case "tsjechie":
+			country = "CZE"; break;
+		case "denemarken":
+			country = "DNK"; break;
+		case "djibouti":
+			country = "DJI"; break;
+		case "dominica":
+			country = "DMA"; break;
+		case "dominicaanse republiek":
+			country = "DOM"; break;
+		case "oost-timor":
+		case "oost timor":
+			country = "TLS"; break;
+		case "ecuador":
+			country = "ECU"; break;
+		case "egypte":
+			country = "EGY"; break;
+		case "el salvador":
+			country = "SLV"; break;
+		case "equatoriaal-guinea":
+		case "equatoriaal guinea":
+			country = "GNQ"; break;
+		case "eritrea":
+			country = "ERI"; break;
+		case "estland":
+			country = "EST"; break;
+		case "ethiopie":
+			country = "ETH"; break;
+		case "fiji":
+			country = "FJI"; break;
+		case "finland":
+			country = "FIN"; break;
+		case "frankrijk":
+			country = "FRA"; break;
+		case "gabon":
+			country = "GAB"; break;
+		case "gambia":
+			country = "GMB"; break;
+		case "georgie":
+			country = "GEO"; break;
+		case "duitsland":
+			country = "DEU"; break;
+		case "ghana":
+			country = "GHA"; break;
+		case "griekenland":
+			country = "GRC"; break;
+		case "grenada":
+			country = "GRD"; break;
+		case "guatemala":
+			country = "GTM"; break;
+		case "guinee":
+			country = "GIN"; break;
+		case "guinee-bissau":
+		case "guinee bissau":
+			country = "GNB"; break;
+		case "guyana":
+			country = "GUY"; break;
+		case "haiti":
+			country = "HTI"; break;
+		case "vaticaanstad":
+			country = "VAT"; break;
+		case "honduras":
+			country = "HND"; break;
+		case "hongarije":
+			country = "HUN"; break;
+		case "ijsland":
+			country = "ISL"; break;
+		case "india":
+			country = "IND"; break;
+		case "indonesie":
+			country = "IDN"; break;
+		case "iran":
+			country = "IRN"; break;
+		case "irak":
+		case "iraq":
+			country = "IRQ"; break;
+		case "ierland":
+			country = "IRL"; break;
+		case "israel":
+			country = "ISR"; break;
+		case "italie":
+			country = "ITA"; break;
+		case "jamaica":
+			country = "JAM"; break;
+		case "japan":
+			country = "JPN"; break;
+		case "jordanie":
+			country = "JOR"; break;
+		case "kazachstan":
+		case "kazakstan":
+			country = "KAZ"; break;
+		case "kenia":
+			country = "KEN"; break;
+		case "kiribati":
+			country = "KIR"; break;
+		case "kosovo":
+			country = "UNK"; break;
+		case "koeweit":
+		case "kuweit":
+			country = "KWT"; break;
+		case "kirgistan":
+		case "kirgizie":
+			country = "KGZ"; break;
+		case "laos":
+			country = "LAO"; break;
+		case "letland":
+			country = "LVA"; break;
+		case "libanon":
+		case "liebanon":
+			country = "LBN"; break;
+		case "lesotho":
+			country = "LSO"; break;
+		case "liberia":
+			country = "LBR"; break;
+		case "libie":
+			country = "LBY"; break;
+		case "liechtenstein":
+			country = "LIE"; break;
+		case "litouwen":
+			country = "LTU"; break;
+		case "luxemburg":
+		case "luxembourg":
+			country = "LUX"; break;
+		case "macedonie":
+			country = "MKD"; break;
+		case "madagaskar":
+		case "madagascar":
+			country = "MDG"; break;
+		case "malawi":
+			country = "MWI"; break;
+		case "maleisie":
+			country = "MYS"; break;
+		case "maldiven":
+			country = "MDV"; break;
+		case "mali":
+			country = "MLI"; break;
+		case "malta":
+			country = "MLT"; break;
+		case "marshalleilanden":
+		case "marshall eilanden":
+			country = "MHL"; break;
+		case "mauritanie":
+			country = "MRT"; break;
+		case "mauritius":
+			country = "MUS"; break;
+		case "mexico":
+			country = "MEX"; break;
+		case "micronesia":
+		case "micronesie":
+			country = "FSM"; break;
+		case "moldavie":
+			country = "MDA"; break;
+		case "monaco":
+			country = "MCO"; break;
+		case "mongolie":
+			country = "MNG"; break;
+		case "montenegro":
+			country = "MNE"; break;
+		case "marokko":
+		case "marocco":
+			country = "MAR"; break;
+		case "mozambique":
+			country = "MOZ"; break;
+		case "namibie":
+			country = "NAM"; break;
+		case "nauru":
+			country = "NRU"; break;
+		case "nepal":
+			country = "NPL"; break;
+		case "nederland":
+		case "holland":
+			country = "NLD"; break;
+		case "nieuw-zeeland":
+		case "nieuw zeeland":
+			country = "NZL"; break;
+		case "nicaragua":
+			country = "NIC"; break;
+		case "niger":
+			country = "NER"; break;
+		case "nigeria":
+			country = "NGA"; break;
+		case "noord-korea":
+		case "noord korea":
+			country = "PRK"; break;
+		case "noorwegen":
+			country = "NOR"; break;
+		case "oman":
+			country = "OMN"; break;
+		case "pakistan":
+			country = "PAK"; break;
+		case "palau":
+			country = "PLW"; break;
+		case "palestina":
+			country = "PSE"; break;
+		case "panama":
+			country = "PAN"; break;
+		case "papoea-nieuw-guinea":
+		case "papoea nieuw guinea":
+		case "nieuw guinea":
+			country = "PNG"; break;
+		case "paraguay":
+			country = "PRY"; break;
+		case "peru":
+			country = "PER"; break;
+		case "filipijnen":
+		case "philipijnen":
+			country = "PHL"; break;
+		case "polen":
+			country = "POL"; break;
+		case "portugal":
+			country = "PRT"; break;
+		case "qatar":
+			country = "QAT"; break;
+		case "roemenie":
+			country = "ROU"; break;
+		case "rusland":
+			country = "RUS"; break;
+		case "rwanda":
+			country = "RWA"; break;
+		case "saint kitts en nevis":
+		case "saint kitts":
+			country = "KNA"; break;
+		case "saint lucia":
+			country = "LCU"; break;
+		case "saint vincent en de grenadines":
+		case "saint vincent":
+			country = "VCT"; break;
+		case "samoa":
+			country = "WSM"; break;
+		case "san marino":
+			country = "SMR"; break;
+		case "sao tome en principe":
+		case "sao tome":
+			country = "STP"; break;
+		case "saoedi-arabie":
+		case "saoedi arabie":
+		case "saudi-arabie":
+		case "saudi arabie":
+			country = "SAU"; break;
+		case "senegal":
+			country = "SEN"; break;
+		case "servie":
+			country = "SRB"; break;
+		case "seychellen":
+			country = "SYC"; break;
+		case "sierra leone":
+			country = "SLE"; break;
+		case "singapore":
+			country = "SGP"; break;
+		case "slovakije":
+		case "slowakije":
+			country = "SVK"; break;
+		case "slovenie":
+			country = "SVN"; break;
+		case "salomoneilanden":
+		case "salomon eilanden":
+		case "solomoneilanden":
+		case "solomon eilanden":
+			country = "SLB"; break;
+		case "somalie":
+			country = "SOM"; break;
+		case "zuid-afrika":
+		case "zuid afrika":
+			country = "ZAF"; break;
+		case "zuid-korea":
+		case "zuid korea":
+			country = "KOR"; break;
+		case "zuid-soedan":
+		case "zuid soedan":
+		case "zuid-sudan":
+		case "zuid sudan":
+			country = "SSD"; break;
+		case "spanje":
+			country = "ESP"; break;
+		case "sri lanka":
+			country = "LKA"; break;
+		case "soedan":
+		case "sudan":
+			country = "SDN"; break;
+		case "suriname":
+			country = "SUR"; break;
+		case "swaziland":
+			country = "SWZ"; break;
+		case "zweden":
+			country = "SWE"; break;
+		case "zwitserland":
+			country = "CHE"; break;
+		case "syrie":
+			country = "SYR"; break;
+		case "taiwan":
+			country = "TWN"; break;
+		case "tadzjikistan":
+		case "tajikistan":
+		case "tadjikistan":
+			country = "TJK"; break;
+		case "tanzania":
+			country = "TZA"; break;
+		case "thailand":
+			country = "THA"; break;
+		case "togo":
+			country = "TGO"; break;
+		case "tonga":
+			country = "TON"; break;
+		case "trinidad en tobago":
+		case "trinidad":
+			country = "TTO"; break;
+		case "tunesie":
+			country = "TUN"; break;
+		case "turkije":
+			country = "TUR"; break;
+		case "turkmenistan":
+			country = "TKM"; break;
+		case "tuvalu":
+			country = "TUV"; break;
+		case "oeganda":
+		case "uganda":
+			country = "UGA"; break;
+		case "oekraine":
+		case "ukraine":
+			country = "UKR"; break;
+		case "verenigde arabische emiraten":
+		case "arabische emiraten":
+		case "vae":
+			country = "ARE"; break;
+		case "verenigd koninkrijk":
+		case "engeland":
+		case "brittannie":
+		case "groot brittannie":
+		case "groot-brittannie":
+		case "vk":
+			country = "GBR"; break;
+		case "verenigde staten":
+		case "vs":
+		case "amerika":
+		case "usa":
+			country = "USA"; break;
+		case "uruguay":
+			country = "URY"; break;
+		case "oezbekistan":
+		case "uzbekistan":
+			country = "UZB"; break;
+		case "vanuatu":
+			country = "VUT"; break;
+		case "venezuela":
+			country = "VEN"; break;
+		case "vietnam":
+			country = "VNM"; break;
+		case "jemen":
+		case "yemen":
+			country = "YEM"; break;
+		case "zambia":
+			country = "ZMB"; break;
+		case "zimbabwe":
+			country = "ZWE"; break;
+		default:
+			country = "ZZZ"; break;
 	}
 
-	$('.input').keyup(function(){
+	return country;
 
-		var input = makeSortString($('.input').val()).toLowerCase().trim();
-		var counter = 0;
+}
 
-		$('.list ul li').each(function(){
-			if ($(this).attr('id') == colourCountry(input)){
-				if (!$(this).hasClass('correct')){
-					$(this).removeClass('incorrect');
-					$(this).addClass('correct');
-					counter = (parseInt($('.score').text()) + 1);
-					var test = colourCountry(input);
-					$('path[data-iso3="'+test+'"]').css('fill', '#64f4a0');
-					$('circle[data-iso3="'+test+'"]').css('fill', '#64f4a0');
-					$('.score').text(counter);
-					$('.input').val('');
-				}
-
-			}
-
-		});
-
-	});
-
-});
 </script>
+<script type="text/javascript" src="../../js/countryCapitalFunctions.js"></script>
 </head>
 <body>
 

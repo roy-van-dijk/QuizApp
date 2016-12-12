@@ -5,503 +5,478 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
 <link rel="manifest" href="../../manifest.json">
 <link rel="stylesheet" href="../../css/style.css">
-<script src="../../js/jquery-2.2.2.min.js"></script>
-<script src="../../js/jquery.stopwatch.js"></script>
-<script src="../../js/dragScroll.js"></script>
-<script src="../../js/pace.js"></script>
-<script src="../../js/main.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
 <script>
-$(document).ready(function(){
 
-	function colourCountry(country){
-		switch(country){
-			case "kabul":
-				country = "AFG"; break;
-			case "tirana":
-				country = "ALB"; break;
-			case "algiers":
-				country = "DZA"; break;
-			case "andorra la vella":
-				country = "AND"; break;
-			case "luanda":
-				country = "AGO"; break;
-			case "st. john's":
-			case "st. johns":
-			case "st johns":
-			case "st john's":
-			case "saint john's":
-			case "saint johns":
-				country = "ATG"; break;
-			case "buenos aires":
-				country = "ARG"; break;
-			case "yerevan":
-				country = "ARM"; break;
-			case "canberra":
-				country = "AUS"; break;
-			case "vienna":
-				country = "AUT"; break;
-			case "baku":
-				country = "AZE"; break;
-			case "nassau":
-				country = "BHS"; break;
-			case "manama":
-				country = "BHR"; break;
-			case "dhaka":
-				country = "BGD"; break;
-			case "bridgetown":
-				country = "BRB"; break;
-			case "minsk":
-				country = "BLR"; break;
-			case "brussels":
-				country = "BEL"; break;
-			case "belmopan":
-				country = "BLZ"; break;
-			case "porto-novo":
-			case "porto novo":
-			case "cotonou":
-				country = "BEN"; break;
-			case "thimphu":
-				country = "BTN"; break;
-			case "la paz":
-			case "sucre":
-				country = "BOL"; break;
-			case "sarajevo":
-				country = "BIH"; break;
-			case "gaborone":
-				country = "BWA"; break;
-			case "brasilia":
-			case "brazilia":
-				country = "BRA"; break;
-			case "bandar seri begawan":
-				country = "BRN"; break;
-			case "sofia":
-				country = "BGR"; break;
-			case "ouagadougou":
-				country = "BFA"; break;
-			case "naypyidaw":
-				country = "MMR"; break;
-			case "bujumbura":
-				country = "BDI"; break;
-			case "phnom penh":
-				country = "KHM"; break;
-			case "yaounde":
-				country = "CMR"; break;
-			case "ottawa":
-				country = "CAN"; break;
-			case "praia":
-				country = "CPV"; break;
-			case "bangui":
-				country = "CAF"; break;
-			case "n'djamena":
-			case "ndjamena":
-			case "n djamena":
-				country = "TCD"; break;
-			case "santiago":
-				country = "CHL"; break;
-			case "beijing":
-			case "peking":
-				country = "CHN"; break;
-			case "bogota":
-				country = "COL"; break;
-			case "moroni":
-				country = "COM"; break;
-			case "kinshasa":
-				country = "COD"; break;
-			case "brazzaville":
-				country = "COG"; break;
-			case "san jose":
-				country = "CRI"; break;
-			case "yamoussoukro":
-			case "abidjan":
-				country = "CIV"; break;
-			case "zagreb":
-				country = "HRV"; break;
-			case "havana":
-				country = "CUB"; break;
-			case "nicosia":
-				country = "CYP"; break;
-			case "prague":
-				country = "CZE"; break;
-			case "copenhagen":
-				country = "DNK"; break;
-			case "djibouti":
-				country = "DJI"; break;
-			case "roseau":
-				country = "DMA"; break;
-			case "santo domingo":
-				country = "DOM"; break;
-			case "dili":
-				country = "TLS"; break;
-			case "quito":
-				country = "ECU"; break;
-			case "cairo":
-				country = "EGY"; break;
-			case "san salvador":
-				country = "SLV"; break;
-			case "malabo":
-				country = "GNQ"; break;
-			case "asmara":
-				country = "ERI"; break;
-			case "tallinn":
-			case "talinn":
-			case "tallin":
-			case "talin":
-				country = "EST"; break;
-			case "addis ababa":
-				country = "ETH"; break;
-			case "suva":
-				country = "FJI"; break;
-			case "helsinki":
-				country = "FIN"; break;
-			case "paris":
-				country = "FRA"; break;
-			case "libreville":
-				country = "GAB"; break;
-			case "banjul":
-				country = "GMB"; break;
-			case "tbilisi":
-			case "kutaisi":
-				country = "GEO"; break;
-			case "berlin":
-				country = "DEU"; break;
-			case "accra":
-				country = "GHA"; break;
-			case "athens":
-				country = "GRC"; break;
-			case "st. george's":
-			case "st. georges":
-			case "st georges":
-			case "st george's":
-			case "saint george's":
-			case "saint georges":
-				country = "GRD"; break;
-			case "guatemala city":
-				country = "GTM"; break;
-			case "conakry":
-				country = "GIN"; break;
-			case "bissau":
-				country = "GNB"; break;
-			case "georgetown":
-				country = "GUY"; break;
-			case "port-au-prince":
-			case "port au prince":
-			case "portauprince":
-				country = "HTI"; break;
-			case "vatican city":
-				country = "VAT"; break;
-			case "tegucigalpa":
-				country = "HND"; break;
-			case "budapest":
-				country = "HUN"; break;
-			case "reykjavik":
-			case "rejkjavik":
-			case "rejkyavik":
-				country = "ISL"; break;
-			case "new delhi":
-			case "delhi":
-				country = "IND"; break;
-			case "jakarta":
-				country = "IDN"; break;
-			case "tehran":
-			case "teheran":
-				country = "IRN"; break;
-			case "baghdad":
-			case "bagdad":
-				country = "IRQ"; break;
-			case "dublin":
-				country = "IRL"; break;
-			case "telaviv":
-			case "tel aviv":
-			case "tel-aviv":
-			case "jerusalem":
-				country = "ISR"; break;
-			case "rome":
-				country = "ITA"; break;
-			case "kingston":
-				country = "JAM"; break;
-			case "tokyo":
-				country = "JPN"; break;
-			case "amman":
-				country = "JOR"; break;
-			case "astana":
-				country = "KAZ"; break;
-			case "nairobi":
-				country = "KEN"; break;
-			case "tarawa":
-				country = "KIR"; break;
-			case "pristina":
-				country = "UNK"; break;
-			case "kuwait city":
-				country = "KWT"; break;
-			case "bishkek":
-				country = "KGZ"; break;
-			case "vientiane":
-				country = "LAO"; break;
-			case "riga":
-				country = "LVA"; break;
-			case "beirut":
-				country = "LBN"; break;
-			case "maseru":
-				country = "LSO"; break;
-			case "monrovia":
-				country = "LBR"; break;
-			case "tripoli":
-				country = "LBY"; break;
-			case "vaduz":
-				country = "LIE"; break;
-			case "vilnius":
-				country = "LTU"; break;
-			case "luxembourg":
-			case "luxemburg":
-				country = "LUX"; break;
-			case "skopje":
-				country = "MKD"; break;
-			case "antananarivo":
-				country = "MDG"; break;
-			case "lilongwe":
-				country = "MWI"; break;
-			case "kuala lumpur":
-			case "putrajaya":
-				country = "MYS"; break;
-			case "male":
-				country = "MDV"; break;
-			case "bamako":
-				country = "MLI"; break;
-			case "valletta":
-				country = "MLT"; break;
-			case "majuro":
-				country = "MHL"; break;
-			case "nouakchott":
-				country = "MRT"; break;
-			case "port louis":
-				country = "MUS"; break;
-			case "mexico city":
-				country = "MEX"; break;
-			case "palikir":
-				country = "FSM"; break;
-			case "chisinau":
-				country = "MDA"; break;
-			case "monaco":
-				country = "MCO"; break;
-			case "ulaanbaatar":
-			case "ulan bator":
-				country = "MNG"; break;
-			case "podgorica":
-			case "cetinje":
-				country = "MNE"; break;
-			case "rabat":
-				country = "MAR"; break;
-			case "maputo":
-				country = "MOZ"; break;
-			case "windhoek":
-				country = "NAM"; break;
-			case "yaren":
-				country = "NRU"; break;
-			case "kathmandu":
-			case "katmandu":
-				country = "NPL"; break;
-			case "amsterdam":
-				country = "NLD"; break;
-			case "wellington":
-				country = "NZL"; break;
-			case "managua":
-				country = "NIC"; break;
-			case "niamey":
-				country = "NER"; break;
-			case "abuja":
-				country = "NGA"; break;
-			case "pyongyang":
-				country = "PRK"; break;
-			case "oslo":
-				country = "NOR"; break;
-			case "muscat":
-				country = "OMN"; break;
-			case "islamabad":
-				country = "PAK"; break;
-			case "ngerulmud":
-				country = "PLW"; break;
-			case "east-jerusalem":
-			case "east jerusalem":
-			case "ramallah":
-				country = "PSE"; break;
-			case "panama city":
-				country = "PAN"; break;
-			case "port moresby":
-				country = "PNG"; break;
-			case "asuncion":
-				country = "PRY"; break;
-			case "lima":
-			case "lima district":
-			case "cusco":
-				country = "PER"; break;
-			case "manila":
-			case "manilla":
-				country = "PHL"; break;
-			case "warsaw":
-				country = "POL"; break;
-			case "lisbon":
-				country = "PRT"; break;
-			case "doha":
-				country = "QAT"; break;
-			case "bucharest":
-				country = "ROU"; break;
-			case "moscow":
-				country = "RUS"; break;
-			case "kigali":
-				country = "RWA"; break;
-			case "basseterre":
-				country = "KNA"; break;
-			case "castries":
-				country = "LCU"; break;
-			case "kingstown":
-				country = "VCT"; break;
-			case "apia":
-				country = "WSM"; break;
-			case "san marino":
-				country = "SMR"; break;
-			case "sao tome":
-				country = "STP"; break;
-			case "riyadh":
-			case "rijadh":
-				country = "SAU"; break;
-			case "dakar":
-				country = "SEN"; break;
-			case "belgrade":
-				country = "SRB"; break;
-			case "victoria":
-				country = "SYC"; break;
-			case "freetown":
-				country = "SLE"; break;
-			case "singapore":
-				country = "SGP"; break;
-			case "bratislava":
-				country = "SVK"; break;
-			case "ljubljana":
-			case "llubjana":
-			case "lubjana":
-				country = "SVN"; break;
-			case "honiara":
-				country = "SLB"; break;
-			case "mogadishu":
-				country = "SOM"; break;
-			case "pretoria":
-			case "bloemfontein":
-			case "capetown":
-			case "cape town":
-				country = "ZAF"; break;
-			case "seoul":
-				country = "KOR"; break;
-			case "juba":
-				country = "SSD"; break;
-			case "madrid":
-				country = "ESP"; break;
-			case "sri jayawardenepura kotte":
-			case "sri jayawardenepura":
-			case "colombo":
-				country = "LKA"; break;
-			case "khartoum":
-			case "kartoum":
-				country = "SDN"; break;
-			case "paramaribo":
-				country = "SUR"; break;
-			case "mbabane":
-			case "lobamba":
-				country = "SWZ"; break;
-			case "stockholm":
-				country = "SWE"; break;
-			case "bern":
-				country = "CHE"; break;
-			case "damascus":
-				country = "SYR"; break;
-			case "taipei":
-			case "nanjing":
-				country = "TWN"; break;
-			case "dushanbe":
-				country = "TJK"; break;
-			case "dodoma":
-				country = "TZA"; break;
-			case "bangkok":
-				country = "THA"; break;
-			case "lome":
-				country = "TGO"; break;
-			case "nuku'alofa":
-			case "nuku alofa":
-				country = "TON"; break;
-			case "port of spain":
-			case "port-of-spain":
-				country = "TTO"; break;
-			case "tunis":
-				country = "TUN"; break;
-			case "ankara":
-				country = "TUR"; break;
-			case "ashgabat":
-				country = "TKM"; break;
-			case "funafuti":
-				country = "TUV"; break;
-			case "kampala":
-				country = "UGA"; break;
-			case "kiev":
-				country = "UKR"; break;
-			case "abu dhabi":
-				country = "ARE"; break;
-			case "london":
-				country = "GBR"; break;
-			case "washington d.c.":
-			case "washington d.c":
-			case "washington dc":
-			case "washington":
-				country = "USA"; break;
-			case "montevideo":
-				country = "URY"; break;
-			case "tashkent":
-				country = "UZB"; break;
-			case "port vila":
-				country = "VUT"; break;
-			case "caracas":
-				country = "VEN"; break;
-			case "hanoi":
-				country = "VNM"; break;
-			case "sana'a":
-			case "sana a":
-			case "sanaa":
-				country = "YEM"; break;
-			case "lusaka":
-				country = "ZMB"; break;
-			case "harare":
-				country = "ZWE"; break;
-			default:
-				country = "ZZZ"; break;
-		}
-
-		return country;
+function colourCountry(country){
+	switch(country){
+		case "kabul":
+			country = "AFG"; break;
+		case "tirana":
+			country = "ALB"; break;
+		case "algiers":
+			country = "DZA"; break;
+		case "andorra la vella":
+			country = "AND"; break;
+		case "luanda":
+			country = "AGO"; break;
+		case "st. john's":
+		case "st. johns":
+		case "st johns":
+		case "st john's":
+		case "saint john's":
+		case "saint johns":
+			country = "ATG"; break;
+		case "buenos aires":
+			country = "ARG"; break;
+		case "yerevan":
+			country = "ARM"; break;
+		case "canberra":
+			country = "AUS"; break;
+		case "vienna":
+			country = "AUT"; break;
+		case "baku":
+			country = "AZE"; break;
+		case "nassau":
+			country = "BHS"; break;
+		case "manama":
+			country = "BHR"; break;
+		case "dhaka":
+			country = "BGD"; break;
+		case "bridgetown":
+			country = "BRB"; break;
+		case "minsk":
+			country = "BLR"; break;
+		case "brussels":
+			country = "BEL"; break;
+		case "belmopan":
+			country = "BLZ"; break;
+		case "porto-novo":
+		case "porto novo":
+		case "cotonou":
+			country = "BEN"; break;
+		case "thimphu":
+			country = "BTN"; break;
+		case "la paz":
+		case "sucre":
+			country = "BOL"; break;
+		case "sarajevo":
+			country = "BIH"; break;
+		case "gaborone":
+			country = "BWA"; break;
+		case "brasilia":
+		case "brazilia":
+			country = "BRA"; break;
+		case "bandar seri begawan":
+			country = "BRN"; break;
+		case "sofia":
+			country = "BGR"; break;
+		case "ouagadougou":
+			country = "BFA"; break;
+		case "naypyidaw":
+			country = "MMR"; break;
+		case "bujumbura":
+			country = "BDI"; break;
+		case "phnom penh":
+			country = "KHM"; break;
+		case "yaounde":
+			country = "CMR"; break;
+		case "ottawa":
+			country = "CAN"; break;
+		case "praia":
+			country = "CPV"; break;
+		case "bangui":
+			country = "CAF"; break;
+		case "n'djamena":
+		case "ndjamena":
+		case "n djamena":
+			country = "TCD"; break;
+		case "santiago":
+			country = "CHL"; break;
+		case "beijing":
+		case "peking":
+			country = "CHN"; break;
+		case "bogota":
+			country = "COL"; break;
+		case "moroni":
+			country = "COM"; break;
+		case "kinshasa":
+			country = "COD"; break;
+		case "brazzaville":
+			country = "COG"; break;
+		case "san jose":
+			country = "CRI"; break;
+		case "yamoussoukro":
+		case "abidjan":
+			country = "CIV"; break;
+		case "zagreb":
+			country = "HRV"; break;
+		case "havana":
+			country = "CUB"; break;
+		case "nicosia":
+			country = "CYP"; break;
+		case "prague":
+			country = "CZE"; break;
+		case "copenhagen":
+			country = "DNK"; break;
+		case "djibouti":
+			country = "DJI"; break;
+		case "roseau":
+			country = "DMA"; break;
+		case "santo domingo":
+			country = "DOM"; break;
+		case "dili":
+			country = "TLS"; break;
+		case "quito":
+			country = "ECU"; break;
+		case "cairo":
+			country = "EGY"; break;
+		case "san salvador":
+			country = "SLV"; break;
+		case "malabo":
+			country = "GNQ"; break;
+		case "asmara":
+			country = "ERI"; break;
+		case "tallinn":
+		case "talinn":
+		case "tallin":
+		case "talin":
+			country = "EST"; break;
+		case "addis ababa":
+			country = "ETH"; break;
+		case "suva":
+			country = "FJI"; break;
+		case "helsinki":
+			country = "FIN"; break;
+		case "paris":
+			country = "FRA"; break;
+		case "libreville":
+			country = "GAB"; break;
+		case "banjul":
+			country = "GMB"; break;
+		case "tbilisi":
+		case "kutaisi":
+			country = "GEO"; break;
+		case "berlin":
+			country = "DEU"; break;
+		case "accra":
+			country = "GHA"; break;
+		case "athens":
+			country = "GRC"; break;
+		case "st. george's":
+		case "st. georges":
+		case "st georges":
+		case "st george's":
+		case "saint george's":
+		case "saint georges":
+			country = "GRD"; break;
+		case "guatemala city":
+			country = "GTM"; break;
+		case "conakry":
+			country = "GIN"; break;
+		case "bissau":
+			country = "GNB"; break;
+		case "georgetown":
+			country = "GUY"; break;
+		case "port-au-prince":
+		case "port au prince":
+		case "portauprince":
+			country = "HTI"; break;
+		case "vatican city":
+			country = "VAT"; break;
+		case "tegucigalpa":
+			country = "HND"; break;
+		case "budapest":
+			country = "HUN"; break;
+		case "reykjavik":
+		case "rejkjavik":
+		case "rejkyavik":
+			country = "ISL"; break;
+		case "new delhi":
+		case "delhi":
+			country = "IND"; break;
+		case "jakarta":
+			country = "IDN"; break;
+		case "tehran":
+		case "teheran":
+			country = "IRN"; break;
+		case "baghdad":
+		case "bagdad":
+			country = "IRQ"; break;
+		case "dublin":
+			country = "IRL"; break;
+		case "telaviv":
+		case "tel aviv":
+		case "tel-aviv":
+		case "jerusalem":
+			country = "ISR"; break;
+		case "rome":
+			country = "ITA"; break;
+		case "kingston":
+			country = "JAM"; break;
+		case "tokyo":
+			country = "JPN"; break;
+		case "amman":
+			country = "JOR"; break;
+		case "astana":
+			country = "KAZ"; break;
+		case "nairobi":
+			country = "KEN"; break;
+		case "tarawa":
+			country = "KIR"; break;
+		case "pristina":
+			country = "UNK"; break;
+		case "kuwait city":
+			country = "KWT"; break;
+		case "bishkek":
+			country = "KGZ"; break;
+		case "vientiane":
+			country = "LAO"; break;
+		case "riga":
+			country = "LVA"; break;
+		case "beirut":
+			country = "LBN"; break;
+		case "maseru":
+			country = "LSO"; break;
+		case "monrovia":
+			country = "LBR"; break;
+		case "tripoli":
+			country = "LBY"; break;
+		case "vaduz":
+			country = "LIE"; break;
+		case "vilnius":
+			country = "LTU"; break;
+		case "luxembourg":
+		case "luxemburg":
+			country = "LUX"; break;
+		case "skopje":
+			country = "MKD"; break;
+		case "antananarivo":
+			country = "MDG"; break;
+		case "lilongwe":
+			country = "MWI"; break;
+		case "kuala lumpur":
+		case "putrajaya":
+			country = "MYS"; break;
+		case "male":
+			country = "MDV"; break;
+		case "bamako":
+			country = "MLI"; break;
+		case "valletta":
+			country = "MLT"; break;
+		case "majuro":
+			country = "MHL"; break;
+		case "nouakchott":
+			country = "MRT"; break;
+		case "port louis":
+			country = "MUS"; break;
+		case "mexico city":
+			country = "MEX"; break;
+		case "palikir":
+			country = "FSM"; break;
+		case "chisinau":
+			country = "MDA"; break;
+		case "monaco":
+			country = "MCO"; break;
+		case "ulaanbaatar":
+		case "ulan bator":
+			country = "MNG"; break;
+		case "podgorica":
+		case "cetinje":
+			country = "MNE"; break;
+		case "rabat":
+			country = "MAR"; break;
+		case "maputo":
+			country = "MOZ"; break;
+		case "windhoek":
+			country = "NAM"; break;
+		case "yaren":
+			country = "NRU"; break;
+		case "kathmandu":
+		case "katmandu":
+			country = "NPL"; break;
+		case "amsterdam":
+			country = "NLD"; break;
+		case "wellington":
+			country = "NZL"; break;
+		case "managua":
+			country = "NIC"; break;
+		case "niamey":
+			country = "NER"; break;
+		case "abuja":
+			country = "NGA"; break;
+		case "pyongyang":
+			country = "PRK"; break;
+		case "oslo":
+			country = "NOR"; break;
+		case "muscat":
+			country = "OMN"; break;
+		case "islamabad":
+			country = "PAK"; break;
+		case "ngerulmud":
+			country = "PLW"; break;
+		case "east-jerusalem":
+		case "east jerusalem":
+		case "ramallah":
+			country = "PSE"; break;
+		case "panama city":
+			country = "PAN"; break;
+		case "port moresby":
+			country = "PNG"; break;
+		case "asuncion":
+			country = "PRY"; break;
+		case "lima":
+		case "lima district":
+		case "cusco":
+			country = "PER"; break;
+		case "manila":
+		case "manilla":
+			country = "PHL"; break;
+		case "warsaw":
+			country = "POL"; break;
+		case "lisbon":
+			country = "PRT"; break;
+		case "doha":
+			country = "QAT"; break;
+		case "bucharest":
+			country = "ROU"; break;
+		case "moscow":
+			country = "RUS"; break;
+		case "kigali":
+			country = "RWA"; break;
+		case "basseterre":
+			country = "KNA"; break;
+		case "castries":
+			country = "LCU"; break;
+		case "kingstown":
+			country = "VCT"; break;
+		case "apia":
+			country = "WSM"; break;
+		case "san marino":
+			country = "SMR"; break;
+		case "sao tome":
+			country = "STP"; break;
+		case "riyadh":
+		case "rijadh":
+			country = "SAU"; break;
+		case "dakar":
+			country = "SEN"; break;
+		case "belgrade":
+			country = "SRB"; break;
+		case "victoria":
+			country = "SYC"; break;
+		case "freetown":
+			country = "SLE"; break;
+		case "singapore":
+			country = "SGP"; break;
+		case "bratislava":
+			country = "SVK"; break;
+		case "ljubljana":
+		case "llubjana":
+		case "lubjana":
+			country = "SVN"; break;
+		case "honiara":
+			country = "SLB"; break;
+		case "mogadishu":
+			country = "SOM"; break;
+		case "pretoria":
+		case "bloemfontein":
+		case "capetown":
+		case "cape town":
+			country = "ZAF"; break;
+		case "seoul":
+			country = "KOR"; break;
+		case "juba":
+			country = "SSD"; break;
+		case "madrid":
+			country = "ESP"; break;
+		case "sri jayawardenepura kotte":
+		case "sri jayawardenepura":
+		case "colombo":
+			country = "LKA"; break;
+		case "khartoum":
+		case "kartoum":
+			country = "SDN"; break;
+		case "paramaribo":
+			country = "SUR"; break;
+		case "mbabane":
+		case "lobamba":
+			country = "SWZ"; break;
+		case "stockholm":
+			country = "SWE"; break;
+		case "bern":
+			country = "CHE"; break;
+		case "damascus":
+			country = "SYR"; break;
+		case "taipei":
+		case "nanjing":
+			country = "TWN"; break;
+		case "dushanbe":
+			country = "TJK"; break;
+		case "dodoma":
+			country = "TZA"; break;
+		case "bangkok":
+			country = "THA"; break;
+		case "lome":
+			country = "TGO"; break;
+		case "nuku'alofa":
+		case "nuku alofa":
+			country = "TON"; break;
+		case "port of spain":
+		case "port-of-spain":
+			country = "TTO"; break;
+		case "tunis":
+			country = "TUN"; break;
+		case "ankara":
+			country = "TUR"; break;
+		case "ashgabat":
+			country = "TKM"; break;
+		case "funafuti":
+			country = "TUV"; break;
+		case "kampala":
+			country = "UGA"; break;
+		case "kiev":
+			country = "UKR"; break;
+		case "abu dhabi":
+			country = "ARE"; break;
+		case "london":
+			country = "GBR"; break;
+		case "washington d.c.":
+		case "washington d.c":
+		case "washington dc":
+		case "washington":
+			country = "USA"; break;
+		case "montevideo":
+			country = "URY"; break;
+		case "tashkent":
+			country = "UZB"; break;
+		case "port vila":
+			country = "VUT"; break;
+		case "caracas":
+			country = "VEN"; break;
+		case "hanoi":
+			country = "VNM"; break;
+		case "sana'a":
+		case "sana a":
+		case "sanaa":
+			country = "YEM"; break;
+		case "lusaka":
+			country = "ZMB"; break;
+		case "harare":
+			country = "ZWE"; break;
+		default:
+			country = "ZZZ"; break;
 	}
 
-	$('.input').keyup(function(){
+	return country;
+}
 
-		var input = makeSortString($('.input').val()).toLowerCase().trim();
-		var counter = 0;
-
-		$('.list ul li').each(function(){
-			if ($(this).attr('id') == colourCountry(input)){
-				if (!$(this).hasClass('correct')){
-					$(this).removeClass('incorrect');
-					$(this).addClass('correct');
-					counter = (parseInt($('.score').text()) + 1);
-					var test = colourCountry(input);
-					$('path[data-iso3="'+test+'"]').css('fill', '#64f4a0');
-					$('circle[data-iso3="'+test+'"]').css('fill', '#64f4a0');
-					$('.score').text(counter);
-					$('.input').val('');
-				}
-
-			}
-
-		});
-
-	});
-
-});
 </script>
+<script type="text/javascript" src="../../js/countryCapitalFunctions.js"></script>
 </head>
 <body>
 
