@@ -479,7 +479,7 @@ $(document).ready(function(){
 	function preload(flagPaths) {
 		for (i = 0; i < flagPaths.length; i++) {
 			images[i] = new Image();
-			images[i].src = 'flags/'+flagPaths[i]+'.svg';
+			images[i].src = 'flags/'+flagPaths[i].toLowerCase()+'.svg';
 		}
 	}
 	preload(flagPaths);
