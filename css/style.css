@@ -82,7 +82,7 @@ body{
 	max-width: 500px;
 }
 .scorecounter td{
-	width: 33%;
+	width: 33.3%;
 }
 .map{
 	margin: 0px auto;
@@ -105,6 +105,9 @@ body{
 	margin-top: 8px;
 	table-layout: fixed;
 	width: 100%;
+}
+.topbarcontent td{
+	width: 33.3%;
 }
 .topbarcontent td, .topbarcontent a{
 	color: #2b87ff;
@@ -237,6 +240,7 @@ td.langselect{
 }
 .giveuptext{
 	float: right;
+	text-align: right;
 	cursor: pointer;
 }
 .backarrow{
@@ -406,6 +410,21 @@ td.langselect{
 	right: 100%;
 	width: 100%;
 	height: 3px;
+}
+.hiscoretable{
+	margin: 0px auto;
+	table-layout: fixed;
+	text-align: center;
+	border-collapse: collapse;
+	width: 500px;
+}
+.hiscoretable th{
+	font-size: 25px;
+	padding-bottom: 10px;
+	cursor: pointer;
+}
+.hiscoretable th, .hiscoretable th{
+	width: 33.3%;
 }
 @keyframes fadein {
     from { opacity: 0; }
