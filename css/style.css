@@ -119,6 +119,7 @@ body{
 .intro{
 	text-align: center;
 	cursor: default;
+	white-space: nowrap;
 }
 .hamburger{
     cursor: pointer;
@@ -127,6 +128,7 @@ body{
 }
 .hamburger img{
     height: 30px;
+    width: auto;
     margin-top: 3px;
 }
 td.langselect{
@@ -217,7 +219,7 @@ td.langselect{
 }
 .gametype{
 	text-decoration: none;
-	width: 420px;
+	max-width: 420px;
 	display: block;
 	margin: 0px auto;
 	cursor: pointer;
@@ -239,13 +241,15 @@ td.langselect{
 	float: left;
 }
 .giveuptext{
-	float: right;
 	text-align: right;
+	float: right;
 	cursor: pointer;
+	white-space: nowrap;
 }
 .backarrow{
 	transform: rotate(180deg);
 	height: 35px;
+	width: auto;
 	float: left;
 }
 .timer{
@@ -459,5 +463,26 @@ td.langselect{
 	.svgzoom{
 		height: 771px;
 		width: 1500px;
+	}
+}
+@media only screen and (max-width: 350px){
+	.topbarcontent td, .backtext, giveuptext{
+		font-size: 14px;
+	}
+	.backarrow{
+		height: 21px;
+	}
+	.backarrow{
+		margin-top: 6px;
+	}
+	.options img{
+		display: none;
+	}
+	.mainmenu li{
+		font-size: 14px;
+	}
+	.hamburger img{
+		height: 18px;
+		margin-top: 5px;
 	}
 }
