@@ -102,7 +102,7 @@ body{
 }
 .topbarcontent{
 	/*animation: fadein 0.3s;*/
-	margin-top: 8px;
+	margin-top: 9px;
 	table-layout: fixed;
 	width: 100%;
 }
