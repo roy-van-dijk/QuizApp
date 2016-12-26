@@ -14,13 +14,13 @@ $(document).ready(function(){
 	var lastTouchY = 0;
 	var preventPullToRefresh = true;
 
-	$('body').on('touchstart', function (e) {
+	$('html').on('touchstart', function (e) {
 	    if (e.originalEvent.touches.length != 1) { return; }
 	    lastTouchY = e.originalEvent.touches[0].clientY;
 	    preventPullToRefresh = window.pageYOffset == 0;
 	});
 
-	$('body').on('touchmove', function (e) {
+	$('html').on('touchmove', function (e) {
 	    var touchY = e.originalEvent.touches[0].clientY;
 	    var touchYDelta = touchY - lastTouchY;
 	    lastTouchY = touchY;
