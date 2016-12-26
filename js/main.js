@@ -12,7 +12,7 @@ function makeSortString(s) {
 $(document).ready(function(){
 
 	var lastTouchY = 0;
-	var preventPullToRefresh = false;
+	var preventPullToRefresh = true;
 
 	$('body').on('touchstart', function (e) {
 	    if (e.originalEvent.touches.length != 1) { return; }
