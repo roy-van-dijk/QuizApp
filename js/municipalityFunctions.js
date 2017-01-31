@@ -10,15 +10,22 @@ $(document).ready(function(){
 				if (!$(this).hasClass('correct')){
 					$(this).removeClass('incorrect');
 					$(this).addClass('correct');
-					counter = (parseInt($('.score').text()) + 1);
+					counter = (parseInt($('.scoreMunicipality').text()) + 1);
 					var test = colourCountry(input);
 					$('path[gem="'+test+'"]').css('fill', '#64f4a0');
 					$('circle[gem="'+test+'"]').css('fill', '#64f4a0');
-					$('.score').text(counter);
+					$('.scoreMunicipality').text(counter);
 					$('.input').val('');
 				}
 			}
 		});
+	});
+
+	$('.scoreMunicipality').bind("DOMSubtreeModified",function(){
+		if($('.score').text() == "390"){
+			var score = $('.timer').text();
+			endscreen("win");
+		}
 	});
 
 });
