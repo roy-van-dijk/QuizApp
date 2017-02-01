@@ -33,7 +33,7 @@ $(document).ready(function(){
 		}
 	    }
 	});
-	
+
 	// document.addEventListener("touchstart", function(){}, true);
 
 	function endscreen(outcome){
@@ -82,6 +82,7 @@ $(document).ready(function(){
 	$('.zoom').click(function(){
 		if($('#zoom').prop('checked') === true){
 			$('.map svg').addClass('svgzoom');
+			$('.map').animate( { scrollLeft: '493' }, 300);
 		}
 		else{
 			$('.map svg').removeClass('svgzoom');
