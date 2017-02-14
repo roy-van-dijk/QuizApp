@@ -22,7 +22,7 @@ $(document).ready(function(){
 	});
 
 	$('.scoreMunicipality').bind("DOMSubtreeModified",function(){
-		if($('.score').text() == "390"){
+		if($('.score').text() == "389"){
 			var score = $('.timer').text();
 			endscreen("win");
 		}
