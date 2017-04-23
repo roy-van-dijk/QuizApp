@@ -64,7 +64,7 @@ $(document).ready(function(){
 	});
 
 	$('.score').bind("DOMSubtreeModified",function(){
-		if($('.score').text() == "197"){
+		if($('.score').text() == $('.targetScore').text()){
 			var score = $('.timer').text();
 			endscreen("win");
 		}
