@@ -14,6 +14,10 @@
 
 function colourCountry(state){
 	switch(state){
+		case "californië":
+		case "californie":
+			state = "california"; break;
+
 		case "new hampshire":
 			state = "new_hampshire"; break;
 
@@ -59,9 +63,9 @@ function colourCountry(state){
 	<div class="topbar noselect">
 		<table class="topbarcontent">
 			<tr>
-				<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+				<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Terug</span></a></td>
 				<td class="timer">00:00:00</td>
-				<td><span class="giveuptext">Give Up</span></td>
+				<td><span class="giveuptext">Opgeven</span></td>
 			</tr>
 		</table>
 	</div>
@@ -69,8 +73,8 @@ function colourCountry(state){
 	<div class="wrapper">
 
 		<div class="endscreen displaynone">
-			<div class="endmessage_win displaynone">Congratulations, you guessed all the states in: </div>
-			<div class="endmessage_loss displaynone">You lost. Time: </div>
+			<div class="endmessage_win displaynone">Gefeliciteerd, je hebt alle staten geraden in: </div>
+			<div class="endmessage_loss displaynone">Je hebt verloren. Tijd: </div>
 			<div class="endtime">00:00:00</div>
 		</div>
 
@@ -163,7 +167,7 @@ function colourCountry(state){
 				<li class="incorrect" id="alaska">Alaska</li>
 				<li class="incorrect" id="arizona">Arizona</li>
 				<li class="incorrect" id="arkansas">Arkansas</li>
-				<li class="incorrect" id="california">California</li>
+				<li class="incorrect" id="california">Californië</li>
 				<li class="incorrect" id="colorado">Colorado</li>
 				<li class="incorrect" id="connecticut">Connecticut</li>
 				<li class="incorrect" id="delaware">Delaware</li>
