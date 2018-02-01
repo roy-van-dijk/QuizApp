@@ -118,8 +118,8 @@ $(document).ready(function(){
 	addTranslations();
 	function addTranslations(){
 		// Default language
-		if(!localStorage.language){
-			localStorage.language = english;
+		if(localStorage.language === undefined){
+			localStorage.setItem("language", "english");
 		}
 
  		// Current language
