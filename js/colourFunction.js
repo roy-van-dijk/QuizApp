@@ -12,8 +12,8 @@ $(document).ready(function(){
 					$(this).addClass('correct');
 					counter = (parseInt($('.score').text()) + 1);
 					var test = colourCountry(input);
-					$('path[gem="'+test+'"]').css('fill', '#64f4a0');
-					$('circle[gem="'+test+'"]').css('fill', '#64f4a0');
+					$('path[path-identifier="'+test+'"]').css('fill', '#64f4a0');
+					$('circle[path-identifier="'+test+'"]').css('fill', '#64f4a0');
 					$('.score').text(counter);
 					$('.input').val('');
 				}
