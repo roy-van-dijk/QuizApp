@@ -30,12 +30,14 @@ body{
 	border-radius: 5px;
 }
 .list{
-	width: 410px;
+	width: 500px;
 	margin: 10px auto;
+	border-radius: 5px;
+	overflow: hidden
 }
 .list ul{
 	list-style: none;
-	width: 410px;
+	width: 500px;
 	text-align: center;
 }
 .list ul li{
@@ -348,15 +350,13 @@ td.langselect{
 }
 .switchbox input + span:after{
 	color: black;
-	content: 'OFF';
+	content: 'O';
 }
 .switchbox input:checked + span:after{
 	color: white;
-	content: 'ON';
+	content: 'I';
 	padding-right: 3px;
 }
-.optionsdutch .switchbox input + span:after{ content: 'UIT'; }
-.optionsdutch .switchbox input:checked + span:after{ content: 'AAN'; }
 .options img{
 	height: 25px;
 	margin-right: 5px;

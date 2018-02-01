@@ -10,9 +10,7 @@ function addFlag(path){
 
 $(document).ready(function(){
 
-	if(window.location.href.indexOf("Random") > -1){
-		var randomizedCountries = shuffleArray(countryArray);
-	}
+	shuffleArray(countryArray);
 
 	function shuffleArray(array) {
 	    for (var i = array.length - 1; i > 0; i--) {
@@ -99,7 +97,6 @@ $(document).ready(function(){
 				correctCountries.push(guessedCountry);
 			}
 		}
-
 	});
 
 });

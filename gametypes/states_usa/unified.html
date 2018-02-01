@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<link rel="manifest" href="../../manifest.json">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+
+function colourCountry(state){
+	switch(state){
+		case "californië":
+		case "californie":
+			state = "california"; break;
+			
+		case "new hampshire":
+			state = "new_hampshire"; break;
+
+		case "new jersey":
+			state = "new_jersey"; break;
+
+		case "new mexico":
+			state = "new_mexico"; break;
+
+		case "new york":
+			state = "new_york"; break;
+
+		case "north carolina":
+			state = "north_carolina"; break;
+
+		case "north dakota":
+			state = "north_dakota"; break;
+
+		case "rhode island":
+			state = "rhode_island"; break;
+
+		case "south carolina":
+			state = "south_carolina"; break;
+
+		case "south dakota":
+			state = "south_dakota"; break;
+
+		case "west virginia":
+			state = "west_virginia"; break;
+
+		default:
+			state = state; break;
+	}
+
+	return state;
+}
+
+</script>
+<script type="text/javascript" src="../../js/colourFunction.js"></script>
+</head>
+<body>
+
+	<div class="topbar noselect">
+		<table class="topbarcontent">
+			<tr>
+				<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+				<td class="timer">00:00:00</td>
+				<td><span class="giveuptext">Give Up</span></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="endscreen displaynone">
+			<div class="endmessage_win displaynone">Congratulations, you guessed all the states in: </div>
+			<div class="endmessage_loss displaynone">You lost. Time: </div>
+			<div class="endtime">00:00:00</div>
+		</div>
+
+		<div class="map dragscroll">
+			<img class="svg" src="../../assets/usa_states.svg">
+		</div>
+
+		<table class="scorecounter noselect">
+			<tr>
+				<td></td>
+				<td><span class="score">0</span>/<span class="targetScore">50</span></td>
+				<td><span class="options zoom"><img src="../../assets/zoom.png"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></span></td>
+			</tr>
+		</table>
+
+		<input type="text" class="input" />
+
+
+		<div id="list-english">
+			<ul>
+				<li class="incorrect" id="alabama">Alabama</li>
+				<li class="incorrect" id="alaska">Alaska</li>
+				<li class="incorrect" id="arizona">Arizona</li>
+				<li class="incorrect" id="arkansas">Arkansas</li>
+				<li class="incorrect" id="california">California</li>
+				<li class="incorrect" id="colorado">Colorado</li>
+				<li class="incorrect" id="connecticut">Connecticut</li>
+				<li class="incorrect" id="delaware">Delaware</li>
+				<li class="incorrect" id="florida">Florida</li>
+				<li class="incorrect" id="georgia">Georgia</li>
+				<li class="incorrect" id="hawaii">Hawaii</li>
+				<li class="incorrect" id="idaho">Idaho</li>
+				<li class="incorrect" id="illinois">Illinois</li>
+				<li class="incorrect" id="indiana">Indiana</li> 
+				<li class="incorrect" id="iowa">Iowa</li>
+				<li class="incorrect" id="kansas">Kansas</li>
+				<li class="incorrect" id="kentucky">Kentucky</li>
+				<li class="incorrect" id="louisiana">Louisiana</li>
+				<li class="incorrect" id="maine">Maine</li>
+				<li class="incorrect" id="maryland">Maryland</li>
+				<li class="incorrect" id="massachusetts">Massachusetts</li>
+				<li class="incorrect" id="michigan">Michigan</li>
+				<li class="incorrect" id="minnesota">Minnesota</li>
+				<li class="incorrect" id="mississippi">Mississippi</li>
+				<li class="incorrect" id="missouri">Missouri</li>
+				<li class="incorrect" id="montana">Montana</li>
+				<li class="incorrect" id="nebraska">Nebraska</li> 
+				<li class="incorrect" id="nevada">Nevada</li>
+				<li class="incorrect" id="new_hampshire">New Hampshire</li> 
+				<li class="incorrect" id="new_jersey">New Jersey</li>
+				<li class="incorrect" id="new_mexico">New Mexico</li>
+				<li class="incorrect" id="new_york">New York</li>
+				<li class="incorrect" id="north_carolina">North Carolina</li>
+				<li class="incorrect" id="north_dakota">North Dakota</li>
+				<li class="incorrect" id="ohio">Ohio</li>
+				<li class="incorrect" id="oklahoma">Oklahoma</li>
+				<li class="incorrect" id="oregon">Oregon</li>
+				<li class="incorrect" id="pennsylvania">Pennsylvania</li>
+				<li class="incorrect" id="rhode_island">Rhode Island</li> 
+				<li class="incorrect" id="south_carolina">South Carolina</li>
+				<li class="incorrect" id="south_dakota">South Dakota</li>
+				<li class="incorrect" id="tennessee">Tennessee</li>
+				<li class="incorrect" id="texas">Texas</li>
+				<li class="incorrect" id="utah">Utah</li>
+				<li class="incorrect" id="vermont">Vermont</li>
+				<li class="incorrect" id="virginia">Virginia</li>
+				<li class="incorrect" id="washington">Washington</li>
+				<li class="incorrect" id="west_virginia">West Virginia</li>
+				<li class="incorrect" id="wisconsin">Wisconsin</li>
+				<li class="incorrect" id="wyoming">Wyoming</li>
+			<ul>
+		</div>
+
+		<div id="list-dutch">
+			<ul>
+				<li class="incorrect" id="alabama">Alabama</li>
+				<li class="incorrect" id="alaska">Alaska</li>
+				<li class="incorrect" id="arizona">Arizona</li>
+				<li class="incorrect" id="arkansas">Arkansas</li>
+				<li class="incorrect" id="california">Californië</li>
+				<li class="incorrect" id="colorado">Colorado</li>
+				<li class="incorrect" id="connecticut">Connecticut</li>
+				<li class="incorrect" id="delaware">Delaware</li>
+				<li class="incorrect" id="florida">Florida</li>
+				<li class="incorrect" id="georgia">Georgia</li>
+				<li class="incorrect" id="hawaii">Hawaii</li>
+				<li class="incorrect" id="idaho">Idaho</li>
+				<li class="incorrect" id="illinois">Illinois</li>
+				<li class="incorrect" id="indiana">Indiana</li> 
+				<li class="incorrect" id="iowa">Iowa</li>
+				<li class="incorrect" id="kansas">Kansas</li>
+				<li class="incorrect" id="kentucky">Kentucky</li>
+				<li class="incorrect" id="louisiana">Louisiana</li>
+				<li class="incorrect" id="maine">Maine</li>
+				<li class="incorrect" id="maryland">Maryland</li>
+				<li class="incorrect" id="massachusetts">Massachusetts</li>
+				<li class="incorrect" id="michigan">Michigan</li>
+				<li class="incorrect" id="minnesota">Minnesota</li>
+				<li class="incorrect" id="mississippi">Mississippi</li>
+				<li class="incorrect" id="missouri">Missouri</li>
+				<li class="incorrect" id="montana">Montana</li>
+				<li class="incorrect" id="nebraska">Nebraska</li> 
+				<li class="incorrect" id="nevada">Nevada</li>
+				<li class="incorrect" id="new_hampshire">New Hampshire</li> 
+				<li class="incorrect" id="new_jersey">New Jersey</li>
+				<li class="incorrect" id="new_mexico">New Mexico</li>
+				<li class="incorrect" id="new_york">New York</li>
+				<li class="incorrect" id="north_carolina">North Carolina</li>
+				<li class="incorrect" id="north_dakota">North Dakota</li>
+				<li class="incorrect" id="ohio">Ohio</li>
+				<li class="incorrect" id="oklahoma">Oklahoma</li>
+				<li class="incorrect" id="oregon">Oregon</li>
+				<li class="incorrect" id="pennsylvania">Pennsylvania</li>
+				<li class="incorrect" id="rhode_island">Rhode Island</li> 
+				<li class="incorrect" id="south_carolina">South Carolina</li>
+				<li class="incorrect" id="south_dakota">South Dakota</li>
+				<li class="incorrect" id="tennessee">Tennessee</li>
+				<li class="incorrect" id="texas">Texas</li>
+				<li class="incorrect" id="utah">Utah</li>
+				<li class="incorrect" id="vermont">Vermont</li>
+				<li class="incorrect" id="virginia">Virginia</li>
+				<li class="incorrect" id="washington">Washington</li>
+				<li class="incorrect" id="west_virginia">West Virginia</li>
+				<li class="incorrect" id="wisconsin">Wisconsin</li>
+				<li class="incorrect" id="wyoming">Wyoming</li>
+			<ul>
+		</div>
+	</div>
+
+</body>
+</html>

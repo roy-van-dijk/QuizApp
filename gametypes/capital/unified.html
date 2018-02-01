@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<link rel="manifest" href="../../manifest.json">
+<link rel="stylesheet" href="../../css/style.css">
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+
+function colourCountry(country){
+	switch(country){
+		case "kabul":
+			country = "AFG"; break;
+		case "tirana":
+			country = "ALB"; break;
+		case "algiers":
+			country = "DZA"; break;
+		case "andorra la vella":
+			country = "AND"; break;
+		case "luanda":
+			country = "AGO"; break;
+		case "st. john's":
+		case "st. johns":
+		case "st johns":
+		case "st john's":
+		case "saint john's":
+		case "saint johns":
+			country = "ATG"; break;
+		case "buenos aires":
+			country = "ARG"; break;
+		case "yerevan":
+		case "jerevan":
+			country = "ARM"; break;
+		case "canberra":
+			country = "AUS"; break;
+		case "vienna":
+		case "wenen":
+			country = "AUT"; break;
+		case "baku":
+		case "bakoe":
+			country = "AZE"; break;
+		case "nassau":
+			country = "BHS"; break;
+		case "manama":
+			country = "BHR"; break;
+		case "dhaka":
+			country = "BGD"; break;
+		case "bridgetown":
+			country = "BRB"; break;
+		case "minsk":
+			country = "BLR"; break;
+		case "brussels":
+		case "brussel":
+			country = "BEL"; break;
+		case "belmopan":
+			country = "BLZ"; break;
+		case "porto-novo":
+		case "porto novo":
+		case "cotonou":
+			country = "BEN"; break;
+		case "thimphu":
+			country = "BTN"; break;
+		case "la paz":
+		case "sucre":
+			country = "BOL"; break;
+		case "sarajevo":
+			country = "BIH"; break;
+		case "gaborone":
+			country = "BWA"; break;
+		case "brasilia":
+		case "brazilia":
+			country = "BRA"; break;
+		case "bandar seri begawan":
+			country = "BRN"; break;
+		case "sofia":
+			country = "BGR"; break;
+		case "ouagadougou":
+			country = "BFA"; break;
+		case "naypyidaw":
+			country = "MMR"; break;
+		case "bujumbura":
+			country = "BDI"; break;
+		case "phnom penh":
+		case "phnom-penh":
+			country = "KHM"; break;
+		case "yaounde":
+			country = "CMR"; break;
+		case "ottawa":
+			country = "CAN"; break;
+		case "praia":
+			country = "CPV"; break;
+		case "bangui":
+			country = "CAF"; break;
+		case "n'djamena":
+		case "ndjamena":
+		case "n djamena":
+			country = "TCD"; break;
+		case "santiago":
+			country = "CHL"; break;
+		case "beijing":
+		case "peking":
+			country = "CHN"; break;
+		case "bogota":
+			country = "COL"; break;
+		case "moroni":
+			country = "COM"; break;
+		case "kinshasa":
+			country = "COD"; break;
+		case "brazzaville":
+			country = "COG"; break;
+		case "san jose":
+			country = "CRI"; break;
+		case "yamoussoukro":
+		case "abidjan":
+			country = "CIV"; break;
+		case "zagreb":
+			country = "HRV"; break;
+		case "havana":
+			country = "CUB"; break;
+		case "nicosia":
+			country = "CYP"; break;
+		case "prague":
+		case "praag":
+			country = "CZE"; break;
+		case "copenhagen":
+		case "kopenhagen":
+			country = "DNK"; break;
+		case "djibouti":
+			country = "DJI"; break;
+		case "roseau":
+			country = "DMA"; break;
+		case "santo domingo":
+			country = "DOM"; break;
+		case "dili":
+			country = "TLS"; break;
+		case "quito":
+			country = "ECU"; break;
+		case "cairo":
+			country = "EGY"; break;
+		case "san salvador":
+			country = "SLV"; break;
+		case "malabo":
+			country = "GNQ"; break;
+		case "asmara":
+			country = "ERI"; break;
+		case "tallinn":
+		case "talinn":
+		case "tallin":
+		case "talin":
+			country = "EST"; break;
+		case "addis ababa":
+			country = "ETH"; break;
+		case "suva":
+			country = "FJI"; break;
+		case "helsinki":
+			country = "FIN"; break;
+		case "paris":
+		case "parijs":
+			country = "FRA"; break;
+		case "libreville":
+			country = "GAB"; break;
+		case "banjul":
+			country = "GMB"; break;
+		case "tbilisi":
+		case "kutaisi":
+			country = "GEO"; break;
+		case "berlin":
+		case "berlijn":
+			country = "DEU"; break;
+		case "accra":
+			country = "GHA"; break;
+		case "athens":
+		case "athene":
+			country = "GRC"; break;
+		case "st. george's":
+		case "st. georges":
+		case "st georges":
+		case "st george's":
+		case "saint george's":
+		case "saint georges":
+			country = "GRD"; break;
+		case "guatemala city":
+		case "guatemala stad":
+		case "guatemala-stad":
+			country = "GTM"; break;
+		case "conakry":
+			country = "GIN"; break;
+		case "bissau":
+			country = "GNB"; break;
+		case "georgetown":
+			country = "GUY"; break;
+		case "port-au-prince":
+		case "port au prince":
+		case "portauprince":
+			country = "HTI"; break;
+		case "vatican city":
+		case "vaticaanstad":
+			country = "VAT"; break;
+		case "tegucigalpa":
+			country = "HND"; break;
+		case "budapest":
+			country = "HUN"; break;
+		case "reykjavik":
+		case "rejkjavik":
+		case "rejkyavik":
+			country = "ISL"; break;
+		case "new delhi":
+		case "delhi":
+			country = "IND"; break;
+		case "jakarta":
+			country = "IDN"; break;
+		case "tehran":
+		case "teheran":
+			country = "IRN"; break;
+		case "baghdad":
+		case "bagdad":
+			country = "IRQ"; break;
+		case "dublin":
+			country = "IRL"; break;
+		case "telaviv":
+		case "tel aviv":
+		case "tel-aviv":
+		case "jerusalem":
+		case "jeruzalem":
+			country = "ISR"; break;
+		case "rome":
+			country = "ITA"; break;
+		case "kingston":
+			country = "JAM"; break;
+		case "tokyo":
+		case "tokio":
+			country = "JPN"; break;
+		case "amman":
+			country = "JOR"; break;
+		case "astana":
+			country = "KAZ"; break;
+		case "nairobi":
+			country = "KEN"; break;
+		case "tarawa":
+			country = "KIR"; break;
+		case "pristina":
+			country = "UNK"; break;
+		case "kuwait city":
+		case "koeweit":
+		case "koeweit-stad":
+			country = "KWT"; break;
+		case "bishkek":
+		case "bisjkek":
+			country = "KGZ"; break;
+		case "vientiane":
+			country = "LAO"; break;
+		case "riga":
+			country = "LVA"; break;
+		case "beirut":
+		case "beiroet":
+			country = "LBN"; break;
+		case "maseru":
+			country = "LSO"; break;
+		case "monrovia":
+			country = "LBR"; break;
+		case "tripoli":
+			country = "LBY"; break;
+		case "vaduz":
+			country = "LIE"; break;
+		case "vilnius":
+			country = "LTU"; break;
+		case "luxembourg":
+		case "luxemburg":
+			country = "LUX"; break;
+		case "skopje":
+			country = "MKD"; break;
+		case "antananarivo":
+			country = "MDG"; break;
+		case "lilongwe":
+			country = "MWI"; break;
+		case "kuala lumpur":
+		case "putrajaya":
+			country = "MYS"; break;
+		case "male":
+			country = "MDV"; break;
+		case "bamako":
+			country = "MLI"; break;
+		case "valletta":
+			country = "MLT"; break;
+		case "majuro":
+			country = "MHL"; break;
+		case "nouakchott":
+			country = "MRT"; break;
+		case "port louis":
+			country = "MUS"; break;
+		case "mexico city":
+		case "mexico stad":
+		case "mexico-stad":
+			country = "MEX"; break;
+		case "palikir":
+			country = "FSM"; break;
+		case "chisinau":
+			country = "MDA"; break;
+		case "monaco":
+			country = "MCO"; break;
+		case "ulaanbaatar":
+		case "ulan bator":
+			country = "MNG"; break;
+		case "podgorica":
+		case "cetinje":
+			country = "MNE"; break;
+		case "rabat":
+			country = "MAR"; break;
+		case "maputo":
+			country = "MOZ"; break;
+		case "windhoek":
+			country = "NAM"; break;
+		case "yaren":
+			country = "NRU"; break;
+		case "kathmandu":
+		case "katmandu":
+			country = "NPL"; break;
+		case "amsterdam":
+			country = "NLD"; break;
+		case "wellington":
+			country = "NZL"; break;
+		case "managua":
+			country = "NIC"; break;
+		case "niamey":
+			country = "NER"; break;
+		case "abuja":
+			country = "NGA"; break;
+		case "pyongyang":
+			country = "PRK"; break;
+		case "oslo":
+			country = "NOR"; break;
+		case "muscat":
+		case "masqat":
+			country = "OMN"; break;
+		case "islamabad":
+			country = "PAK"; break;
+		case "ngerulmud":
+			country = "PLW"; break;
+		case "east-jerusalem":
+		case "east jerusalem":
+		case "ramallah":
+		case "oost jeruzalem":
+		case "oost-jeruzalem":
+			country = "PSE"; break;
+		case "panama city":
+		case "panama stad":
+		case "panama-city":
+			country = "PAN"; break;
+		case "port moresby":
+			country = "PNG"; break;
+		case "asuncion":
+			country = "PRY"; break;
+		case "lima":
+		case "lima district":
+		case "cusco":
+			country = "PER"; break;
+		case "manila":
+		case "manilla":
+			country = "PHL"; break;
+		case "warsaw":
+		case "warschau":
+			country = "POL"; break;
+		case "lisbon":
+		case "lissabon":
+			country = "PRT"; break;
+		case "doha":
+			country = "QAT"; break;
+		case "bucharest":
+		case "boekarest":
+			country = "ROU"; break;
+		case "moscow":
+		case "moskou":
+			country = "RUS"; break;
+		case "kigali":
+			country = "RWA"; break;
+		case "basseterre":
+			country = "KNA"; break;
+		case "castries":
+			country = "LCU"; break;
+		case "kingstown":
+			country = "VCT"; break;
+		case "apia":
+			country = "WSM"; break;
+		case "san marino":
+			country = "SMR"; break;
+		case "sao tome":
+			country = "STP"; break;
+		case "riyadh":
+		case "rijadh":
+		case "riyad":
+		case "rijad":
+			country = "SAU"; break;
+		case "dakar":
+			country = "SEN"; break;
+		case "belgrade":
+		case "belgrado":
+			country = "SRB"; break;
+		case "victoria":
+			country = "SYC"; break;
+		case "freetown":
+			country = "SLE"; break;
+		case "singapore":
+			country = "SGP"; break;
+		case "bratislava":
+			country = "SVK"; break;
+		case "ljubljana":
+		case "llubjana":
+		case "lubjana":
+			country = "SVN"; break;
+		case "honiara":
+			country = "SLB"; break;
+		case "mogadishu":
+			country = "SOM"; break;
+		case "pretoria":
+		case "bloemfontein":
+		case "capetown":
+		case "cape town":
+		case "kaapstad":
+		case "kaap stad":
+			country = "ZAF"; break;
+		case "seoul":
+		case "seoel":
+			country = "KOR"; break;
+		case "juba":
+		case "djoeba":
+			country = "SSD"; break;
+		case "madrid":
+			country = "ESP"; break;
+		case "sri jayawardenepura kotte":
+		case "sri jayawardenepura":
+		case "colombo":
+			country = "LKA"; break;
+		case "khartoum":
+		case "kartoum":
+			country = "SDN"; break;
+		case "paramaribo":
+			country = "SUR"; break;
+		case "mbabane":
+		case "lobamba":
+			country = "SWZ"; break;
+		case "stockholm":
+			country = "SWE"; break;
+		case "bern":
+			country = "CHE"; break;
+		case "damascus":
+			country = "SYR"; break;
+		case "taipei":
+		case "nanjing":
+			country = "TWN"; break;
+		case "dushanbe":
+		case "doesjanbe":
+			country = "TJK"; break;
+		case "dodoma":
+			country = "TZA"; break;
+		case "bangkok":
+			country = "THA"; break;
+		case "lome":
+			country = "TGO"; break;
+		case "nuku'alofa":
+		case "nuku alofa":
+			country = "TON"; break;
+		case "port of spain":
+		case "port-of-spain":
+			country = "TTO"; break;
+		case "tunis":
+			country = "TUN"; break;
+		case "ankara":
+			country = "TUR"; break;
+		case "ashgabat":
+		case "asjchabad":
+			country = "TKM"; break;
+		case "funafuti":
+			country = "TUV"; break;
+		case "kampala":
+			country = "UGA"; break;
+		case "kiev":
+			country = "UKR"; break;
+		case "abu dhabi":
+			country = "ARE"; break;
+		case "london":
+		case "londen":
+			country = "GBR"; break;
+		case "washington d.c.":
+		case "washington d.c":
+		case "washington dc":
+		case "washington":
+			country = "USA"; break;
+		case "montevideo":
+			country = "URY"; break;
+		case "tashkent":
+		case "tasjkent":
+			country = "UZB"; break;
+		case "port vila":
+			country = "VUT"; break;
+		case "caracas":
+			country = "VEN"; break;
+		case "hanoi":
+			country = "VNM"; break;
+		case "sana'a":
+		case "sana a":
+		case "sanaa":
+			country = "YEM"; break;
+		case "lusaka":
+			country = "ZMB"; break;
+		case "harare":
+			country = "ZWE"; break;
+		default:
+			country = "ZZZ"; break;
+	}
+
+	return country;
+}
+
+</script>
+<script type="text/javascript" src="../../js/colourFunction.js"></script>
+</head>
+<body>
+
+	<div class="topbar noselect">
+		<table class="topbarcontent">
+			<tr>
+				<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+				<td class="timer">00:00:00</td>
+				<td><span class="giveuptext">Give Up</span></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="wrapper">
+
+		<div class="endscreen displaynone">
+			<div class="endmessage_win displaynone">Congratulations, you guessed all the capital cities in: </div>
+			<div class="endmessage_loss displaynone">You lost. Time: </div>
+			<div class="endtime">00:00:00</div>
+		</div>
+
+		<div class="map dragscroll">
+			<img class="svg" src="../../assets/capital_cities.svg">
+		</div>
+
+		<table class="scorecounter noselect">
+			<tr>
+				<td></td>
+				<td><span class="score">0</span>/<span class="targetScore">197</span></td>
+				<td><span class="options zoom"><img src="../../assets/zoom.png"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></span></td>
+			</tr>
+		</table>
+
+		<input type="text" class="input" />
+
+
+		<div id="list-english">
+			<ul>
+				<li class="incorrect" id="ARE">Abu Dhabi | United Arab Emirates</li>
+				<li class="incorrect" id="NGA">Abuja | Nigeria</li>
+				<li class="incorrect" id="GHA">Accra | Ghana</li>
+				<li class="incorrect" id="ETH">Addis Ababa | Ethiopia</li>
+				<li class="incorrect" id="DZA">Algiers | Algeria</li>
+				<li class="incorrect" id="JOR">Amman | Jordan</li>
+				<li class="incorrect" id="NLD">Amsterdam | The Netherlands</li>
+				<li class="incorrect" id="AND">Andorra La Vella | Andorra</li>
+				<li class="incorrect" id="TUR">Ankara | Turkey</li>
+				<li class="incorrect" id="MDG">Antananarivo | Madagascar</li>
+				<li class="incorrect" id="WSM">Apia | Samoa</li>
+				<li class="incorrect" id="TKM">Ashgabat | Turkmenistan</li>
+				<li class="incorrect" id="ERI">Asmara | Eritrea</li>
+				<li class="incorrect" id="KAZ">Astana | Kazakhstan</li>
+				<li class="incorrect" id="PRY">Asunción | Paraguay</li>
+				<li class="incorrect" id="GRC">Athens | Greece</li>
+				<li class="incorrect" id="IRQ">Baghdad | Iraq</li>
+				<li class="incorrect" id="AZE">Baku | Azerbaijan</li>
+				<li class="incorrect" id="MLI">Bamako | Mali</li>
+				<li class="incorrect" id="BRN">Bandar Seri Begawan | Brunei</li>
+				<li class="incorrect" id="THA">Bangkok | Thailand</li>
+				<li class="incorrect" id="CAF">Bangui | Central African Republic</li>
+				<li class="incorrect" id="GMB">Banjul | The Gambia</li>
+				<li class="incorrect" id="KNA">Basseterre | Saint Kitts and Nevis</li>
+				<li class="incorrect" id="CHN">Beijing | China</li>
+				<li class="incorrect" id="LBN">Beirut | Lebanon</li>
+				<li class="incorrect" id="SRB">Belgrade | Serbia</li>
+				<li class="incorrect" id="BLZ">Belmopan | Belize</li>
+				<li class="incorrect" id="DEU">Berlin | Germany</li>
+				<li class="incorrect" id="CHE">Bern | Switzerland</li>
+				<li class="incorrect" id="KGZ">Bishkek | Kyrgyzstan</li>
+				<li class="incorrect" id="GNB">Bissau | Guinea-Bissau</li>
+				<li class="incorrect" id="COL">Bogotá | Colombia</li>
+				<li class="incorrect" id="BRA">Brasília | Brazil</li>
+				<li class="incorrect" id="SVK">Bratislava | Slovakia</li>
+				<li class="incorrect" id="COG">Brazzaville | Republic of the Congo</li>
+				<li class="incorrect" id="BRB">Bridgetown | Barbados</li>
+				<li class="incorrect" id="BEL">Brussels | Belgium</li>
+				<li class="incorrect" id="ROU">Bucharest | Romania</li>
+				<li class="incorrect" id="HUN">Budapest | Hungary</li>
+				<li class="incorrect" id="ARG">Buenos Aires | Argentina</li>
+				<li class="incorrect" id="BDI">Bujumbura | Burundi</li>
+				<li class="incorrect" id="EGY">Cairo | Egypt</li>
+				<li class="incorrect" id="AUS">Canberra | Australia</li>
+				<li class="incorrect" id="VEN">Caracas | Venezuela</li>
+				<li class="incorrect" id="LCU">Castries | Saint Lucia</li>
+				<li class="incorrect" id="MDA">Chișinău | Moldova</li>
+				<li class="incorrect" id="GIN">Conakry | Guinea</li>
+				<li class="incorrect" id="DNK">Copenhagen | Denmark</li>
+				<li class="incorrect" id="SEN">Dakar | Senegal</li>
+				<li class="incorrect" id="SYR">Damascus | Syria</li>
+				<li class="incorrect" id="BGD">Dhaka | Bangladesh</li>
+				<li class="incorrect" id="TLS">Dili | East Timor</li>
+				<li class="incorrect" id="DJI">Djibouti | Djibouti</li>
+				<li class="incorrect" id="TZA">Dodoma | Tanzania</li>
+				<li class="incorrect" id="QAT">Doha | Qatar</li>
+				<li class="incorrect" id="IRL">Dublin | Ireland</li>
+				<li class="incorrect" id="TJK">Dushanbe | Tajikistan</li>
+				<li class="incorrect" id="PSE">East Jerusalem / Ramallah | Palestine</li>
+				<li class="incorrect" id="SLE">Freetown | Sierra Leone</li>
+				<li class="incorrect" id="TUV">Funafuti | Tuvalu</li>
+				<li class="incorrect" id="BWA">Gaborone | Botswana</li>
+				<li class="incorrect" id="GUY">Georgetown | Guyana</li>
+				<li class="incorrect" id="GTM">Guatemala City | Guatemala</li>
+				<li class="incorrect" id="VNM">Hanoi | Vietnam</li>
+				<li class="incorrect" id="ZWE">Harare | Zimbabwe</li>
+				<li class="incorrect" id="CUB">Havana | Cuba</li>
+				<li class="incorrect" id="FIN">Helsinki | Finland</li>
+				<li class="incorrect" id="SLB">Honiara | Solomon Islands</li>
+				<li class="incorrect" id="PAK">Islamabad | Pakistan</li>
+				<li class="incorrect" id="IDN">Jakarta | Indonesia</li>
+				<li class="incorrect" id="SSD">Juba | South Sudan</li>
+				<li class="incorrect" id="AFG">Kabul | Afghanistan</li>
+				<li class="incorrect" id="UGA">Kampala | Uganda</li>
+				<li class="incorrect" id="NPL">Kathmandu | Nepal</li>
+				<li class="incorrect" id="SDN">Khartoum | Sudan</li>
+				<li class="incorrect" id="UKR">Kiev | Ukraine</li>
+				<li class="incorrect" id="RWA">Kigali | Rwanda</li>
+				<li class="incorrect" id="JAM">Kingston | Jamaica</li>
+				<li class="incorrect" id="VCT">Kingstown | Saint Vincent and the Grenadines</li>
+				<li class="incorrect" id="COD">Kinshasa | Democratic Republic of the Congo</li>
+				<li class="incorrect" id="MYS">Kuala Lumpur | Malaysia</li>
+				<li class="incorrect" id="KWT">Kuwait City | Kuwait</li>
+				<li class="incorrect" id="GAB">Libreville | Gabon</li>
+				<li class="incorrect" id="MWI">Lilongwe | Malawi</li>
+				<li class="incorrect" id="PER">Lima | Peru</li>
+				<li class="incorrect" id="PRT">Lisbon | Portugal</li>
+				<li class="incorrect" id="SVN">Ljubljana | Slovenia</li>
+				<li class="incorrect" id="TGO">Lomé | Togo</li>
+				<li class="incorrect" id="GBR">London | United Kingdom</li>
+				<li class="incorrect" id="AGO">Luanda | Angola</li>
+				<li class="incorrect" id="ZMB">Lusaka | Zambia</li>
+				<li class="incorrect" id="LUX">Luxembourg | Luxembourg</li>
+				<li class="incorrect" id="ESP">Madrid | Spain</li>
+				<li class="incorrect" id="MHL">Majuro | Marshall Islands</li>
+				<li class="incorrect" id="GNQ">Malabo | Equatorial Guinea</li>
+				<li class="incorrect" id="MDV">Malé | Maldives</li>
+				<li class="incorrect" id="NIC">Managua | Nicaragua</li>
+				<li class="incorrect" id="BHR">Manama | Bahrain</li>
+				<li class="incorrect" id="PHL">Manila | Philippines</li>
+				<li class="incorrect" id="MOZ">Maputo | Mozambique</li>
+				<li class="incorrect" id="LSO">Maseru | Lesotho</li>
+				<li class="incorrect" id="SWZ">Mbabane / Lobamba | Swaziland</li>
+				<li class="incorrect" id="MEX">Mexico City | Mexico</li>
+				<li class="incorrect" id="BLR">Minsk | Belarus</li>
+				<li class="incorrect" id="SOM">Mogadishu | Somalia</li>
+				<li class="incorrect" id="MCO">Monaco | Monaco</li>
+				<li class="incorrect" id="LBR">Monrovia | Liberia</li>
+				<li class="incorrect" id="URY">Montevideo | Uruguay</li>
+				<li class="incorrect" id="COM">Moroni | Comoros</li>
+				<li class="incorrect" id="RUS">Moscow | Russia</li>
+				<li class="incorrect" id="OMN">Muscat | Oman</li>
+				<li class="incorrect" id="KEN">Nairobi | Kenya</li>
+				<li class="incorrect" id="BHS">Nassau | Bahamas</li>
+				<li class="incorrect" id="MMR">Naypyidaw | Myanmar</li>
+				<li class="incorrect" id="TCD">N'Djamena | Chad</li>
+				<li class="incorrect" id="IND">New Delhi | India</li>
+				<li class="incorrect" id="PLW">Ngerulmud | Palau</li>
+				<li class="incorrect" id="NER">Niamey | Niger</li>
+				<li class="incorrect" id="CYP">Nicosia | Cyprus</li>
+				<li class="incorrect" id="MRT">Nouakchott | Mauritania</li>
+				<li class="incorrect" id="TON">Nuku'alofa | Tonga</li>
+				<li class="incorrect" id="NOR">Oslo | Norway</li>
+				<li class="incorrect" id="CAN">Ottawa | Canada</li>
+				<li class="incorrect" id="BFA">Ouagadougou | Burkina Faso</li>
+				<li class="incorrect" id="FSM">Palikir | Micronesia</li>
+				<li class="incorrect" id="PAN">Panama City | Panama</li>
+				<li class="incorrect" id="SUR">Paramaribo | Suriname</li>
+				<li class="incorrect" id="FRA">Paris | France</li>
+				<li class="incorrect" id="KHM">Phnom Penh | Cambodia</li>
+				<li class="incorrect" id="MNE">Podgorica | Montenegro</li>
+				<li class="incorrect" id="MUS">Port Louis | Mauritius</li>
+				<li class="incorrect" id="PNG">Port Moresby | Papua New Guinea</li>
+				<li class="incorrect" id="VUT">Port Vila | Vanuatu</li>
+				<li class="incorrect" id="HTI">Port-au-Prince | Haiti</li>
+				<li class="incorrect" id="TTO">Port of Spain | Trinidad and Tobago</li>
+				<li class="incorrect" id="BEN">Porto-Novo | Benin</li>
+				<li class="incorrect" id="CZE">Prague | Czech Republic</li>
+				<li class="incorrect" id="CPV">Praia | Cape Verde</li>
+				<li class="incorrect" id="ZAF">Pretoria / Bloemfontein / Cape Town | South Africa</li>
+				<li class="incorrect" id="UNK">Pristina | Kosovo</li>
+				<li class="incorrect" id="PRK">Pyongyang | North Korea</li>
+				<li class="incorrect" id="ECU">Quito | Ecuador</li>
+				<li class="incorrect" id="MAR">Rabat | Morocco</li>
+				<li class="incorrect" id="ISL">Reykjavik | Iceland</li>
+				<li class="incorrect" id="LVA">Riga | Latvia</li>
+				<li class="incorrect" id="SAU">Riyadh | Saudi Arabia</li>
+				<li class="incorrect" id="ITA">Rome | Italy</li>
+				<li class="incorrect" id="DMA">Roseau | Dominica</li>
+				<li class="incorrect" id="CRI">San José | Costa Rica</li>
+				<li class="incorrect" id="SMR">San Marino | San Marino</li>
+				<li class="incorrect" id="SLV">San Salvador | El Salvador</li>
+				<li class="incorrect" id="YEM">Sana'a | Yemen</li>
+				<li class="incorrect" id="CHL">Santiago | Chile</li>
+				<li class="incorrect" id="DOM">Santo Domingo | Dominican Republic</li>
+				<li class="incorrect" id="STP">São Tomé | Sao Tome and Principe</li>
+				<li class="incorrect" id="BIH">Sarajevo | Bosnia and Herzegovina</li>
+				<li class="incorrect" id="KOR">Seoul | South Korea</li>
+				<li class="incorrect" id="SGP">Singapore | Singapore</li>
+				<li class="incorrect" id="MKD">Skopje | Macedonia</li>
+				<li class="incorrect" id="BGR">Sofia | Bulgaria</li>
+				<li class="incorrect" id="LKA">Sri Jayawardenepura Kotte | Sri Lanka</li>
+				<li class="incorrect" id="GRD">St. George's | Grenada</li>
+				<li class="incorrect" id="ATG">St. John's | Antigua and Barbuda</li>
+				<li class="incorrect" id="SWE">Stockholm | Sweden</li>
+				<li class="incorrect" id="BOL">Sucre / La Paz | Bolivia</li>
+				<li class="incorrect" id="FJI">Suva | Fiji</li>
+				<li class="incorrect" id="TWN">Taipei / Nanjing | Taiwan</li>
+				<li class="incorrect" id="EST">Tallinn | Estonia</li>
+				<li class="incorrect" id="KIR">Tarawa | Kiribati</li>
+				<li class="incorrect" id="UZB">Tashkent | Uzbekistan</li>
+				<li class="incorrect" id="GEO">Tbilisi | Georgia</li>
+				<li class="incorrect" id="HND">Tegucigalpa | Honduras</li>
+				<li class="incorrect" id="IRN">Tehran | Iran</li>
+				<li class="incorrect" id="ISR">Tel Aviv / Jerusalem | Israel</li>
+				<li class="incorrect" id="BTN">Thimphu | Bhutan</li>
+				<li class="incorrect" id="ALB">Tirana | Albania</li>
+				<li class="incorrect" id="JPN">Tokyo | Japan</li>
+				<li class="incorrect" id="LBY">Tripoli | Libya</li>
+				<li class="incorrect" id="TUN">Tunis | Tunisia</li>
+				<li class="incorrect" id="MNG">Ulaanbaatar | Mongolia</li>
+				<li class="incorrect" id="LIE">Vaduz | Liechtenstein</li>
+				<li class="incorrect" id="MLT">Valletta | Malta</li>
+				<li class="incorrect" id="VAT">Vatican City | Vatican City</li>
+				<li class="incorrect" id="SYC">Victoria | Seychelles</li>
+				<li class="incorrect" id="AUT">Vienna | Austria</li>
+				<li class="incorrect" id="LAO">Vientiane | Laos</li>
+				<li class="incorrect" id="LTU">Vilnius | Lithuania</li>
+				<li class="incorrect" id="POL">Warsaw | Poland</li>
+				<li class="incorrect" id="USA">Washington, D.C. | United States</li>
+				<li class="incorrect" id="NZL">Wellington | New Zealand</li>
+				<li class="incorrect" id="NAM">Windhoek | Namibia</li>
+				<li class="incorrect" id="CIV">Yamoussoukro | Ivory Coast</li>
+				<li class="incorrect" id="CMR">Yaoundé | Cameroon</li>
+				<li class="incorrect" id="NRU">Yaren | Nauru</li>
+				<li class="incorrect" id="ARM">Yerevan | Armenia</li>
+				<li class="incorrect" id="HRV">Zagreb | Croatia</li>
+			<ul>
+		</div>
+
+		<div id="list-dutch">
+			<ul>
+				<li class="incorrect" id="ARE">Abu Dhabi | Verenigde Arabische Emiraten</li>
+				<li class="incorrect" id="NGA">Abuja | Nigeria</li>
+				<li class="incorrect" id="GHA">Accra | Ghana</li>
+				<li class="incorrect" id="ETH">Addis Abeba | Ethiopië</li>
+				<li class="incorrect" id="DZA">Algiers | Algerije</li>
+				<li class="incorrect" id="JOR">Amman | Jordanië</li>
+				<li class="incorrect" id="NLD">Amsterdam | Nederland</li>
+				<li class="incorrect" id="AND">Andorra La Vella | Andorra</li>
+				<li class="incorrect" id="TUR">Ankara | Turkije</li>
+				<li class="incorrect" id="MDG">Antananarivo | Madagaskar</li>
+				<li class="incorrect" id="WSM">Apia | Samoa</li>
+				<li class="incorrect" id="TKM">Asjchabad | Turkmenistan</li>
+				<li class="incorrect" id="ERI">Asmara | Eritrea</li>
+				<li class="incorrect" id="KAZ">Astana | Kazachstan</li>
+				<li class="incorrect" id="PRY">Asunción | Paraguay</li>
+				<li class="incorrect" id="GRC">Athene | Griekenland</li>
+				<li class="incorrect" id="IRQ">Bagdad | Irak</li>
+				<li class="incorrect" id="AZE">Bakoe | Azerbeidzjan</li>
+				<li class="incorrect" id="MLI">Bamako | Mali</li>
+				<li class="incorrect" id="BRN">Bandar Seri Begawan | Brunei</li>
+				<li class="incorrect" id="THA">Bangkok | Thailand</li>
+				<li class="incorrect" id="CAF">Bangui | Centraal-Afrikaanse Republiek</li>
+				<li class="incorrect" id="GMB">Banjul | Gambia</li>
+				<li class="incorrect" id="KNA">Basseterre | Saint Kitts en Nevis</li>
+				<li class="incorrect" id="LBN">Beiroet | Libanon</li>
+				<li class="incorrect" id="SRB">Belgrado | Servië</li>
+				<li class="incorrect" id="BLZ">Belmopan | Belize</li>
+				<li class="incorrect" id="DEU">Berlijn | Duitsland</li>
+				<li class="incorrect" id="CHE">Bern | Zwitserland</li>
+				<li class="incorrect" id="KGZ">Bisjkek | Kirgizië</li>
+				<li class="incorrect" id="GNB">Bissau | Guinee-Bissau</li>
+				<li class="incorrect" id="COL">Bogotá | Colombia</li>
+				<li class="incorrect" id="BRA">Brasília | Brazilië</li>
+				<li class="incorrect" id="SVK">Bratislava | Slowakije</li>
+				<li class="incorrect" id="COG">Brazzaville | Republiek Congo</li>
+				<li class="incorrect" id="BRB">Bridgetown | Barbados</li>
+				<li class="incorrect" id="BEL">Brussel | België</li>
+				<li class="incorrect" id="ROU">Boekarest | Roemenië</li>
+				<li class="incorrect" id="HUN">Boedapest | Hongarije</li>
+				<li class="incorrect" id="ARG">Buenos Aires | Argentinië</li>
+				<li class="incorrect" id="BDI">Bujumbura | Burundi</li>
+				<li class="incorrect" id="EGY">Caïro | Egypt</li>
+				<li class="incorrect" id="AUS">Canberra | Australië</li>
+				<li class="incorrect" id="VEN">Caracas | Venezuela</li>
+				<li class="incorrect" id="LCU">Castries | Saint Lucia</li>
+				<li class="incorrect" id="MDA">Chișinău | Moldavië</li>
+				<li class="incorrect" id="GIN">Conakry | Guinee</li>
+				<li class="incorrect" id="SEN">Dakar | Senegal</li>
+				<li class="incorrect" id="SYR">Damascus | Syrië</li>
+				<li class="incorrect" id="BGD">Dhaka | Bangladesh</li>
+				<li class="incorrect" id="TLS">Dili | Oost-Timor</li>
+				<li class="incorrect" id="DJI">Djibouti | Djibouti</li>
+				<li class="incorrect" id="SSD">Djoeba | Zuid-Soedan</li>
+				<li class="incorrect" id="TZA">Dodoma | Tanzania</li>
+				<li class="incorrect" id="QAT">Doha | Qatar</li>
+				<li class="incorrect" id="IRL">Dublin | Ierland</li>
+				<li class="incorrect" id="TJK">Doesjanbe | Tadzjikistan</li>
+				<li class="incorrect" id="SLE">Freetown | Sierra Leone</li>
+				<li class="incorrect" id="TUV">Funafuti | Tuvalu</li>
+				<li class="incorrect" id="BWA">Gaborone | Botswana</li>
+				<li class="incorrect" id="GUY">Georgetown | Guyana</li>
+				<li class="incorrect" id="GTM">Guatemala-Stad | Guatemala</li>
+				<li class="incorrect" id="VNM">Hanoi | Vietnam</li>
+				<li class="incorrect" id="ZWE">Harare | Zimbabwe</li>
+				<li class="incorrect" id="CUB">Havana | Cuba</li>
+				<li class="incorrect" id="FIN">Helsinki | Finland</li>
+				<li class="incorrect" id="SLB">Honiara | Salomoneilanden</li>
+				<li class="incorrect" id="PAK">Islamabad | Pakistan</li>
+				<li class="incorrect" id="IDN">Jakarta | Indonesië</li>
+				<li class="incorrect" id="ARM">Jerevan | Armenië</li>
+				<li class="incorrect" id="AFG">Kabul | Afghanistan</li>
+				<li class="incorrect" id="UGA">Kampala | Oeganda</li>
+				<li class="incorrect" id="NPL">Kathmandu | Nepal</li>
+				<li class="incorrect" id="SDN">Khartoum | Soedan</li>
+				<li class="incorrect" id="UKR">Kiev | Oekraïne</li>
+				<li class="incorrect" id="RWA">Kigali | Rwanda</li>
+				<li class="incorrect" id="JAM">Kingston | Jamaica</li>
+				<li class="incorrect" id="VCT">Kingstown | Saint Vincent en de Grenadines</li>
+				<li class="incorrect" id="COD">Kinshasa | Democratische Republiek Congo</li>
+				<li class="incorrect" id="KWT">Koeweit | Koeweit</li>
+				<li class="incorrect" id="DNK">Kopenhagen | Denemarken</li>
+				<li class="incorrect" id="MYS">Kuala Lumpur | Maleisië</li>
+				<li class="incorrect" id="GAB">Libreville | Gabon</li>
+				<li class="incorrect" id="MWI">Lilongwe | Malawi</li>
+				<li class="incorrect" id="PER">Lima | Peru</li>
+				<li class="incorrect" id="PRT">Lissabon | Portugal</li>
+				<li class="incorrect" id="SVN">Ljubljana | Slovenië</li>
+				<li class="incorrect" id="TGO">Lomé | Togo</li>
+				<li class="incorrect" id="GBR">Londen | Verenigd koninkrijk</li>
+				<li class="incorrect" id="AGO">Luanda | Angola</li>
+				<li class="incorrect" id="ZMB">Lusaka | Zambia</li>
+				<li class="incorrect" id="LUX">Luxemburg | Luxemburg</li>
+				<li class="incorrect" id="ESP">Madrid | Spanje</li>
+				<li class="incorrect" id="MHL">Majuro | Marshalleilanden</li>
+				<li class="incorrect" id="GNQ">Malabo | Equatoriaal-Guinea</li>
+				<li class="incorrect" id="MDV">Malé | Maldives</li>
+				<li class="incorrect" id="NIC">Managua | Nicaragua</li>
+				<li class="incorrect" id="BHR">Manama | Bahrein</li>
+				<li class="incorrect" id="PHL">Manila | Filipijnen</li>
+				<li class="incorrect" id="MOZ">Maputo | Mozambique</li>
+				<li class="incorrect" id="LSO">Maseru | Lesotho</li>
+				<li class="incorrect" id="SWZ">Mbabane / Lobamba | Swaziland</li>
+				<li class="incorrect" id="MEX">Mexico-Stad | Mexico</li>
+				<li class="incorrect" id="BLR">Minsk | Wit-Rusland</li>
+				<li class="incorrect" id="SOM">Mogadishu | Somalië</li>
+				<li class="incorrect" id="MCO">Monaco | Monaco</li>
+				<li class="incorrect" id="LBR">Monrovia | Liberia</li>
+				<li class="incorrect" id="URY">Montevideo | Uruguay</li>
+				<li class="incorrect" id="COM">Moroni | Comoren</li>
+				<li class="incorrect" id="RUS">Moskou | Rusland</li>
+				<li class="incorrect" id="OMN">Masqat | Oman</li>
+				<li class="incorrect" id="KEN">Nairobi | Kenia</li>
+				<li class="incorrect" id="BHS">Nassau | Bahama's</li>
+				<li class="incorrect" id="MMR">Naypyidaw | Myanmar</li>
+				<li class="incorrect" id="TCD">Ndjamena | Tsjaad</li>
+				<li class="incorrect" id="IND">New Delhi | India</li>
+				<li class="incorrect" id="PLW">Ngerulmud | Palau</li>
+				<li class="incorrect" id="NER">Niamey | Niger</li>
+				<li class="incorrect" id="CYP">Nicosia | Cyprus</li>
+				<li class="incorrect" id="MRT">Nouakchott | Mauritanië</li>
+				<li class="incorrect" id="TON">Nuku'alofa | Tonga</li>
+				<li class="incorrect" id="PSE">Oost-Jeruzalem / Ramallah | Palestina</li>
+				<li class="incorrect" id="NOR">Oslo | Noorwegen</li>
+				<li class="incorrect" id="CAN">Ottawa | Canada</li>
+				<li class="incorrect" id="BFA">Ouagadougou | Burkina Faso</li>
+				<li class="incorrect" id="FSM">Palikir | Micronesia</li>
+				<li class="incorrect" id="PAN">Panama-Stad | Panama</li>
+				<li class="incorrect" id="SUR">Paramaribo | Suriname</li>
+				<li class="incorrect" id="FRA">Parijs | Frankrijk</li>
+				<li class="incorrect" id="CHN">Peking | China</li>
+				<li class="incorrect" id="KHM">Phnom-Penh | Cambodja</li>
+				<li class="incorrect" id="MNE">Podgorica | Montenegro</li>
+				<li class="incorrect" id="MUS">Port Louis | Mauritius</li>
+				<li class="incorrect" id="PNG">Port Moresby | Papoea-Nieuw-Guinea</li>
+				<li class="incorrect" id="VUT">Port Vila | Vanuatu</li>
+				<li class="incorrect" id="HTI">Port-au-Prince | Haïti</li>
+				<li class="incorrect" id="TTO">Port of Spain | Trinidad en Tobago</li>
+				<li class="incorrect" id="BEN">Porto-Novo | Benin</li>
+				<li class="incorrect" id="CZE">Praag | Tsjechië</li>
+				<li class="incorrect" id="CPV">Praia | Kaapverdië</li>
+				<li class="incorrect" id="ZAF">Pretoria / Bloemfontein / Kaapstad | Zuid-Afrika</li>
+				<li class="incorrect" id="UNK">Pristina | Kosovo</li>
+				<li class="incorrect" id="PRK">Pyongyang | Noord-Korea</li>
+				<li class="incorrect" id="ECU">Quito | Ecuador</li>
+				<li class="incorrect" id="MAR">Rabat | Marokko</li>
+				<li class="incorrect" id="ISL">Reykjavik | Ijsland</li>
+				<li class="incorrect" id="LVA">Riga | Letland</li>
+				<li class="incorrect" id="SAU">Riyad | Saoedi-Arabië</li>
+				<li class="incorrect" id="ITA">Rome | Italië</li>
+				<li class="incorrect" id="DMA">Roseau | Dominica</li>
+				<li class="incorrect" id="CRI">San José | Costa Rica</li>
+				<li class="incorrect" id="SMR">San Marino | San Marino</li>
+				<li class="incorrect" id="SLV">San Salvador | El Salvador</li>
+				<li class="incorrect" id="YEM">Sanaa | Jemen</li>
+				<li class="incorrect" id="CHL">Santiago | Chili</li>
+				<li class="incorrect" id="DOM">Santo Domingo | Dominican Republic</li>
+				<li class="incorrect" id="STP">São Tomé | Sao Tome en Principe</li>
+				<li class="incorrect" id="BIH">Sarajevo | Bosnia en Herzegovina</li>
+				<li class="incorrect" id="KOR">Seoul | Zuid-Korea</li>
+				<li class="incorrect" id="SGP">Singapore | Singapore</li>
+				<li class="incorrect" id="MKD">Skopje | Macedonië</li>
+				<li class="incorrect" id="BGR">Sofia | Bulgarije</li>
+				<li class="incorrect" id="LKA">Sri Jayawardenepura Kotte | Sri Lanka</li>
+				<li class="incorrect" id="GRD">St. George's | Grenada</li>
+				<li class="incorrect" id="ATG">St. John's | Antigua en Barbuda</li>
+				<li class="incorrect" id="SWE">Stockholm | Zweden</li>
+				<li class="incorrect" id="BOL">Sucre / La Paz | Bolivia</li>
+				<li class="incorrect" id="FJI">Suva | Fiji</li>
+				<li class="incorrect" id="TWN">Taipei / Nanjing | Taiwan</li>
+				<li class="incorrect" id="EST">Tallinn | Estland</li>
+				<li class="incorrect" id="KIR">Tarawa | Kiribati</li>
+				<li class="incorrect" id="UZB">Tasjkent | Oezbekistan</li>
+				<li class="incorrect" id="GEO">Tbilisi | Georgië</li>
+				<li class="incorrect" id="HND">Tegucigalpa | Honduras</li>
+				<li class="incorrect" id="IRN">Teheran | Iran</li>
+				<li class="incorrect" id="ISR">Tel Aviv / Jeruzalem | Israël</li>
+				<li class="incorrect" id="BTN">Thimphu | Bhutan</li>
+				<li class="incorrect" id="ALB">Tirana | Albanië</li>
+				<li class="incorrect" id="JPN">Tokio | Japan</li>
+				<li class="incorrect" id="LBY">Tripoli | Libië</li>
+				<li class="incorrect" id="TUN">Tunis | Tunisië</li>
+				<li class="incorrect" id="MNG">Ulaanbaatar | Mongolië</li>
+				<li class="incorrect" id="LIE">Vaduz | Liechtenstein</li>
+				<li class="incorrect" id="MLT">Valletta | Malta</li>
+				<li class="incorrect" id="VAT">Vaticaanstad | Vaticaanstad</li>
+				<li class="incorrect" id="SYC">Victoria | Seychellen</li>
+				<li class="incorrect" id="LAO">Vientiane | Laos</li>
+				<li class="incorrect" id="LTU">Vilnius | Litouwen</li>
+				<li class="incorrect" id="POL">Warschou | Polen</li>
+				<li class="incorrect" id="USA">Washington D.C. | Verenigde Staten</li>
+				<li class="incorrect" id="NZL">Wellington | Nieuw-Zeeland</li>
+				<li class="incorrect" id="NAM">Windhoek | Namibië</li>
+				<li class="incorrect" id="AUT">Wenen | Oostenrijk</li>
+				<li class="incorrect" id="CIV">Yamoussoukro | Ivoorkust</li>
+				<li class="incorrect" id="CMR">Yaoundé | Kameroen</li>
+				<li class="incorrect" id="NRU">Yaren | Nauru</li>
+				<li class="incorrect" id="HRV">Zagreb | Kroatië</li>
+			<ul>
+		</div>
+	</div>
+
+</body>
+</html>

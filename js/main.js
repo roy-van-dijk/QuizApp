@@ -11,10 +11,26 @@ function makeSortString(s) {
 
 $(document).ready(function(){
 
+	var translations = {
+		"english" : {
+			"back" 	: "Back",
+			"giveup": "Give Up",
+			"lost" 	: "You lost. Time: ",
+			"won" 	: "Congratulations, you won in: ",
+			"list" 	: "list-english",
+			"menu" 	: "mainmenuenglish"
+		},
+		"dutch" : {
+			"back" 	: "Terug",
+			"giveup": "Opgeven",
+			"lost" 	: "Je hebt verloren. Tijd: ",
+			"won" 	: "Gefeliciteerd, je hebt gewonnen in: ",
+			"list" 	: "list-dutch",
+			"menu" 	: "mainmenudutch"
+		}
+	}
 
-	/*
-     * Replace all SVG images with inline SVG
-     */
+	// Replace all SVG images with inline SVG
     jQuery('img.svg').each(function(){
         var $img = jQuery(this);
         var imgID = $img.attr('id');
@@ -43,31 +59,6 @@ $(document).ready(function(){
         }, 'xml');
 
     });
-
-	var lastTouchY = 0;
-	var preventPullToRefresh = true;
-
-	$('html').on('touchstart', function (e) {
-	    if (e.originalEvent.touches.length != 1) { return; }
-	    lastTouchY = e.originalEvent.touches[0].clientY;
-	    preventPullToRefresh = window.pageYOffset == 0;
-	});
-
-	$('html').on('touchmove', function (e) {
-	    var touchY = e.originalEvent.touches[0].clientY;
-	    var touchYDelta = touchY - lastTouchY;
-	    lastTouchY = touchY;
-	    if (preventPullToRefresh) {
-		// To suppress pull-to-refresh it is sufficient to preventDefault the first overscrolling touchmove.
-		preventPullToRefresh = false;
-		if (touchYDelta > 0) {
-		    e.preventDefault();
-		    return;
-		}
-	    }
-	});
-
-	// document.addEventListener("touchstart", function(){}, true);
 
 	function endscreen(outcome){
 		$('.timer').stopwatch().stopwatch('stop');
@@ -106,6 +97,8 @@ $(document).ready(function(){
 	$('.langdropdown li').click(function(){
 		var newLang = this.id;
 
+		localStorage.setItem("language", newLang);
+
 		$('ul.mainmenu').addClass('vishidden');
         setTimeout(function(){
             $('ul#mainmenu'+newLang).removeClass('vishidden');
@@ -121,6 +114,33 @@ $(document).ready(function(){
 			$('.map svg').removeClass('svgzoom');
 		}
 	});
+
+	addTranslations();
+	function addTranslations(){
+		// Default language
+		if(!localStorage.language){
+			localStorage.language = english;
+		}
+
+ 		// Current language
+		var curLang = localStorage.language;
+
+		// Main menu language
+		$('.mainmenu').addClass('vishidden');
+		$('#'+translations[curLang].menu).removeClass('vishidden');
+
+		// Interface language
+		$('.backtext').text(translations[curLang].back);
+		$('.giveuptext').text(translations[curLang].giveup);
+		$('.endmessage_win').text(translations[curLang].won);
+		$('.endmessage_loss').text(translations[curLang].lost);
+
+		// Answer language
+		$('#list-english').addClass('displaynone');
+		$('#list-dutch').addClass('displaynone');
+		$('#'+translations[curLang].list).removeClass('displaynone');
+		$('#'+translations[curLang].list).addClass('list');
+	}
 
     $(document).mouseup(function (e){
         var container = $(".langselect");
