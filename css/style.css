@@ -18,11 +18,12 @@ body{
 	width: 100%;
 	height: 100%;
 	margin: 0;
-	/*overflow-y: hidden;*/
+	overflow-y: hidden;
 }
 /* prevent pull to refresh */
 .overflow-wrapper{
 	z-index: 2;
+	overflow-y: scroll;
 }
 .wrapper{
 	max-width: 1000px;
