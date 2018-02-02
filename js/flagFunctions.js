@@ -62,6 +62,7 @@ $(document).ready(function(){
 				$('.input').attr('disabled', true);
 			}
 			else{
+				$('.input').val('');
 				$('.input').attr('disabled', false);
 			}
 			$('.input').focus();
@@ -89,7 +90,7 @@ $(document).ready(function(){
 				$(guessedCountry).addClass('correct');
 				counter = (parseInt($('.score').text()) + 1);
 				$('.score').text(counter);
-				$('.input').val('');
+				$('.input').attr('disabled', true);
 				addFlag(guessedCountry);
 				if($('#forward').prop('checked') === true){
 					$('.nextFlag').trigger('click');

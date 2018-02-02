@@ -204,6 +204,12 @@ td.langselect{
     position: absolute;
     transition:opacity 0.2s linear, visibility 0.2s linear;
 }
+.mainmenu a{
+	border-radius: 5px;
+}
+.mainmenu a:hover{
+	background-color: #bbb;
+}
 .gameselect{
 	text-align: center;
 	font-weight: bold;
