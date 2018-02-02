@@ -15,45 +15,46 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+	<div class="overflow-wrapper">
+		<div class="topbar noselect">
+			<table class="topbarcontent">
+				<tr>
+					<td class="langselect">
+						<label for="dropdownToggle" class="hamburger"><img src="assets/hamburger.svg"></label>
+	                    <input type="checkbox" id="dropdownToggle">
+						<ul class="langdropdown">
+	                        <div class="dropdownarrow"></div>
+							<li id="english"><span class="flag"></span>English</li>
+							<li id="dutch"><span class="flag"></span>Nederlands</li>
+						</ul>
+					</td>
+					<td class="intro">Country Quiz</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
 
-	<div class="topbar noselect">
-		<table class="topbarcontent">
-			<tr>
-				<td class="langselect">
-					<label for="dropdownToggle" class="hamburger"><img src="assets/hamburger.svg"></label>
-                    <input type="checkbox" id="dropdownToggle">
-					<ul class="langdropdown">
-                        <div class="dropdownarrow"></div>
-						<li id="english"><span class="flag"></span>English</li>
-						<li id="dutch"><span class="flag"></span>Nederlands</li>
-					</ul>
-				</td>
-				<td class="intro">Country Quiz</td>
-				<td></td>
-			</tr>
-		</table>
-	</div>
+		<div class="wrapper">
 
-	<div class="wrapper">
+			<ul class="mainmenu noselect" id="mainmenuenglish">
+				<div class="gameselect">Select your game type:</div>
+				<a href="gametypes/country/unified.html" class="gametype"><li><img src="assets/country.png">Countries</li></a>
+				<a href="gametypes/capital/unified.html" class="gametype"><li><img src="assets/capital.png">Capital Cities</li></a>
+				<a href="gametypes/flag/unified.html" class="gametype"><li><img src="assets/flag.png">Flags</li></a>
+				<a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><li><img src="assets/capital.png">Dutch Municipalities</li></a>
+				<a href="gametypes/states_usa/unified.html" class="gametype"><li><img src="assets/states.png">American States</li></a>
+			</ul>
 
-		<ul class="mainmenu noselect" id="mainmenuenglish">
-			<div class="gameselect">Select your game type:</div>
-			<a href="gametypes/country/unified.html" class="gametype"><li><img src="assets/country.png">Countries</li></a>
-			<a href="gametypes/capital/unified.html" class="gametype"><li><img src="assets/capital.png">Capital Cities</li></a>
-			<a href="gametypes/flag/unified.html" class="gametype"><li><img src="assets/flag.png">Flags</li></a>
-			<a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><li><img src="assets/capital.png">Dutch Municipalities</li></a>
-			<a href="gametypes/states_usa/unified.html" class="gametype"><li><img src="assets/states.png">American States</li></a>
-		</ul>
+			<ul class="mainmenu noselect vishidden" id="mainmenudutch">
+				<div class="gameselect">Selecteer je speltype:</div>
+				<a href="gametypes/country/unified.html" class="gametype"><li><img src="assets/country.png">Landen</li></a>
+				<a href="gametypes/capital/unified.html" class="gametype"><li><img src="assets/capital.png">Hoofdsteden</li></a>
+				<a href="gametypes/flag/unified.html" class="gametype"><li><img src="assets/flag.png">Vlaggen</li></a>
+				<a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><li><img src="assets/capital.png">Nederlandse gemeenten</li></a>
+				<a href="gametypes/states_usa/unified.html" class="gametype"><li><img src="assets/states.png">Amerikaanse staten</li></a>
+			</ul>
 
-		<ul class="mainmenu noselect vishidden" id="mainmenudutch">
-			<div class="gameselect">Selecteer je speltype:</div>
-			<a href="gametypes/country/unified.html" class="gametype"><li><img src="assets/country.png">Landen</li></a>
-			<a href="gametypes/capital/unified.html" class="gametype"><li><img src="assets/capital.png">Hoofdsteden</li></a>
-			<a href="gametypes/flag/unified.html" class="gametype"><li><img src="assets/flag.png">Vlaggen</li></a>
-			<a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><li><img src="assets/capital.png">Nederlandse gemeenten</li></a>
-			<a href="gametypes/states_usa/unified.html" class="gametype"><li><img src="assets/states.png">Amerikaanse staten</li></a>
-		</ul>
-
+		</div>
 	</div>
 
 </body>
