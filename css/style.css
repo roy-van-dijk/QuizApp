@@ -457,6 +457,20 @@ td.langselect{
 .hiscoretable th, .hiscoretable th{
 	width: 33.3%;
 }
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    background-color: rgba(0,0,0,0.0);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #2b87ff;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background-color: rgba(0,0,0,0.0); 
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
