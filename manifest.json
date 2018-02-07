@@ -3,5 +3,8 @@
   "name": "Country Quiz",
   "start_url": "index.html",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "icons":{
+  		"400": "assets/country.png"
+  }
 }
