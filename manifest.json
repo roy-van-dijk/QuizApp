@@ -4,7 +4,9 @@
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "icons":{
-  		"400": "assets/country.png"
+  "icons" : {
+  		"16" : 	"assets/16.png",
+  		"48" : 	"assets/48.png",
+  		"128": 	"assets/128.png"
   }
 }
