@@ -13,36 +13,36 @@ $(document).ready(function(){
 
 	var translations = {
 		"english" : {
-			"back" 					: "Back",
-			"giveup"				: "Give Up",
-			"lost" 					: "You lost. Time: ",
-			"won" 					: "Congratulations, you won in: ",
-			"list" 					: "list-english",
-			"menu" 					: "mainmenuenglish",
-			"gametype"				: "Select your game type:",
-			"endtime"				: "Time",
-			"date"					: "Date",
-			"country"				: "Countries",
-			"capital" 				: "Capitals",
-			"flag" 					: "Flags",
-			"dutch_municipalities"	: "Dutch Municipalities",
-			"usa_states" 			: "American States"
+			"back" 							: "Back",
+			"giveup"						: "Give Up",
+			"lost" 							: "You lost. Time: ",
+			"won" 							: "Congratulations, you won in: ",
+			"list" 							: "list-english",
+			"menu" 							: "mainmenuenglish",
+			"gametype"						: "Select your game type:",
+			"endtime"						: "Time",
+			"date"							: "Date",
+			"country"						: "Countries",
+			"capital" 						: "Capitals",
+			"flag" 							: "Flags",
+			"municipalities_netherlands"	: "Dutch Municipalities",
+			"states_usa" 					: "American States"
 		},
 		"dutch" : {
-			"back" 					: "Terug",
-			"giveup"				: "Opgeven",
-			"lost" 					: "Je hebt verloren. Tijd: ",
-			"won" 					: "Gefeliciteerd, je hebt gewonnen in: ",
-			"list" 					: "list-dutch",
-			"menu" 					: "mainmenudutch",
-			"gametype"				: "Selecteer je speltype:",
-			"endtime"				: "Tijd",
-			"date"					: "Datum",
-			"country"				: "Landen",
-			"capital" 				: "Hoofdsteden",
-			"flag" 					: "Vlaggen",
-			"dutch_municipalities"	: "Nederlandse gemeenten",
-			"usa_states" 			: "Amerikaanse staten"
+			"back" 							: "Terug",
+			"giveup"						: "Opgeven",
+			"lost" 							: "Je hebt verloren. Tijd: ",
+			"won" 							: "Gefeliciteerd, je hebt gewonnen in: ",
+			"list" 							: "list-dutch",
+			"menu" 							: "mainmenudutch",
+			"gametype"						: "Selecteer je speltype:",
+			"endtime"						: "Tijd",
+			"date"							: "Datum",
+			"country"						: "Landen",
+			"capital" 						: "Hoofdsteden",
+			"flag" 							: "Vlaggen",
+			"municipalities_netherlands"	: "Nederlandse gemeenten",
+			"states_usa" 					: "Amerikaanse staten"
 		}
 	}
 
@@ -179,9 +179,9 @@ $(document).ready(function(){
 		$('option[value="country"').text(translations[curLang].country);
 		$('option[value="capital"').text(translations[curLang].capital);
 		$('option[value="flag"').text(translations[curLang].flag);
-		$('option[value="dutch_municipalities"').text(translations[curLang].dutch_municipalities);
-		$('option[value="usa_states"').text(translations[curLang].usa_states);
-		$('.hiscorestime').text(translations[curLang].endtime);
+		$('option[value="municipalities_netherlands"').text(translations[curLang].municipalities_netherlands);
+		$('option[value="states_usa"').text(translations[curLang].states_usa);
+		$('.hiscoresendtime').text(translations[curLang].endtime);
 		$('.hiscoresdate').text(translations[curLang].date);
 
 	}
