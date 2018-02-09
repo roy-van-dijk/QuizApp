@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 	var translations = {
 		"english" : {
-			"back" 	: "Back",
+			"back" 					: "Back",
 			"giveup"				: "Give Up",
 			"lost" 					: "You lost. Time: ",
 			"won" 					: "Congratulations, you won in: ",
