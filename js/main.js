@@ -14,19 +14,35 @@ $(document).ready(function(){
 	var translations = {
 		"english" : {
 			"back" 	: "Back",
-			"giveup": "Give Up",
-			"lost" 	: "You lost. Time: ",
-			"won" 	: "Congratulations, you won in: ",
-			"list" 	: "list-english",
-			"menu" 	: "mainmenuenglish"
+			"giveup"				: "Give Up",
+			"lost" 					: "You lost. Time: ",
+			"won" 					: "Congratulations, you won in: ",
+			"list" 					: "list-english",
+			"menu" 					: "mainmenuenglish",
+			"gametype"				: "Select your game type:",
+			"endtime"				: "Time",
+			"date"					: "Date",
+			"country"				: "Countries",
+			"capital" 				: "Capitals",
+			"flag" 					: "Flags",
+			"dutch_municipalities"	: "Dutch Municipalities",
+			"usa_states" 			: "American States"
 		},
 		"dutch" : {
-			"back" 	: "Terug",
-			"giveup": "Opgeven",
-			"lost" 	: "Je hebt verloren. Tijd: ",
-			"won" 	: "Gefeliciteerd, je hebt gewonnen in: ",
-			"list" 	: "list-dutch",
-			"menu" 	: "mainmenudutch"
+			"back" 					: "Terug",
+			"giveup"				: "Opgeven",
+			"lost" 					: "Je hebt verloren. Tijd: ",
+			"won" 					: "Gefeliciteerd, je hebt gewonnen in: ",
+			"list" 					: "list-dutch",
+			"menu" 					: "mainmenudutch",
+			"gametype"				: "Selecteer je speltype:",
+			"endtime"				: "Tijd",
+			"date"					: "Datum",
+			"country"				: "Landen",
+			"capital" 				: "Hoofdsteden",
+			"flag" 					: "Vlaggen",
+			"dutch_municipalities"	: "Nederlandse gemeenten",
+			"usa_states" 			: "Amerikaanse staten"
 		}
 	}
 
@@ -62,7 +78,13 @@ $(document).ready(function(){
 
 	function endscreen(outcome){
 		$('.timer').stopwatch().stopwatch('stop');
-		var endtime = $('.timer').text();
+
+		var endtime 	= $('.timer').text();
+		var score 		= $('.score').text();
+		var gametype 	= $('.gametype').text();
+		var result 		= { [Math.floor(Date.now() / 1000)] : { "gametype" : gametype, "endtime" : endtime, "score" : score } };
+
+		appendToStorage("countryquiz_hiscores", JSON.stringify(result));
 
 		if (outcome == "win"){
 			alert($('.endmessage_win').text() + endtime);
@@ -70,6 +92,18 @@ $(document).ready(function(){
 		else{
 			alert($('.endmessage_loss').text() + endtime);
 		}
+
+	}
+
+	function appendToStorage(name, data){
+	    var old = localStorage.getItem(name);
+	    if(old === null) {
+	    	old = "";
+	    	localStorage.setItem(name, old + data);
+	    }
+	    else{
+	    	localStorage.setItem(name, old.slice(0, -1) + "," + data.substring(1));
+	    }
 	}
 
 	$('.giveuptext').click(function(){
@@ -89,7 +123,6 @@ $(document).ready(function(){
 
 	$('.score').bind("DOMSubtreeModified",function(){
 		if($('.score').text() == $('.targetScore').text()){
-			var score = $('.timer').text();
 			endscreen("win");
 		}
 	});
@@ -140,6 +173,17 @@ $(document).ready(function(){
 		$('#list-dutch').addClass('displaynone');
 		$('#'+translations[curLang].list).removeClass('displaynone');
 		$('#'+translations[curLang].list).addClass('list');
+
+		// Hiscores language
+		$('.hiscores.gameselect').text(translations[curLang].gametype);
+		$('option[value="country"').text(translations[curLang].country);
+		$('option[value="capital"').text(translations[curLang].capital);
+		$('option[value="flag"').text(translations[curLang].flag);
+		$('option[value="dutch_municipalities"').text(translations[curLang].dutch_municipalities);
+		$('option[value="usa_states"').text(translations[curLang].usa_states);
+		$('.hiscorestime').text(translations[curLang].endtime);
+		$('.hiscoresdate').text(translations[curLang].date);
+
 	}
 
     $(document).mouseup(function (e){

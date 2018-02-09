@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
 <title>Country Quiz</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2b87ff">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#2b87ff">
 <meta name="msapplication-TileColor" content="#2b87ff">
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="css/style.css">
@@ -22,10 +22,10 @@
 			<table class="topbarcontent">
 				<tr>
 					<td class="langselect">
-						<label for="dropdownToggle" class="hamburger"><img src="assets/hamburger.svg"></label>
+						<label for="dropdownToggle" class="hamburger"><img src="assets/hamburger.svg" alt="Options"></label>
 	                    <input type="checkbox" id="dropdownToggle">
 						<ul class="langdropdown">
-	                        <div class="dropdownarrow"></div>
+	                        <li class="dropdownarrow"></li>
 							<li id="english"><span class="flag"></span>English</li>
 							<li id="dutch"><span class="flag"></span>Nederlands</li>
 						</ul>
@@ -39,21 +39,23 @@
 		<div class="wrapper">
 
 			<ul class="mainmenu noselect" id="mainmenuenglish">
-				<div class="gameselect">Select your game type:</div>
-				<a href="gametypes/country/unified.html" class="gametype"><li><img src="assets/country.png">Countries</li></a>
-				<a href="gametypes/capital/unified.html" class="gametype"><li><img src="assets/capital.png">Capital Cities</li></a>
-				<a href="gametypes/flag/unified.html" class="gametype"><li><img src="assets/flag.png">Flags</li></a>
-				<a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><li><img src="assets/capital.png">Dutch Municipalities</li></a>
-				<a href="gametypes/states_usa/unified.html" class="gametype"><li><img src="assets/states.png">American States</li></a>
+				<li><a href="hiscores/hiscores.html" class="gametype">Highscores</a></li>
+				<li class="gameselect">Select your game type:</li>
+				<li><a href="gametypes/country/unified.html" class="gametype"><img src="assets/country.png" alt="Country icon">Countries</a></li>
+				<li><a href="gametypes/capital/unified.html" class="gametype"><img src="assets/capital.png" alt="Capital icon">Capital Cities</a></li>
+				<li><a href="gametypes/flag/unified.html" class="gametype"><img src="assets/flag.png" alt="Flag icon">Flags</a></li>
+				<li><a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><img src="assets/capital.png" alt="Municipality icon">Dutch Municipalities</a></li>
+				<li><a href="gametypes/states_usa/unified.html" class="gametype"><img src="assets/states.png" alt="States icon">American States</a></li>
 			</ul>
 
 			<ul class="mainmenu noselect vishidden" id="mainmenudutch">
-				<div class="gameselect">Selecteer je speltype:</div>
-				<a href="gametypes/country/unified.html" class="gametype"><li><img src="assets/country.png">Landen</li></a>
-				<a href="gametypes/capital/unified.html" class="gametype"><li><img src="assets/capital.png">Hoofdsteden</li></a>
-				<a href="gametypes/flag/unified.html" class="gametype"><li><img src="assets/flag.png">Vlaggen</li></a>
-				<a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><li><img src="assets/capital.png">Nederlandse gemeenten</li></a>
-				<a href="gametypes/states_usa/unified.html" class="gametype"><li><img src="assets/states.png">Amerikaanse staten</li></a>
+				<li><a href="hiscores/hiscores.html" class="gametype">Highscores</a></li>
+				<li class="gameselect">Selecteer je speltype:</li>
+				<li><a href="gametypes/country/unified.html" class="gametype"><img src="assets/country.png" alt="Land icoon">Landen</a></li>
+				<li><a href="gametypes/capital/unified.html" class="gametype"><img src="assets/capital.png" alt="Hoofdstad icoon">Hoofdsteden</a></li>
+				<li><a href="gametypes/flag/unified.html" class="gametype"><img src="assets/flag.png" alt="Vlag icoon">Vlaggen</a></li>
+				<li><a href="gametypes/municipalities_netherlands/unified.html" class="gametype"><img src="assets/capital.png" alt="Gemeenten icoon">Nederlandse gemeenten</a></li>
+				<li><a href="gametypes/states_usa/unified.html" class="gametype"><img src="assets/states.png" alt="Staten icoon">Amerikaanse staten</a></li>
 			</ul>
 
 		</div>

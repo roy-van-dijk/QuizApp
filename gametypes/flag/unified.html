@@ -635,9 +635,11 @@ function checkCountry(country){
 		</div>
 
 		<div class="wrapper">
-
-			<div class="endmessage_win displaynone">Congratulations, you guessed all the flags in: </div>
-			<div class="endmessage_loss displaynone">You lost. Time: </div>
+			<div class="endscreen displaynone">
+				<div class="endmessage_win">Congratulations, you guessed all the flags in: </div>
+				<div class="endmessage_loss">You lost. Time: </div>
+				<div class="gametype">flag</div>
+			</div>
 
 			<div class="flagContainer noselect">
 				<table class="flagDisplay">
@@ -652,7 +654,7 @@ function checkCountry(country){
 				<tr>
 					<td></td>
 					<td><span class="score">0</span>/<span class="targetScore">197</span></td>
-					<td><span class="options optionsenglish"><img src="../../assets/forward.png"><div class="switchbox"><label><input type="checkbox" id="forward"><span></span></label></div></span></td>
+					<td><div class="options zoom"><img src="../../assets/zoom.png"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></div></td>
 				</tr>
 			</table>
 
@@ -857,7 +859,7 @@ function checkCountry(country){
 					<li class="incorrect" id="YEM">Yemen</li>
 					<li class="incorrect" id="ZMB">Zambia</li>
 					<li class="incorrect" id="ZWE">Zimbabwe</li>
-				<ul>
+				</ul>
 			</div>
 
 			<div id="list-dutch">
@@ -1059,7 +1061,7 @@ function checkCountry(country){
 					<li class="incorrect" id="SSD">Zuid-Soedan</li>
 					<li class="incorrect" id="SWE">Zweden</li>
 					<li class="incorrect" id="CHE">Zwitserland</li>
-				<ul>
+				</ul>
 			</div>
 
 

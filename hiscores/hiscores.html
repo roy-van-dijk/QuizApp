@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#2b87ff">
+<meta name="msapplication-TileColor" content="#2b87ff">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/jquery-2.2.2.min.js"></script>
+<script src="../js/pace.js"></script>
+<script src="../js/sorttable.js"></script>
+<script src="../js/main.js"></script>
+<script>
+$(document).ready(function(){
+	var hiscores = localStorage.getItem("countryquiz_hiscores");
+
+	getGameTypeResults("country");
+
+	$('select').change(function(){
+		$('option:selected').each(function(){
+			getGameTypeResults(this.value);
+		});
+	});
+
+	function getGameTypeResults(gametype){
+		var hiscores = JSON.parse(localStorage.getItem("countryquiz_hiscores"));
+		$('.hiscoretable tr:not(.tableheader)').remove();
+
+		jQuery.each(hiscores, function(key, val){
+			if(val.gametype == gametype){
+				var date 		= new Date([key] * 1000);
+				var day 		= ('0' + date.getDate()).slice(-2);
+				var month 		= ('0' + (date.getMonth()+1)).slice(-2);
+				var year 		= date.getFullYear();
+				var hours 		= ('0' + date.getHours()).slice(-2);
+				var minutes 	= ('0' + date.getMinutes()).slice(-2);
+				var prettyDate 	= year + "-" + month + "-" + day + " " + hours + ":" + minutes;
+
+				$('.hiscoretable').append('<tr><td>' + val.score + '</td><td>' + val.endtime + '</td><td>' + prettyDate + '</td></tr>');
+			}
+		});
+
+	}
+});
+</script>
+</head>
+<body>
+
+	<div class="topbar noselect">
+		<table class="topbarcontent">
+			<tr>
+				<td><a href="../index.html"><img src="../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+				<td class="intro">Highscores</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="wrapper">
+		<form id="type-selector">
+			<div class="hiscores gameselect noselect">Select your game type:</div>
+			<select name="hiscore-dropdown" id="hiscore-dropdown">
+				<option value="country">Countries</option>
+				<option value="capital">Capitals</option>
+				<option value="flag">Flags</option>
+				<option value="dutch_municipalities">Dutch Municipalities</option>
+				<option value="usa_states">American States</option>
+			</select>
+		</form>
+
+		<table class="hiscoretable sortable">
+			<tr class="tableheader noselect">
+				<th>Hiscore</th>
+				<th class="hiscoresendtime">Time</th>
+				<th class="hiscoresdate">Date</th>
+			</tr>
+		</table>
+
+
+	</div>
+
+</body>
+</html>
