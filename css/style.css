@@ -409,16 +409,14 @@ td.langselect{
 	height: 771px;
 	width: 1500px;
 }
+.dragscroll svg, .dragscroll svg:hover{
+    cursor: grab;
+	cursor: -webkit-grab;
+}
 .dragscroll svg:active{
 	cursor: grabbing;
 	cursor: -webkit-grabbing;
 }
-.dragscroll:hover{
-	cursor: move;
-    cursor: -webkit-grab;
-    cursor: grab;
-}
-
 .map svg{
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -527,8 +525,8 @@ td.langselect{
 }
 @media only screen and (min-width : 1000px) {
 	::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    	width: 6px;
+    	height: 6px;
 	}
 	::-webkit-scrollbar-track {
 	    -webkit-border-radius: 10px;
