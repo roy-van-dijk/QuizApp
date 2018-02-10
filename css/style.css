@@ -409,11 +409,16 @@ td.langselect{
 	height: 771px;
 	width: 1500px;
 }
-.svgzoom:hover{
+.dragscroll svg:active{
+	cursor: grabbing;
+	cursor: -webkit-grabbing;
+}
+.dragscroll:hover{
 	cursor: move;
     cursor: -webkit-grab;
     cursor: grab;
 }
+
 .map svg{
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
