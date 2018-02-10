@@ -127,7 +127,7 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.langdropdown li').click(function(){
+	$('.langdropdown li:not(.dropdownarrow)').click(function(){
 		var newLang = this.id;
 
 		localStorage.setItem("language", newLang);

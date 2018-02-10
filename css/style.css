@@ -199,7 +199,7 @@ td.langselect{
     opacity: 0;
     transition:opacity 0.1s linear, visibility 0.1s linear;
 }
-.langdropdown li{
+.langdropdown li:not(.dropdownarrow){
 	line-height: 50px;
 	cursor: pointer;
 }
