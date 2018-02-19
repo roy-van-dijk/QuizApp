@@ -26,7 +26,9 @@ $(document).ready(function(){
 			"capital" 						: "Capitals",
 			"flag" 							: "Flags",
 			"municipalities_netherlands"	: "Dutch Municipalities",
-			"states_usa" 					: "American States"
+			"states_usa" 					: "American States",
+			"guidetext"						: "Welcome to Country Quiz. Select a game type below and guess as many countries, cities, states, etc. as you can! When you get one correct, it will light up in green on the map. Good luck!",
+			"hiscores"						: "Personal Highscores"
 		},
 		"dutch" : {
 			"back" 							: "Terug",
@@ -42,7 +44,9 @@ $(document).ready(function(){
 			"capital" 						: "Hoofdsteden",
 			"flag" 							: "Vlaggen",
 			"municipalities_netherlands"	: "Nederlandse gemeenten",
-			"states_usa" 					: "Amerikaanse staten"
+			"states_usa" 					: "Amerikaanse staten",
+			"guidetext"						: "Welkom bij Country Quiz. Selecteer hieronder een speltype en raad zo veel mogelijk laden, steden, staten, etc als je kan. Wanneer je er een correct hebt, zal het groen worden op de kaart. Succes!",
+			"hiscores"						: "Persoonlijke Highscores"
 		}
 	}
 
@@ -136,6 +140,8 @@ $(document).ready(function(){
         setTimeout(function(){
             $('ul#mainmenu'+newLang).removeClass('vishidden');
         }, 300);
+
+        location.reload();
 	});
 
 	$('.zoom').click(function(){
@@ -148,6 +154,15 @@ $(document).ready(function(){
 		}
 	});
 
+	$('.guide').click(function(){
+		$('.guide').hide();
+		localStorage.CountryQuiz_guide_off = true;
+	});
+
+	if(localStorage.CountryQuiz_guide_off == null){
+		$('.guide').removeClass('displaynone');
+	}
+
 	addTranslations();
 	function addTranslations(){
 		// Default language
@@ -159,8 +174,13 @@ $(document).ready(function(){
 		var curLang = localStorage.language;
 
 		// Main menu language
-		$('.mainmenu').addClass('vishidden');
-		$('#'+translations[curLang].menu).removeClass('vishidden');
+		$('.guidetext').text(translations[curLang].guidetext);
+		$('.menu_hiscores').text(translations[curLang].hiscores);
+		$('.menu_country').append(translations[curLang].country);
+		$('.menu_capital').append(translations[curLang].capital);
+		$('.menu_flag').append(translations[curLang].flag);
+		$('.menu_municipalities_netherlands').append(translations[curLang].municipalities_netherlands);
+		$('.menu_states_usa').append(translations[curLang].states_usa);
 
 		// Interface language
 		$('.backtext').text(translations[curLang].back);
@@ -174,8 +194,8 @@ $(document).ready(function(){
 		$('#'+translations[curLang].list).removeClass('displaynone');
 		$('#'+translations[curLang].list).addClass('list');
 
-		// Hiscores language
-		$('.hiscores.gameselect').text(translations[curLang].gametype);
+		// Hiscores language, first also main menu
+		$('.gameselect').text(translations[curLang].gametype);
 		$('option[value="country"').text(translations[curLang].country);
 		$('option[value="capital"').text(translations[curLang].capital);
 		$('option[value="flag"').text(translations[curLang].flag);
