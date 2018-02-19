@@ -214,11 +214,12 @@ td.langselect{
 	height: 20px;
 	width: 30px;
 	display: inline-block;
-	background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
 	margin-right: 10px;
 }
-#english > .flag{ background-image: url('../assets/uk.png');}
-#dutch > .flag{ background-image: url('../assets/nl.png');}
+#english > .flag{ background-image: url('../assets/gbr.svg');}
+#dutch > .flag{ background-image: url('../assets/nld.svg');}
 .mainmenu{
 	margin: 0px auto;
     left: 0;
@@ -478,10 +479,46 @@ td.langselect{
 }
 .tab-nav{
 }
+.guide{
+	width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    color:  white;
+    background: #efefef;
+    padding: 15px 55px 15px 15px;
+    position:  relative;
+    border-radius:  10px;
+    color: #2b87ff;
+    font-weight:  bold;
+    cursor: pointer;
+}
+.guideclose{
+	top: 50%;
+    transform: translate(-50%, -50%);
+    right: 0;
+    width: 25px;
+    position:  absolute;
+    font-size:  25px;
+}
 .clearfix::after{
   content: "";
   display: table;
   clear: both;
+}
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    background-color: rgba(0,0,0,0.0);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #2b87ff;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background-color: rgba(0,0,0,0.0); 
 }
 @keyframes ripple {
   0% {
@@ -524,21 +561,6 @@ td.langselect{
   	}
 }
 @media only screen and (min-width : 1000px) {
-	::-webkit-scrollbar {
-    	width: 6px;
-    	height: 6px;
-	}
-	::-webkit-scrollbar-track {
-	    -webkit-border-radius: 10px;
-	    background-color: rgba(0,0,0,0.0);
-	    border-radius: 10px;
-	}
-	::-webkit-scrollbar-thumb {
-	    background-color: #2b87ff;
-	}
-	::-webkit-scrollbar-thumb:window-inactive {
-		background-color: rgba(0,0,0,0.0); 
-	}
 	.map{
 		height: 514px;
 	}
