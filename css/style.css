@@ -485,12 +485,14 @@ td.langselect{
     margin: 50px auto;
     color:  white;
     background: #efefef;
-    padding: 15px 55px 15px 15px;
+    padding: 25px 55px 25px 25px;
     position:  relative;
     border-radius:  10px;
     color: #2b87ff;
     font-weight:  bold;
     cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
 }
 .guideclose{
 	top: 50%;

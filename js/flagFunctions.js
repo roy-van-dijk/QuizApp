@@ -77,6 +77,17 @@ $(document).ready(function(){
 		});
 	});
 
+	// e = which key pressed
+	$(document).keydown(function(e){
+		// 13 = enter, 37 = arrow back, 39 = arrow forward
+		if(e.which === 13 || e.which === 39){
+			$('.nextFlag').trigger('click');
+		}
+		if(e.which === 37){
+			$('.prevFlag').trigger('click');
+		}
+	});
+
 	$('.input').keyup(function(){
 
 		var input = makeSortString($('.input').val()).toLowerCase().trim();

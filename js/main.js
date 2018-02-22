@@ -125,11 +125,13 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.score').bind("DOMSubtreeModified",function(){
-		if($('.score').text() == $('.targetScore').text()){
-			endscreen("win");
-		}
-	});
+	if($('.score').length > 0){
+		new MutationObserver(function(){
+			if($('.score').text() == $('.targetScore').text()){
+				endscreen("win");
+			}
+		}).observe($('.score')[0], {childList: true, subtree: true});
+	}
 
 	$('.langdropdown li:not(.dropdownarrow)').click(function(){
 		var newLang = this.id;
