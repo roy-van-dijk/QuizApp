@@ -407,8 +407,7 @@ td.langselect{
     display:none;
 }
 .svgzoom{
-	height: 771px;
-	width: 1500px;
+	transform: scale(1.5);
 }
 .dragscroll svg, .dragscroll svg:hover{
     cursor: grab;
@@ -418,13 +417,13 @@ td.langselect{
 	cursor: grabbing;
 	cursor: -webkit-grabbing;
 }
+.map{
+	position: relative;
+}
 .map svg{
-	-webkit-transform: translateZ(0);
-	-moz-transform: translateZ(0);
-	-ms-transform: translateZ(0);
-	-o-transform: translateZ(0);
-	transform: translateZ(0);
-	transition: 0.3s height ease-in-out, 0.3s width ease-in-out;
+	transform-origin: 0 0;
+	position: absolute;
+	transition: 0.3s transform ease-in-out;
 }
 .pace {
  	-webkit-pointer-events: none;
@@ -520,7 +519,7 @@ td.langselect{
     background-color: #2b87ff;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-	background-color: rgba(0,0,0,0.0); 
+	background-color: rgba(0,0,0,0.0);
 }
 @keyframes ripple {
   0% {
@@ -565,10 +564,6 @@ td.langselect{
 @media only screen and (min-width : 1000px) {
 	.map{
 		height: 514px;
-	}
-	.svgzoom{
-		height: 771px;
-		width: 1500px;
 	}
 }
 @media only screen and (max-width: 350px){

@@ -157,7 +157,6 @@ $(document).ready(function(){
 	$('.zoom').click(function(){
 		if($('#zoom').prop('checked') === true){
 			$('.map svg').addClass('svgzoom');
-			$('.map').animate( { scrollLeft: '493' }, 300);
 		}
 		else{
 			$('.map svg').removeClass('svgzoom');
