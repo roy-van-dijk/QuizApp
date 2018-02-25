@@ -1,8 +1,8 @@
 function makeSortString(s) {
-	  if(!makeSortString.translate_re) makeSortString.translate_re = /[öäüëïéôșăóãÖÄÜËÏÉÔȘĂÓÃ]/g;
+	  if(!makeSortString.translate_re) makeSortString.translate_re = /[öäüëïéôșăóãñáàíìÖÄÜËÏÉÔȘĂÓÃÑÁÀÍÌ]/g;
 	  var translate = {
-	    "ä": "a", "ö": "o", "ü": "u", "ë": "e", "ï": "i", "é": "e", "ô": "o", "ș": "s", "ă": "a", "ó": "o", "ã": "a",
-	    "Ä": "A", "Ö": "O", "Ü": "U", "Ë": "E", "Ï": "I", "É": "E", "Ô": "O", "Ș": "S", "Ă": "A", "Ó": "O", "Ã": "A" // probably more to come
+	    "ä": "a", "ö": "o", "ü": "u", "ë": "e", "ï": "i", "é": "e", "ô": "o", "ș": "s", "ă": "a", "ó": "o", "ã": "a", "ñ": "n", "á": "a", "à": "a", "í": "i", "ì": "i", "ú": "u",
+	    "Ä": "A", "Ö": "O", "Ü": "U", "Ë": "E", "Ï": "I", "É": "E", "Ô": "O", "Ș": "S", "Ă": "A", "Ó": "O", "Ã": "A", "Ñ": "N", "Á": "A", "À": "A", "Í": "I", "Ì": "I", "Ú": "U" // probably more to come
 	  };
 	  return ( s.replace(makeSortString.translate_re, function(match) {
 	    return translate[match];
@@ -29,6 +29,7 @@ $(document).ready(function(){
 			"states_usa" 					: "American States",
 			"regions_china"					: "Regions of China",
 			"regions_russia"				: "Regions of Russia",
+			"provinces_spain"				: "Provinces of Spain",
 			"guidetext"						: "Welcome to Country Quiz. Select a game type below and guess as many countries, cities, states, etc. as you can! When you get one correct, it will light up in green on the map. Good luck!",
 			"hiscores"						: "Personal Highscores"
 		},
@@ -49,6 +50,7 @@ $(document).ready(function(){
 			"states_usa" 					: "Amerikaanse staten",
 			"regions_china"					: "Regio's van China",
 			"regions_russia"				: "Regio's van Rusland",
+			"provinces_spain"				: "Provincies van Spanje",
 			"guidetext"						: "Welkom bij Country Quiz. Selecteer hieronder een speltype en raad zo veel mogelijk laden, steden, staten, etc als je kan. Wanneer je er een correct hebt, zal het groen worden op de kaart. Succes!",
 			"hiscores"						: "Persoonlijke Highscores"
 		}
@@ -191,6 +193,7 @@ $(document).ready(function(){
 		$('.menu_states_usa').append(translations[curLang].states_usa);
 		$('.menu_regions_china').append(translations[curLang].regions_china);
 		$('.menu_regions_russia').append(translations[curLang].regions_russia);
+		$('.menu_provinces_spain').append(translations[curLang].provinces_spain);
 
 		// Interface language
 		$('.backtext').text(translations[curLang].back);
@@ -213,6 +216,7 @@ $(document).ready(function(){
 		$('option[value="states_usa"').text(translations[curLang].states_usa);
 		$('option[value="regions_china"').text(translations[curLang].regions_china);
 		$('option[value="regions_russia"').text(translations[curLang].regions_russia);
+		$('option[value="provinces_spain"').text(translations[curLang].provinces_spain);
 		$('.hiscoresendtime').text(translations[curLang].endtime);
 		$('.hiscoresdate').text(translations[curLang].date);
 
