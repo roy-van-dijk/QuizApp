@@ -161,6 +161,11 @@ $(document).ready(function(){
 		else{
 			$('.map svg').removeClass('svgzoom');
 		}
+		// WTF? Mobile dragscroll fix
+		setTimeout(function(){
+			$('.map').css('transform', 'none');
+		}, 100);
+
 	});
 
 	$('.guide').click(function(){

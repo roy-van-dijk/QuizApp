@@ -20,7 +20,7 @@ body{
 	margin: 0;
 	overflow-y: hidden;
 }
-/* prevent pull to refresh */
+ /*prevent pull to refresh */
 .overflow-wrapper{
 	z-index: 2;
 	overflow-y: scroll;
@@ -52,7 +52,7 @@ body{
 	max-width: 500px;
 	margin: 10px auto;
 	border-radius: 10px;
-	overflow: hidden
+	overflow: hidden;
 }
 .list ul{
 	list-style: none;
@@ -71,7 +71,6 @@ body{
 .correct .listImg{
 	width: 23px;
 	height: 18px;
-
 }
 .correct{
 	background-color: #64f4a0;
@@ -107,12 +106,12 @@ body{
 	width: 33.3%;
 }
 .map{
-	margin: 0px auto;
-	/*height > zoom, max-height > reponsive*/
 	height: 50vw;
+	margin: 0px auto;
 	overflow: scroll;
-	/*box-shadow: inset 0px 0px 20px rgba(0,0,0,0.7);*/
 	border-radius: 10px;
+	position: relative;
+	transform: translateZ(0);
 }
 .topbar{
 	height: 75px;
@@ -125,7 +124,6 @@ body{
 	z-index: 99;
 }
 .topbarcontent{
-	/*animation: fadein 0.3s;*/
 	margin-top: 7px;
 	table-layout: fixed;
 	width: 100%;
@@ -156,7 +154,6 @@ body{
     margin-top: 3px;
 }
 td.langselect{
-	/*float: left;*/
 	padding-left: 20px;
     font-size: 25px;
     line-height: 25px;
@@ -416,9 +413,6 @@ td.langselect{
 .dragscroll svg:active{
 	cursor: grabbing;
 	cursor: -webkit-grabbing;
-}
-.map{
-	position: relative;
 }
 .map svg{
 	transform-origin: 0 0;
