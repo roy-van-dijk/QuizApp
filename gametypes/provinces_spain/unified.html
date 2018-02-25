@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<title>Country Quiz</title>
+<link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" href="../../css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114691948-1"></script>
+<script type="text/javascript" src="../../js/analytics.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+
+function colourCountry(province){
+	switch(province){
+		case "corunna":
+		case "la coruna":
+		case "coruna":
+		case "a coruna":
+			province = "la_coruna"; break;
+		case "araba":
+			province = "alava"; break;
+		case "alacant":
+			province = "alicante"; break;
+		case "illes balears":
+		case "islas balearis":
+		case "balearis":
+		case "balears":
+		case "balearen":
+		case "balearic islands":
+			province = "balearic_islands"; break;
+		case "bizkaia":
+		case "vizcaya":
+			province = "biscay"; break;
+		case "ciudad real":
+			province = "ciudad_real"; break;
+		case "gipuzkoa":
+			province = "guipuzcoa"; break;
+		case "girona":
+			province = "gerona"; break;
+		case "la rioja":
+		case "rioja":
+			province = "la_rioja"; break;
+		case "las palmas":
+			province = "las_palmas"; break;
+		case "lleida":
+			province = "lerida"; break;
+		case "nafarroa":
+		case "navarra":
+			province = "navarre"; break;
+		case "ourense":
+			province = "orense"; break;
+		case "santa cruz de tenerife":
+		case "tenerife":
+			province = "santa_cruz_de_tenerife"; break;
+		case "sevilla":
+			province = "seville"; break;
+		case "saragossa":
+			province = "zaragoza"; break;
+		default:
+			province = province; break;
+	}
+
+	return province;
+}
+
+</script>
+<script type="text/javascript" src="../../js/colourFunction.js"></script>
+</head>
+<body>
+	<div class="overflow-wrapper">
+		<div class="topbar noselect">
+			<table class="topbarcontent">
+				<tr>
+					<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+					<td class="timer">00:00:00</td>
+					<td><span class="giveuptext">Give Up</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="wrapper">
+
+			<div class="endscreen displaynone">
+				<div class="endmessage_win displaynone">Congratulations, you guessed all the provinces in: </div>
+				<div class="endmessage_loss displaynone">You lost. Time: </div>
+				<div class="endtime">00:00:00</div>
+				<div class="gametype">regions_spain</div>
+			</div>
+
+			<div class="map dragscroll">
+				<img class="svg" src="../../assets/spain2.svg">
+			</div>
+
+			<table class="scorecounter noselect">
+				<tr>
+					<td></td>
+					<td><span class="score">0</span>/<span class="targetScore">50</span></td>
+					<td><div class="options zoom"><img src="../../assets/zoom.svg"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></div></td>
+				</tr>
+			</table>
+
+			<input type="text" class="input" />
+
+
+			<div id="list-english">
+				<ul>
+					<li class="incorrect" id="la_coruna">La Coruña</li>
+					<li class="incorrect" id="alava">Álava</li>
+					<li class="incorrect" id="albacete">Albacete</li>
+					<li class="incorrect" id="alicante">Alicante</li>
+					<li class="incorrect" id="almeria">Almería</li>
+					<li class="incorrect" id="asturias">Asturias</li>
+					<li class="incorrect" id="avila">Ávila</li>
+					<li class="incorrect" id="badajoz">Badajoz</li>
+					<li class="incorrect" id="balearic_islands">Balearic Islands</li>
+					<li class="incorrect" id="barcelona">Barcelona</li>
+					<li class="incorrect" id="biscay">Biscay</li>
+					<li class="incorrect" id="burgos">Burgos</li>
+					<li class="incorrect" id="caceres">Cáceres</li>
+					<li class="incorrect" id="cadiz">Cádiz</li>
+					<li class="incorrect" id="cantabria">Cantabria</li>
+					<li class="incorrect" id="castellon">Castellón</li>
+					<li class="incorrect" id="ciudad_real">Ciudad Real</li>
+					<li class="incorrect" id="cordoba">Córdoba</li>
+					<li class="incorrect" id="cuenca">Cuenca</li>
+					<li class="incorrect" id="guipuzcoa">Guipúzcoa</li>
+					<li class="incorrect" id="gerona">Gerona</li>
+					<li class="incorrect" id="granada">Granada</li>
+					<li class="incorrect" id="guadalajara">Guadalajara</li>
+					<li class="incorrect" id="huelva">Huelva</li>
+					<li class="incorrect" id="huesca">Huesca</li>
+					<li class="incorrect" id="jaen">Jaén</li>
+					<li class="incorrect" id="la_rioja">La Rioja</li>
+					<li class="incorrect" id="las_palmas">Las Palmas</li>
+					<li class="incorrect" id="leon">León</li>
+					<li class="incorrect" id="lerida">Lérida</li>
+					<li class="incorrect" id="lugo">Lugo</li>
+					<li class="incorrect" id="madrid">Madrid</li>
+					<li class="incorrect" id="malaga">Málaga</li>
+					<li class="incorrect" id="murcia">Murcia</li>
+					<li class="incorrect" id="navarre">Navarra</li>
+					<li class="incorrect" id="orense">Orense</li>
+					<li class="incorrect" id="palencia">Palencia</li>
+					<li class="incorrect" id="pontevedra">Pontevedra</li>
+					<li class="incorrect" id="salamanca">Salamanca</li>
+					<li class="incorrect" id="santa_cruz_de_tenerife">Santa Cruz de Tenerife</li>
+					<li class="incorrect" id="segovia">Segovia</li>
+					<li class="incorrect" id="seville">Seville</li>
+					<li class="incorrect" id="soria">Soria</li>
+					<li class="incorrect" id="tarragona">Tarragona</li>
+					<li class="incorrect" id="teruel">Teruel</li>
+					<li class="incorrect" id="toledo">Toledo</li>
+					<li class="incorrect" id="valencia">Valencia</li>
+					<li class="incorrect" id="valladolid">Valladolid</li>
+					<li class="incorrect" id="zamora">Zamora</li>
+					<li class="incorrect" id="zaragoza">Zaragoza</li>
+				</ul>
+			</div>
+
+			<div id="list-dutch">
+				<ul>
+					<li class="incorrect" id="la_coruna">La Coruña</li>
+					<li class="incorrect" id="alava">Álava</li>
+					<li class="incorrect" id="albacete">Albacete</li>
+					<li class="incorrect" id="alicante">Alicante</li>
+					<li class="incorrect" id="almeria">Almería</li>
+					<li class="incorrect" id="asturias">Asturias</li>
+					<li class="incorrect" id="avila">Ávila</li>
+					<li class="incorrect" id="badajoz">Badajoz</li>
+					<li class="incorrect" id="balearic_islands">Balearen</li>
+					<li class="incorrect" id="barcelona">Barcelona</li>
+					<li class="incorrect" id="biscay">Biscay</li>
+					<li class="incorrect" id="burgos">Burgos</li>
+					<li class="incorrect" id="caceres">Cáceres</li>
+					<li class="incorrect" id="cadiz">Cádiz</li>
+					<li class="incorrect" id="cantabria">Cantabria</li>
+					<li class="incorrect" id="castellon">Castellón</li>
+					<li class="incorrect" id="ciudad_real">Ciudad Real</li>
+					<li class="incorrect" id="cordoba">Córdoba</li>
+					<li class="incorrect" id="cuenca">Cuenca</li>
+					<li class="incorrect" id="guipuzcoa">Guipúzcoa</li>
+					<li class="incorrect" id="gerona">Gerona</li>
+					<li class="incorrect" id="granada">Granada</li>
+					<li class="incorrect" id="guadalajara">Guadalajara</li>
+					<li class="incorrect" id="huelva">Huelva</li>
+					<li class="incorrect" id="huesca">Huesca</li>
+					<li class="incorrect" id="jaen">Jaén</li>
+					<li class="incorrect" id="la_rioja">La Rioja</li>
+					<li class="incorrect" id="las_palmas">Las Palmas</li>
+					<li class="incorrect" id="leon">León</li>
+					<li class="incorrect" id="lerida">Lérida</li>
+					<li class="incorrect" id="lugo">Lugo</li>
+					<li class="incorrect" id="madrid">Madrid</li>
+					<li class="incorrect" id="malaga">Málaga</li>
+					<li class="incorrect" id="murcia">Murcia</li>
+					<li class="incorrect" id="navarre">Navarre</li>
+					<li class="incorrect" id="orense">Orense</li>
+					<li class="incorrect" id="palencia">Palencia</li>
+					<li class="incorrect" id="pontevedra">Pontevedra</li>
+					<li class="incorrect" id="salamanca">Salamanca</li>
+					<li class="incorrect" id="santa_cruz_de_tenerife">Santa Cruz de Tenerife</li>
+					<li class="incorrect" id="segovia">Segovia</li>
+					<li class="incorrect" id="seville">Sevilla</li>
+					<li class="incorrect" id="soria">Soria</li>
+					<li class="incorrect" id="tarragona">Tarragona</li>
+					<li class="incorrect" id="teruel">Teruel</li>
+					<li class="incorrect" id="toledo">Toledo</li>
+					<li class="incorrect" id="valencia">Valencia</li>
+					<li class="incorrect" id="valladolid">Valladolid</li>
+					<li class="incorrect" id="zamora">Zamora</li>
+					<li class="incorrect" id="zaragoza">Zaragoza</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
