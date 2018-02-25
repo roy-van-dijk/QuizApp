@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<title>Country Quiz</title>
+<link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" href="../../css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114691948-1"></script>
+<script type="text/javascript" src="../../js/analytics.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+
+function colourCountry(region){
+	switch(region){
+		case "mari el":
+		case "mariel":
+			region = "mari_el"; break;
+
+		case "saint petersburg city":
+		case "saint-petersburg city":
+		case "st petersburg city":
+		case "saint petersburg":
+		case "saint-petersburg":
+		case "st petersburg":
+		case "sint-petersburg":
+		case "sint-petersburg":
+		case "sint petersburg":
+		case "st petersburg":
+		case "sint-pietersburg":
+		case "sint pietersburg":
+		case "st pietersburg":
+			region = "saint_petersburg_city"; break;
+
+		case "north ossetia":
+		case "north-ossetia":
+		case "noord ossetia":
+		case "noord-ossetia":
+		case "noord-ossetie":
+		case "noord ossetie":
+			region = "north_ossetia"; break;
+
+		case "nizhny novogrod":
+		case "novogrod":
+			region = "nizhny_novogrod"; break;
+
+		case "moscow city":
+		case "moscow-city":
+		case "moskou stad":
+		case "moskou-stad":
+			region = "moscow_city"; break;
+
+		case "moskou":
+			region = "moscow"; break;
+
+		default:
+			region = region; break;
+	}
+
+	return region;
+}
+
+</script>
+<script type="text/javascript" src="../../js/colourFunction.js"></script>
+</head>
+<body>
+	<div class="overflow-wrapper">
+		<div class="topbar noselect">
+			<table class="topbarcontent">
+				<tr>
+					<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+					<td class="timer">00:00:00</td>
+					<td><span class="giveuptext">Give Up</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="wrapper">
+
+			<div class="endscreen displaynone">
+				<div class="endmessage_win displaynone">Congratulations, you guessed all the regions in: </div>
+				<div class="endmessage_loss displaynone">You lost. Time: </div>
+				<div class="endtime">00:00:00</div>
+				<div class="gametype">regions_russia</div>
+			</div>
+
+			<div class="map dragscroll">
+				<img class="svg" src="../../assets/russia.svg">
+			</div>
+
+			<table class="scorecounter noselect">
+				<tr>
+					<td></td>
+					<td><span class="score">0</span>/<span class="targetScore">83</span></td>
+					<td><div class="options zoom"><img src="../../assets/zoom.svg"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></div></td>
+				</tr>
+			</table>
+
+			<input type="text" class="input" />
+
+
+			<div id="list-english">
+				<ul>
+					<li class="incorrect" id="adygea">Adygea</li>
+					<li class="incorrect" id="altai">Altai</li>
+					<li class="incorrect" id="amur">Amur</li>
+					<li class="incorrect" id="arkhangelsk">Arkhangelsk</li>
+					<li class="incorrect" id="astrakhan">Astrakhan</li>
+					<li class="incorrect" id="bashkortostan">Bashkortostan</li>
+					<li class="incorrect" id="belgorod">Belgorod</li>
+					<li class="incorrect" id="bryansk">Bryansk</li>
+					<li class="incorrect" id="buryat">Buryat</li>
+					<li class="incorrect" id="chechen">Chechen</li>
+					<li class="incorrect" id="chelyabinsk">Chelyabinsk</li>
+					<li class="incorrect" id="chukotka">Chukotka</li>
+					<li class="incorrect" id="chuvash">Chuvash</li>
+					<li class="incorrect" id="dagestan">Dagestan</li>
+					<li class="incorrect" id="gorno-altai">Gorno-Altai</li>
+					<li class="incorrect" id="ingushetia">Ingushetia</li>
+					<li class="incorrect" id="irkutsk">Irkutsk</li>
+					<li class="incorrect" id="ivanovo">Ivanovo</li>
+					<li class="incorrect" id="kabardino-balkar">Kabardino-Balkar</li>
+					<li class="incorrect" id="karachay-cherkess">Karachay-Cherkess</li>
+					<li class="incorrect" id="krasnodar">Krasnodar</li>
+					<li class="incorrect" id="kemerovo">Kemerovo</li>
+					<li class="incorrect" id="kaluga">Kaluga</li>
+					<li class="incorrect" id="khabarovsk">Khabarovsk</li>
+					<li class="incorrect" id="karelia">Karelia</li>
+					<li class="incorrect" id="khakassia">Khakassia</li>
+					<li class="incorrect" id="kalmykia">Kalmykia</li>
+					<li class="incorrect" id="khanty-mansi">Khanty-Mansi</li>
+					<li class="incorrect" id="kaliningrad">Kaliningrad</li>
+					<li class="incorrect" id="komi">Komi</li>
+					<li class="incorrect" id="kamchatka">Kamchatka</li>
+					<li class="incorrect" id="kursk">Kursk</li>
+					<li class="incorrect" id="kostroma">Kostroma</li>
+					<li class="incorrect" id="kurgan">Kurgan</li>
+					<li class="incorrect" id="kirov">Kirov</li>
+					<li class="incorrect" id="krasnoyarsk">Krasnoyarsk</li>
+					<li class="incorrect" id="leningrad">Leningrad</li>
+					<li class="incorrect" id="lipetsk">Lipetsk</li>
+					<li class="incorrect" id="moscow_city">Moscow City</li>
+					<li class="incorrect" id="mari_el">Mari El</li>
+					<li class="incorrect" id="magadan">Magadan</li>
+					<li class="incorrect" id="murmansk">Murmansk</li>
+					<li class="incorrect" id="mordovia">Mordovia</li>
+					<li class="incorrect" id="moscow">Moscow</li>
+					<li class="incorrect" id="novgorod">Novgorod</li>
+					<li class="incorrect" id="nenets">Nenets</li>
+					<li class="incorrect" id="north_ossetia">North Ossetia</li>
+					<li class="incorrect" id="novosibirsk">Novosibirsk</li>
+					<li class="incorrect" id="nizhny_novogrod">Nizhny Novogrod</li>
+					<li class="incorrect" id="orenburg">Orenburg</li>
+					<li class="incorrect" id="oryol">Oryol</li>
+					<li class="incorrect" id="omsk">Omsk</li>
+					<li class="incorrect" id="perm">Perm</li>
+					<li class="incorrect" id="primorsky">Primorsky</li>
+					<li class="incorrect" id="pskov">Pskov</li>
+					<li class="incorrect" id="penza">Penza</li>
+					<li class="incorrect" id="rostov">Rostov</li>
+					<li class="incorrect" id="ryazan">Ryazan</li>
+					<li class="incorrect" id="samara">Samara</li>
+					<li class="incorrect" id="sakha">Sakha</li>
+					<li class="incorrect" id="sakhalin">Sakhalin</li>
+					<li class="incorrect" id="smolensk">Smolensk</li>
+					<li class="incorrect" id="saint_petersburg_city">Saint Petersburg City</li>
+					<li class="incorrect" id="saratov">Saratov</li>
+					<li class="incorrect" id="stavropol">Stavropol</li>
+					<li class="incorrect" id="sverdlovsk">Sverdlovsk</li>
+					<li class="incorrect" id="tambov">Tambov</li>
+					<li class="incorrect" id="tomsk">Tomsk</li>
+					<li class="incorrect" id="tula">Tula</li>
+					<li class="incorrect" id="tatarstan">Tatarstan</li>
+					<li class="incorrect" id="tuva">Tuva</li>
+					<li class="incorrect" id="tver">Tver</li>
+					<li class="incorrect" id="tyumen">Tyumen</li>
+					<li class="incorrect" id="udmurt">Udmurt</li>
+					<li class="incorrect" id="ulyanovsk">Ulyanovsk</li>
+					<li class="incorrect" id="volgograd">Volgograd</li>
+					<li class="incorrect" id="vladimir">Vladimir</li>
+					<li class="incorrect" id="yamalo-nenets">Yamalo-Nenets</li>
+					<li class="incorrect" id="vologda">Vologda</li>
+					<li class="incorrect" id="voronezh">Voronezh</li>
+					<li class="incorrect" id="yaroslavl">Yaroslavl</li>
+					<li class="incorrect" id="yevrey">Yevrey</li>
+					<li class="incorrect" id="zabaykalsky">Zabaykalsky</li>
+				</ul>
+			</div>
+
+			<div id="list-dutch">
+				<ul>
+					<li class="incorrect" id="adygea">Adygea</li>
+					<li class="incorrect" id="altai">Altai</li>
+					<li class="incorrect" id="amur">Amur</li>
+					<li class="incorrect" id="arkhangelsk">Arkhangelsk</li>
+					<li class="incorrect" id="astrakhan">Astrakhan</li>
+					<li class="incorrect" id="bashkortostan">Bashkortostan</li>
+					<li class="incorrect" id="belgorod">Belgorod</li>
+					<li class="incorrect" id="bryansk">Bryansk</li>
+					<li class="incorrect" id="buryat">Buryat</li>
+					<li class="incorrect" id="chechen">Chechen</li>
+					<li class="incorrect" id="chelyabinsk">Chelyabinsk</li>
+					<li class="incorrect" id="chukotka">Chukotka</li>
+					<li class="incorrect" id="chuvash">Chuvash</li>
+					<li class="incorrect" id="dagestan">Dagestan</li>
+					<li class="incorrect" id="gorno-altai">Gorno-Altai</li>
+					<li class="incorrect" id="ingushetia">Ingushetia</li>
+					<li class="incorrect" id="irkutsk">Irkutsk</li>
+					<li class="incorrect" id="ivanovo">Ivanovo</li>
+					<li class="incorrect" id="kabardino-balkar">Kabardino-Balkar</li>
+					<li class="incorrect" id="karachay-cherkess">Karachay-Cherkess</li>
+					<li class="incorrect" id="krasnodar">Krasnodar</li>
+					<li class="incorrect" id="kemerovo">Kemerovo</li>
+					<li class="incorrect" id="kaluga">Kaluga</li>
+					<li class="incorrect" id="khabarovsk">Khabarovsk</li>
+					<li class="incorrect" id="karelia">Karelia</li>
+					<li class="incorrect" id="khakassia">Khakassia</li>
+					<li class="incorrect" id="kalmykia">Kalmykia</li>
+					<li class="incorrect" id="khanty-mansi">Khanty-Mansi</li>
+					<li class="incorrect" id="kaliningrad">Kaliningrad</li>
+					<li class="incorrect" id="komi">Komi</li>
+					<li class="incorrect" id="kamchatka">Kamchatka</li>
+					<li class="incorrect" id="kursk">Kursk</li>
+					<li class="incorrect" id="kostroma">Kostroma</li>
+					<li class="incorrect" id="kurgan">Kurgan</li>
+					<li class="incorrect" id="kirov">Kirov</li>
+					<li class="incorrect" id="krasnoyarsk">Krasnoyarsk</li>
+					<li class="incorrect" id="leningrad">Leningrad</li>
+					<li class="incorrect" id="lipetsk">Lipetsk</li>
+					<li class="incorrect" id="moscow_city">Moskou-stad</li>
+					<li class="incorrect" id="mari_el">Mari El</li>
+					<li class="incorrect" id="magadan">Magadan</li>
+					<li class="incorrect" id="murmansk">Murmansk</li>
+					<li class="incorrect" id="mordovia">Mordovia</li>
+					<li class="incorrect" id="moscow">Moskou</li>
+					<li class="incorrect" id="novgorod">Novgorod</li>
+					<li class="incorrect" id="nenets">Nenets</li>
+					<li class="incorrect" id="north_ossetia">Noord-Ossetië</li>
+					<li class="incorrect" id="novosibirsk">Novosibirsk</li>
+					<li class="incorrect" id="nizhny_novogrod">Nizhny Novogrod</li>
+					<li class="incorrect" id="orenburg">Orenburg</li>
+					<li class="incorrect" id="oryol">Oryol</li>
+					<li class="incorrect" id="omsk">Omsk</li>
+					<li class="incorrect" id="perm">Perm</li>
+					<li class="incorrect" id="primorsky">Primorsky</li>
+					<li class="incorrect" id="pskov">Pskov</li>
+					<li class="incorrect" id="penza">Penza</li>
+					<li class="incorrect" id="rostov">Rostov</li>
+					<li class="incorrect" id="ryazan">Ryazan</li>
+					<li class="incorrect" id="samara">Samara</li>
+					<li class="incorrect" id="sakha">Sakha</li>
+					<li class="incorrect" id="sakhalin">Sakhalin</li>
+					<li class="incorrect" id="smolensk">Smolensk</li>
+					<li class="incorrect" id="saint_petersburg_city">Sint-Petersburg</li>
+					<li class="incorrect" id="saratov">Saratov</li>
+					<li class="incorrect" id="stavropol">Stavropol</li>
+					<li class="incorrect" id="sverdlovsk">Sverdlovsk</li>
+					<li class="incorrect" id="tambov">Tambov</li>
+					<li class="incorrect" id="tomsk">Tomsk</li>
+					<li class="incorrect" id="tula">Tula</li>
+					<li class="incorrect" id="tatarstan">Tatarstan</li>
+					<li class="incorrect" id="tuva">Tuva</li>
+					<li class="incorrect" id="tver">Tver</li>
+					<li class="incorrect" id="tyumen">Tyumen</li>
+					<li class="incorrect" id="udmurt">Udmurt</li>
+					<li class="incorrect" id="ulyanovsk">Ulyanovsk</li>
+					<li class="incorrect" id="volgograd">Volgograd</li>
+					<li class="incorrect" id="vladimir">Vladimir</li>
+					<li class="incorrect" id="yamalo-nenets">Yamalo-Nenets</li>
+					<li class="incorrect" id="vologda">Vologda</li>
+					<li class="incorrect" id="voronezh">Voronezh</li>
+					<li class="incorrect" id="yaroslavl">Yaroslavl</li>
+					<li class="incorrect" id="yevrey">Yevrey</li>
+					<li class="incorrect" id="zabaykalsky">Zabaykalsky</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
