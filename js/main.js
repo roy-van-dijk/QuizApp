@@ -156,10 +156,10 @@ $(document).ready(function(){
 
 	$('.zoom').click(function(){
 		if($('#zoom').prop('checked') === true){
-			$('.map svg').addClass('svgzoom');
+			$('.map svg').css('transform', 'scale(1.5)');
 		}
 		else{
-			$('.map svg').removeClass('svgzoom');
+			$('.map svg').css('transform', 'scale(1)');
 		}
 		// WTF? Mobile dragscroll fix
 		setTimeout(function(){

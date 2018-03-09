@@ -417,7 +417,7 @@ td.langselect{
 .map svg{
 	transform-origin: 0 0;
 	position: absolute;
-	transition: 0.3s transform ease-in-out;
+	transition: 0.3s transform;
 }
 .pace {
  	-webkit-pointer-events: none;
