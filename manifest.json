@@ -1,0 +1,12 @@
+{
+  "name": "Country Quiz",
+  "short_name": "CountryQuiz",
+  "display": "standalone",
+  "background_color": "#fff",
+  "icons": [
+    {
+      "src": "assets/logo.svg",
+      "sizes": "any"
+    }
+  ]
+}
