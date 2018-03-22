@@ -55,40 +55,40 @@ $(document).ready(function(){
 </head>
 <body>
 
-	<div class="topbar noselect">
-		<table class="topbarcontent">
-			<tr>
-				<td><a href="../index.html"><img src="../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
-				<td class="intro">Highscores</td>
-				<td></td>
-			</tr>
-		</table>
-	</div>
+	<div class="overflow-wrapper">
+		<div class="topbar noselect">
+			<table class="topbarcontent">
+				<tr>
+					<td><a href="../index.html"><img src="../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+					<td class="intro">Highscores</td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
 
-	<div class="wrapper">
-		<form id="type-selector">
-			<div class="hiscores gameselect noselect">Select your game type:</div>
-			<select name="hiscore-dropdown" id="hiscore-dropdown">
-				<option value="country">Countries</option>
-				<option value="capital">Capitals</option>
-				<option value="flag">Flags</option>
-				<option value="municipalities_netherlands">Dutch Municipalities</option>
-				<option value="states_usa">American States</option>
-				<option value="regions_china">Regions of China</option>
-				<option value="regions_russia">Regions of Russia</option>
-				<option value="provinces_spain">Provinces of Spain</option>
-			</select>
-		</form>
+		<div class="wrapper">
+			<form id="type-selector">
+				<div class="hiscores gameselect noselect">Select your game type:</div>
+				<select name="hiscore-dropdown" id="hiscore-dropdown">
+					<option value="country">Countries</option>
+					<option value="capital">Capitals</option>
+					<option value="flag">Flags</option>
+					<option value="municipalities_netherlands">Dutch Municipalities</option>
+					<option value="states_usa">American States</option>
+					<option value="regions_china">Regions of China</option>
+					<option value="regions_russia">Regions of Russia</option>
+					<option value="provinces_spain">Provinces of Spain</option>
+				</select>
+			</form>
 
-		<table class="hiscoretable sortable">
-			<tr class="tableheader noselect">
-				<th>Highscore</th>
-				<th class="hiscoresendtime">Time</th>
-				<th class="hiscoresdate">Date</th>
-			</tr>
-		</table>
-
-
+			<table class="hiscoretable sortable">
+				<tr class="tableheader noselect">
+					<th>Highscore</th>
+					<th class="hiscoresendtime">Time</th>
+					<th class="hiscoresdate">Date</th>
+				</tr>
+			</table>
+		</div>
 	</div>
 
 </body>
