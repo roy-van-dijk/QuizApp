@@ -21,7 +21,7 @@
 <script src="../js/main.js"></script>
 <script>
 $(document).ready(function(){
-	var hiscores = localStorage.getItem("countryquiz_hiscores");
+	var hiscores = localStorage.getItem("globequiz_hiscores");
 
 	getGameTypeResults("country");
 
@@ -32,7 +32,7 @@ $(document).ready(function(){
 	});
 
 	function getGameTypeResults(gametype){
-		var hiscores = JSON.parse(localStorage.getItem("countryquiz_hiscores"));
+		var hiscores = JSON.parse(localStorage.getItem("globequiz_hiscores"));
 		$('.hiscoretable tr:not(.tableheader)').remove();
 
 		jQuery.each(hiscores, function(key, val){
