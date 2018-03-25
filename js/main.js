@@ -30,7 +30,7 @@ $(document).ready(function(){
 			"regions_china"					: "Regions of China",
 			"regions_russia"				: "Regions of Russia",
 			"provinces_spain"				: "Provinces of Spain",
-			"guidetext"						: "Welcome to Country Quiz. Select a game type below and guess as many countries, cities, states, etc. as you can! When you get one correct, it will light up in green on the map. Good luck!",
+			"guidetext"						: "Welcome to Globe Quiz. Select a game type below and guess as many countries, cities, states, etc. as you can! When you get one correct, it will light up in green on the map. Good luck!",
 			"hiscores"						: "Personal Highscores"
 		},
 		"dutch" : {
@@ -51,7 +51,7 @@ $(document).ready(function(){
 			"regions_china"					: "Regio's van China",
 			"regions_russia"				: "Regio's van Rusland",
 			"provinces_spain"				: "Provincies van Spanje",
-			"guidetext"						: "Welkom bij Country Quiz. Selecteer hieronder een speltype en raad zo veel mogelijk laden, steden, staten, etc als je kan. Wanneer je er een correct hebt, zal het groen worden op de kaart. Succes!",
+			"guidetext"						: "Welkom bij Globe Quiz. Selecteer hieronder een speltype en raad zo veel mogelijk laden, steden, staten, etc als je kan. Wanneer je er een correct hebt, zal het groen worden op de kaart. Succes!",
 			"hiscores"						: "Persoonlijke Highscores"
 		}
 	}
@@ -94,7 +94,7 @@ $(document).ready(function(){
 		var gametype 	= $('.gametype').text();
 		var result 		= { [Math.floor(Date.now() / 1000)] : { "gametype" : gametype, "endtime" : endtime, "score" : score } };
 
-		appendToStorage("countryquiz_hiscores", JSON.stringify(result));
+		appendToStorage("globequiz_hiscores", JSON.stringify(result));
 
 		if (outcome == "win"){
 			alert($('.endmessage_win').text() + endtime);
@@ -170,10 +170,10 @@ $(document).ready(function(){
 
 	$('.guide').click(function(){
 		$('.guide').hide();
-		localStorage.CountryQuiz_guide_off = true;
+		localStorage.globequiz_guide_off = true;
 	});
 
-	if(localStorage.CountryQuiz_guide_off == null){
+	if(localStorage.globequiz_guide_off == null){
 		$('.guide').removeClass('displaynone');
 	}
 
