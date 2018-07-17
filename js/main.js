@@ -89,10 +89,12 @@ $(document).ready(function(){
 	function endscreen(outcome){
 		$('.timer').stopwatch().stopwatch('stop');
 
+		var id 			= Math.floor(Date.now() / 1000).toString();
 		var endtime 	= $('.timer').text();
 		var score 		= $('.score').text();
 		var gametype 	= $('.gametype').text();
-		var result 		= { [Math.floor(Date.now() / 1000)] : { "gametype" : gametype, "endtime" : endtime, "score" : score } };
+		var result 		= {};
+		result[id] 		= { 'gametype' : [gametype], 'endtime' : [endtime], 'score' : [score] };
 
 		appendToStorage("globequiz_hiscores", JSON.stringify(result));
 
