@@ -393,6 +393,7 @@ td.langselect{
 	margin-right: 10px;
 	display: inline-block;
 	float: right;
+	white-space: nowrap;
 }
 .autoadvance{
 	vertical-align: top;
