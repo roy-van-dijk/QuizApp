@@ -1,8 +1,8 @@
 function makeSortString(s) {
 	  if(!makeSortString.translate_re) makeSortString.translate_re = /[öäüëïéôșăóãñáàíìÖÄÜËÏÉÔȘĂÓÃÑÁÀÍÌ]/g;
 	  var translate = {
-	    "ä": "a", "ö": "o", "ü": "u", "ë": "e", "ï": "i", "é": "e", "ô": "o", "ș": "s", "ă": "a", "ó": "o", "ã": "a", "ñ": "n", "á": "a", "à": "a", "í": "i", "ì": "i", "ú": "u",
-	    "Ä": "A", "Ö": "O", "Ü": "U", "Ë": "E", "Ï": "I", "É": "E", "Ô": "O", "Ș": "S", "Ă": "A", "Ó": "O", "Ã": "A", "Ñ": "N", "Á": "A", "À": "A", "Í": "I", "Ì": "I", "Ú": "U" // probably more to come
+	    "ä": "a", "å" : "a", "ö": "o", "ü": "u", "ë": "e", "ï": "i", "é": "e", "ô": "o", "ș": "s", "ă": "a", "ó": "o", "ã": "a", "ñ": "n", "á": "a", "à": "a", "í": "i", "ì": "i", "ú": "u",
+	    "Ä": "A", "Å" : "A", "Ö": "O", "Ü": "U", "Ë": "E", "Ï": "I", "É": "E", "Ô": "O", "Ș": "S", "Ă": "A", "Ó": "O", "Ã": "A", "Ñ": "N", "Á": "A", "À": "A", "Í": "I", "Ì": "I", "Ú": "U" // probably more to come
 	  };
 	  return ( s.replace(makeSortString.translate_re, function(match) {
 	    return translate[match];

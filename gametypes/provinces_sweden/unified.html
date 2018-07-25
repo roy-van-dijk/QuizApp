@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<title>Globe Quiz</title>
+<link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" href="../../css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114691948-1"></script>
+<script type="text/javascript" src="../../js/analytics.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+
+function colourCountry(province){
+	// switch(province){
+		
+	// }
+
+	return province;
+}
+
+</script>
+<script type="text/javascript" src="../../js/colourFunction.js"></script>
+</head>
+<body>
+	<div class="overflow-wrapper">
+		<div class="topbar noselect">
+			<table class="topbarcontent">
+				<tr>
+					<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+					<td class="timer">00:00:00</td>
+					<td><span class="giveuptext">Give Up</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="wrapper">
+
+			<div class="endscreen displaynone">
+				<div class="endmessage_win displaynone">Congratulations, you guessed all the provinces in: </div>
+				<div class="endmessage_loss displaynone">You lost. Time: </div>
+				<div class="endtime">00:00:00</div>
+				<div class="gametype">provinces_spain</div>
+			</div>
+
+			<div class="map dragscroll">
+				<img class="svg" src="../../assets/sweden.svg">
+			</div>
+
+			<table class="scorecounter noselect">
+				<tr>
+					<td></td>
+					<td><span class="score">0</span>/<span class="targetScore">50</span></td>
+					<td><div class="options zoom"><img src="../../assets/zoom.svg"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></div></td>
+				</tr>
+			</table>
+
+			<input type="text" class="input" />
+
+
+			<div id="list-english">
+                <ul>
+                    <li class="incorrect" id="angermanland">Ångermanland</li>
+                    <li class="incorrect" id="blekinge">Blekinge</li>
+                    <li class="incorrect" id="bohuslan">Bohuslän</li>
+                    <li class="incorrect" id="dalarna">Dalarna</li>
+                    <li class="incorrect" id="dalsland">Dalsland</li>
+                    <li class="incorrect" id="gotland">Gotland</li>
+                    <li class="incorrect" id="gastrikland">Gästrikland</li>
+                    <li class="incorrect" id="halland">Halland</li>
+                    <li class="incorrect" id="halsingland">Hälsingland</li>
+                    <li class="incorrect" id="harjedalen">Härjedalen</li>
+                    <li class="incorrect" id="jamtland">Jämtland</li>
+                    <li class="incorrect" id="lappland">Lappland</li>
+                    <li class="incorrect" id="medelpad">Medelpad</li>
+                    <li class="incorrect" id="norrbotten">Norrbotten</li>
+                    <li class="incorrect" id="narke">Närke</li>
+                    <li class="incorrect" id="oland">Öland</li>
+                    <li class="incorrect" id="ostergötland">Östergötland</li>
+                    <li class="incorrect" id="skane">Skåne</li>
+                    <li class="incorrect" id="smaland">Småland</li>
+                    <li class="incorrect" id="sodermanland">Södermanland</li>
+                    <li class="incorrect" id="uppland">Uppland</li>
+                    <li class="incorrect" id="varmland">Värmland</li>
+                    <li class="incorrect" id="vastmanland">Västmanland</li>
+                    <li class="incorrect" id="vasterbotten">Västerbotten</li>
+                    <li class="incorrect" id="vastergotland">Västergötland</li>
+				</ul>
+			</div>
+
+			<div id="list-dutch">
+                <ul>
+                    <li class="incorrect" id="angermanland">Ångermanland</li>
+                    <li class="incorrect" id="blekinge">Blekinge</li>
+                    <li class="incorrect" id="bohuslan">Bohuslän</li>
+                    <li class="incorrect" id="dalarna">Dalarna</li>
+                    <li class="incorrect" id="dalsland">Dalsland</li>
+                    <li class="incorrect" id="gotland">Gotland</li>
+                    <li class="incorrect" id="gastrikland">Gästrikland</li>
+                    <li class="incorrect" id="halland">Halland</li>
+                    <li class="incorrect" id="halsingland">Hälsingland</li>
+                    <li class="incorrect" id="harjedalen">Härjedalen</li>
+                    <li class="incorrect" id="jamtland">Jämtland</li>
+                    <li class="incorrect" id="lappland">Lappland</li>
+                    <li class="incorrect" id="medelpad">Medelpad</li>
+                    <li class="incorrect" id="norrbotten">Norrbotten</li>
+                    <li class="incorrect" id="narke">Närke</li>
+                    <li class="incorrect" id="oland">Öland</li>
+                    <li class="incorrect" id="ostergötland">Östergötland</li>
+                    <li class="incorrect" id="skane">Skåne</li>
+                    <li class="incorrect" id="smaland">Småland</li>
+                    <li class="incorrect" id="sodermanland">Södermanland</li>
+                    <li class="incorrect" id="uppland">Uppland</li>
+                    <li class="incorrect" id="varmland">Värmland</li>
+                    <li class="incorrect" id="vastmanland">Västmanland</li>
+                    <li class="incorrect" id="vasterbotten">Västerbotten</li>
+                    <li class="incorrect" id="vastergotland">Västergötland</li>
+                </ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
