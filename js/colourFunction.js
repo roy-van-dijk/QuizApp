@@ -14,6 +14,7 @@ $(document).ready(function(){
 					var test = colourCountry(input);
 					$('path[path-identifier="'+test+'"]').css('fill', '#64f4a0');
 					$('circle[path-identifier="'+test+'"]').css('fill', '#64f4a0');
+					$('polygon[path-identifier="'+test+'"]').css('fill', '#64f4a0');
 					$('.score').text(counter);
 					$('.input').val('');
 				}

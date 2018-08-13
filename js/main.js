@@ -30,6 +30,7 @@ $(document).ready(function(){
 			"regions_china"					: "Regions of China",
 			"regions_russia"				: "Regions of Russia",
 			"provinces_spain"				: "Provinces of Spain",
+			"provinces_sweden"				: "Provinces of Sweden",
 			"guidetext"						: "Welcome to Globe Quiz. Select a game type below and guess as many countries, cities, states, etc. as you can! When you get one correct, it will light up in green on the map. Good luck!",
 			"hiscores"						: "Personal Highscores"
 		},
@@ -51,6 +52,7 @@ $(document).ready(function(){
 			"regions_china"					: "Regio's van China",
 			"regions_russia"				: "Regio's van Rusland",
 			"provinces_spain"				: "Provincies van Spanje",
+			"provinces_sweden"				: "Provincies van Zweden",
 			"guidetext"						: "Welkom bij Globe Quiz. Selecteer hieronder een speltype en raad zo veel mogelijk laden, steden, staten, etc als je kan. Wanneer je er een correct hebt, zal het groen worden op de kaart. Succes!",
 			"hiscores"						: "Persoonlijke Highscores"
 		}
@@ -200,6 +202,7 @@ $(document).ready(function(){
 		$('.menu_regions_china').append(translations[curLang].regions_china);
 		$('.menu_regions_russia').append(translations[curLang].regions_russia);
 		$('.menu_provinces_spain').append(translations[curLang].provinces_spain);
+		$('.menu_provinces_sweden').append(translations[curLang].provinces_sweden);
 
 		// Interface language
 		$('.backtext').text(translations[curLang].back);
@@ -215,14 +218,15 @@ $(document).ready(function(){
 
 		// Hiscores language, first also main menu
 		$('.gameselect').text(translations[curLang].gametype);
-		$('option[value="country"').text(translations[curLang].country);
-		$('option[value="capital"').text(translations[curLang].capital);
-		$('option[value="flag"').text(translations[curLang].flag);
-		$('option[value="municipalities_netherlands"').text(translations[curLang].municipalities_netherlands);
-		$('option[value="states_usa"').text(translations[curLang].states_usa);
-		$('option[value="regions_china"').text(translations[curLang].regions_china);
-		$('option[value="regions_russia"').text(translations[curLang].regions_russia);
-		$('option[value="provinces_spain"').text(translations[curLang].provinces_spain);
+		$('option[value="country"]').text(translations[curLang].country);
+		$('option[value="capital"]').text(translations[curLang].capital);
+		$('option[value="flag"]').text(translations[curLang].flag);
+		$('option[value="municipalities_netherlands"]').text(translations[curLang].municipalities_netherlands);
+		$('option[value="states_usa"]').text(translations[curLang].states_usa);
+		$('option[value="regions_china"]').text(translations[curLang].regions_china);
+		$('option[value="regions_russia"]').text(translations[curLang].regions_russia);
+		$('option[value="provinces_spain"]').text(translations[curLang].provinces_spain);
+		$('option[value="provinces_sweden"]').text(translations[curLang].provinces_sweden);
 		$('.hiscoresendtime').text(translations[curLang].endtime);
 		$('.hiscoresdate').text(translations[curLang].date);
 
