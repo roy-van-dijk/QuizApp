@@ -37,7 +37,7 @@ $(document).ready(function(){
 	$('.flagDisplay').css('background-image', 'url("flags/' + countryArray[countryNumber].toLowerCase() + '.svg")');
 
 	$('.nextFlag').click(function(){
-		if(countryNumber < 195){
+		if(countryNumber < 196){
 			countryNumber++;
 			$('.flagDisplay').css('background-image', 'url("flags/' + countryArray[countryNumber].toLowerCase() + '.svg")');
 			$('.input').val('');
