@@ -31,6 +31,7 @@ $(document).ready(function(){
 			"regions_russia"				: "Regions of Russia",
 			"provinces_spain"				: "Provinces of Spain",
 			"provinces_sweden"				: "Provinces of Sweden",
+			"counties_british_isles"		: "Counties British Isles",
 			"guidetext"						: "Welcome to Globe Quiz. Select a game type below and guess as many countries, cities, states, etc. as you can! When you get one correct, it will light up in green on the map. Good luck!",
 			"hiscores"						: "Personal Highscores"
 		},
@@ -53,6 +54,7 @@ $(document).ready(function(){
 			"regions_russia"				: "Regio's van Rusland",
 			"provinces_spain"				: "Provincies van Spanje",
 			"provinces_sweden"				: "Provincies van Zweden",
+			"counties_british_isles"		: "Graafschappen Britse Eilanden",
 			"guidetext"						: "Welkom bij Globe Quiz. Selecteer hieronder een speltype en raad zo veel mogelijk laden, steden, staten, etc als je kan. Wanneer je er een correct hebt, zal het groen worden op de kaart. Succes!",
 			"hiscores"						: "Persoonlijke Highscores"
 		}
@@ -203,6 +205,7 @@ $(document).ready(function(){
 		$('.menu_regions_russia').append(translations[curLang].regions_russia);
 		$('.menu_provinces_spain').append(translations[curLang].provinces_spain);
 		$('.menu_provinces_sweden').append(translations[curLang].provinces_sweden);
+		$('.menu_counties_british_isles').append(translations[curLang].counties_british_isles);
 
 		// Interface language
 		$('.backtext').text(translations[curLang].back);
@@ -227,6 +230,7 @@ $(document).ready(function(){
 		$('option[value="regions_russia"]').text(translations[curLang].regions_russia);
 		$('option[value="provinces_spain"]').text(translations[curLang].provinces_spain);
 		$('option[value="provinces_sweden"]').text(translations[curLang].provinces_sweden);
+		$('option[value="counties_british_isles"]').text(translations[curLang].counties_british_isles);
 		$('.hiscoresendtime').text(translations[curLang].endtime);
 		$('.hiscoresdate').text(translations[curLang].date);
 

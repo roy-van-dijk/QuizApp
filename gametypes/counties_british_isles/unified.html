@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="google" content="notranslate" />
+<meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no, minimum-scale=0.7, maximum-scale=0.7">
+<title>Globe Quiz</title>
+<link rel="icon" href="../../favicon.ico">
+<link rel="stylesheet" href="../../css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114691948-1"></script>
+<script type="text/javascript" src="../../js/analytics.js"></script>
+<script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+<script type="text/javascript" src="../../js/jquery.stopwatch.js"></script>
+<script type="text/javascript" src="../../js/dragScroll.js"></script>
+<script type="text/javascript" src="../../js/pace.js"></script>
+<script type="text/javascript" src="../../js/main.js"></script>
+<script>
+
+function colourCountry(province){
+	switch(province){
+		case "county monaghan":
+			province = "county_monaghan"; break;
+		case "county cavan":
+			province = "county_cavan"; break;
+		case "county wicklow":
+			province = "county_wicklow"; break;
+		case "county louth":
+			province = "county_louth"; break;
+		case "county laois":
+			province = "county_laois"; break;
+		case "county longford":
+			province = "county_longford"; break;
+		case "county tipperary":
+			province = "county_tipperary"; break;
+		case "county cork":
+			province = "county_cork"; break;
+		case "county leitrim":
+			province = "county_leitrim"; break;
+		case "county roscommon":
+			province = "county_roscommon"; break;
+		case "county armagh":
+			province = "county_armagh"; break;
+		case "county londonderry":
+			province = "county_londonderry"; break;
+
+		case "county meath":
+ 			 province = "county_meath"; break;
+		case "county donegal":
+ 			 province = "county_donegal"; break;
+		case "county wexford":
+ 			 province = "county_wexford"; break;
+		case "county dublin":
+ 			 province = "county_dublin"; break;
+		case "county kildare":
+ 			 province = "county_kildare"; break;
+		case "county carlow":
+ 			 province = "county_carlow"; break;
+		case "county kilkenny":
+ 			 province = "county_kilkenny"; break;
+		case "county westmeath":
+ 			 province = "county_westmeath"; break;
+		case "county offaly":
+ 			 province = "county_offaly"; break;
+		case "county clare":
+ 			 province = "county_clare"; break;
+		case "county kerry":
+ 			 province = "county_kerry"; break;
+		case "county limerick":
+ 			 province = "county_limerick"; break;
+		case "county waterford":
+ 			 province = "county_waterford"; break;
+		case "county sligo":
+ 			 province = "county_sligo"; break;
+		case "county mayo":
+ 			 province = "county_mayo"; break;
+		case "county galway":
+ 			 province = "county_galway"; break;
+		case "county fermanagh":
+ 			 province = "county_fermanagh"; break;
+		case "county antrim":
+ 			 province = "county_antrim"; break;
+		case "county down":
+			  province = "county_down"; break;
+		case "county tyrone":
+			  province = "county_tyrone"; break;
+		
+		case "east lothian":
+				province = "east_lothian"; break;
+		case "west lothian":
+			province = "west_lothian"; break;
+		
+		case "inverness shire":
+		case "invernessshire":
+		case "inverness-shire":
+			province = "inverness_shire"; break;
+
+		case "kinross shire":
+		case "kinrossshire":
+		case "kinross-shire":
+			province = "kinross_shire"; break;
+
+		case "ross shire":
+		case "rossshire":
+		case "ross-shire":
+			province = "ross_shire"; break;
+		
+		default:
+			province = province; break;
+	}
+
+	return province;
+}
+
+</script>
+<script type="text/javascript" src="../../js/colourFunction.js"></script>
+</head>
+<body>
+	<div class="overflow-wrapper">
+		<div class="topbar noselect">
+			<table class="topbarcontent">
+				<tr>
+					<td><a href="../../index.html"><img src="../../assets/arrow.svg" class="backarrow" /><span class="backtext">Back</span></a></td>
+					<td class="timer">00:00:00</td>
+					<td><span class="giveuptext">Give Up</span></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="wrapper">
+
+			<div class="endscreen displaynone">
+				<div class="endmessage_win displaynone">Congratulations, you guessed all the counties in: </div>
+				<div class="endmessage_loss displaynone">You lost. Time: </div>
+				<div class="endtime">00:00:00</div>
+				<div class="gametype">counties_british_isles</div>
+			</div>
+
+			<div class="map dragscroll">
+				<img class="svg" src="../../assets/britishisles.svg">
+			</div>
+
+			<table class="scorecounter noselect">
+				<tr>
+					<td></td>
+					<td><span class="score">0</span>/<span class="targetScore">132</span></td>
+					<td><div class="options zoom"><img src="../../assets/zoom.svg"><div class="switchbox"><label><input type="checkbox" id="zoom"><span></span></label></div></div></td>
+				</tr>
+			</table>
+
+			<input type="text" class="input" />
+
+
+			<div id="list-english">
+				<ul>
+					<li class="incorrect" id="aberdeenshire">Aberdeenshire</li>
+					<li class="incorrect" id="anglesey">Anglesey</li>
+					<li class="incorrect" id="angus">Angus</li>
+					<li class="incorrect" id="argyllshire">Argyllshire</li>
+					<li class="incorrect" id="ayrshire">Ayrshire</li>
+					<li class="incorrect" id="banffshire">Banffshire</li>
+					<li class="incorrect" id="berkshire">Berkshire</li>
+					<li class="incorrect" id="berwickshire">Berwickshire</li>
+
+
+					<li class="incorrect" id="brecknockshire">Brecknockshire</li>
+					<li class="incorrect" id="buckinghamshire">Buckinghamshire</li>
+					<li class="incorrect" id="buteshire">Buteshire</li>
+
+					<li class="incorrect" id="caernarfonshire">Caernarfonshire</li>
+					<li class="incorrect" id="caithness">Caithness</li>
+					<li class="incorrect" id="cambridgeshire">Cambridgeshire</li>
+					<li class="incorrect" id="cardiganshire">Cardiganshire</li>
+					<li class="incorrect" id="carmarthenshire">Carmarthenshire</li>
+					<li class="incorrect" id="cheshire">Cheshire</li>
+					<li class="incorrect" id="clackmannanshire">Clackmannanshire</li>
+					<li class="incorrect" id="cromartyshire">Cromartyshire</li>
+					<li class="incorrect" id="cumberland">Cumberland</li>
+					<li class="incorrect" id="denbighshire">Denbighshire</li>
+
+					<li class="incorrect" id="derbyshire">Derbyshire</li>
+					<li class="incorrect" id="devon">Devon</li>
+					<li class="incorrect" id="dorset">Dorset</li>
+					<li class="incorrect" id="dumfriesshire">Dumfriesshire</li>
+					<li class="incorrect" id="dunbartonshire">Dunbartonshire</li>
+					<li class="incorrect" id="durham">Durham</li>
+					<li class="incorrect" id="east_lothian">East Lothian</li>
+					<li class="incorrect" id="essex">Essex</li>
+					<li class="incorrect" id="fifeshire">Fifeshire</li>
+					<li class="incorrect" id="flintshire">Flintshire</li>
+					<li class="incorrect" id="glamorganshire">Glamorganshire</li>
+					<li class="incorrect" id="hampshire">Hampshire</li>
+					<li class="incorrect" id="herefordshire">Herefordshire</li>
+					<li class="incorrect" id="hertfordshire">Hertfordshire</li>
+					<li class="incorrect" id="inverness_shire">Inverness-shire</li>
+					<li class="incorrect" id="kent">Kent</li>
+					<li class="incorrect" id="kincardineshire">Kincardineshire</li>
+					<li class="incorrect" id="kinross_shire">Kinross-shire</li>
+					<li class="incorrect" id="kirkcudbrightshire">Kirkcudbrightshire</li>
+
+					<li class="incorrect" id="lanarkshire">Lanarkshire</li>
+					<li class="incorrect" id="lancashire">Lancashire</li>
+					<li class="incorrect" id="leicestershire">Leicestershire</li>
+					<li class="incorrect" id="lincolnshire">Lincolnshire</li>
+					<li class="incorrect" id="merionethshire">Merionethshire</li>
+					<li class="incorrect" id="middlesex">Middlesex</li>
+					<li class="incorrect" id="midlothian">Midlothian</li>
+					<li class="incorrect" id="monmouthshire">Monmouthshire</li>
+					<li class="incorrect" id="montgomeryshire">Montgomeryshire</li>
+					<li class="incorrect" id="morayshire">Morayshire</li>
+					<li class="incorrect" id="nairnshire">Nairnshire</li>
+					<li class="incorrect" id="norfolk">Norfolk</li>
+
+					<li class="incorrect" id="northamptonshire">Northamptonshire</li>
+					<li class="incorrect" id="northumberland">Northumberland</li>
+					<li class="incorrect" id="nottinghamshire">Nottinghamshire</li>
+					<li class="incorrect" id="orkney">Orkney</li>
+
+					<li class="incorrect" id="oxfordshire">Oxfordshire</li>
+					<li class="incorrect" id="peeblesshire">Peeblesshire</li>
+					<li class="incorrect" id="pembrokeshire">Pembrokeshire</li>
+					<li class="incorrect" id="perthshire">Perthshire</li>
+					<li class="incorrect" id="radnorshire">Radnorshire</li>
+					<li class="incorrect" id="renfrewshire">Renfrewshire</li>
+					<li class="incorrect" id="ross_shire">Ross-shire</li>
+
+					<li class="incorrect" id="roxburghshire">Roxburghshire</li>
+					<li class="incorrect" id="rutland">Rutland</li>
+					<li class="incorrect" id="selkirkshire">Selkirkshire</li>
+					<li class="incorrect" id="shetland">Shetland</li>
+
+					<li class="incorrect" id="shropshire">Shropshire</li>
+					<li class="incorrect" id="somerset">Somerset</li>
+					
+
+					<li class="incorrect" id="stirlingshire">Stirlingshire</li>
+					<li class="incorrect" id="suffolk">Suffolk</li>
+					<li class="incorrect" id="surrey">Surrey</li>
+					<li class="incorrect" id="sussex">Sussex</li>
+					<li class="incorrect" id="sutherland">Sutherland</li>
+					<li class="incorrect" id="warwickshire">Warwickshire</li>
+					<li class="incorrect" id="west_lothian">West Lothian</li>
+					<li class="incorrect" id="westmorland">Westmorland</li>
+					<li class="incorrect" id="wigtownshire">Wigtownshire</li>
+					<li class="incorrect" id="wiltshire">Wiltshire</li>
+					<li class="incorrect" id="yorkshire">Yorkshire</li>
+			
+					<li class="incorrect" id="worcestershire">Worcestershire</li>
+					<li class="incorrect" id="gloucestershire">Gloucestershire</li>
+					<li class="incorrect" id="bedfordshire">Bedfordshire</li>
+					<li class="incorrect" id="cornwall">Cornwall</li>
+					<li class="incorrect" id="huntingdonshire">Huntingdonshire</li>
+					<li class="incorrect" id="staffordshire">Staffordshire</li>
+
+					<li class="incorrect" id="county_monaghan">County Monaghan</li>
+					<li class="incorrect" id="county_cavan">County Cavan</li>
+					<li class="incorrect" id="county_wicklow">County Wicklow</li>
+					<li class="incorrect" id="county_louth">County Louth</li>
+					<li class="incorrect" id="county_laois">County Laois</li>
+					<li class="incorrect" id="county_longford">County Longford</li>
+					<li class="incorrect" id="county_tipperary">County Tipperary</li>
+					<li class="incorrect" id="county_cork">County Cork</li>
+					<li class="incorrect" id="county_leitrim">County Leitrim</li>
+					<li class="incorrect" id="county_roscommon">County Roscommon</li>
+					<li class="incorrect" id="county_armagh">County Armagh</li>
+					<li class="incorrect" id="county_londonderry">County Londonderry</li>
+
+			
+					<li class="incorrect" id="county_meath">County Meath</li>
+					<li class="incorrect" id="county_donegal">County Donegal</li>
+					<li class="incorrect" id="county_wexford">County Wexford</li>
+					<li class="incorrect" id="county_dublin">County Dublin</li>
+					<li class="incorrect" id="county_kildare">County Kildare</li>
+					<li class="incorrect" id="county_carlow">County Carlow</li>
+					<li class="incorrect" id="county_kilkenny">County Kilkenny</li>
+					<li class="incorrect" id="county_westmeath">County Westmeath</li>
+					<li class="incorrect" id="county_offaly">County Offaly</li>
+					<li class="incorrect" id="county_clare">County Clare</li>
+					<li class="incorrect" id="county_kerry">County Kerry</li>
+					<li class="incorrect" id="county_limerick">County Limerick</li>
+					<li class="incorrect" id="county_waterford">County Waterford</li>
+					<li class="incorrect" id="county_sligo">County Sligo</li>
+					<li class="incorrect" id="county_mayo">County Mayo</li>
+					<li class="incorrect" id="county_galway">County Galway</li>
+					<li class="incorrect" id="county_fermanagh">County Fermanagh</li>
+					<li class="incorrect" id="county_antrim">County Antrim</li>
+					<li class="incorrect" id="county_down">County Down</li>
+					<li class="incorrect" id="county_tyrone">County Tyrone</li>
+				</ul>
+			</div>
+
+			<div id="list-dutch">
+				<ul>
+					<li class="incorrect" id="aberdeenshire">Aberdeenshire</li>
+					<li class="incorrect" id="anglesey">Anglesey</li>
+					<li class="incorrect" id="angus">Angus</li>
+					<li class="incorrect" id="argyllshire">Argyllshire</li>
+					<li class="incorrect" id="ayrshire">Ayrshire</li>
+					<li class="incorrect" id="banffshire">Banffshire</li>
+					<li class="incorrect" id="berkshire">Berkshire</li>
+					<li class="incorrect" id="berwickshire">Berwickshire</li>
+
+
+					<li class="incorrect" id="brecknockshire">Brecknockshire</li>
+					<li class="incorrect" id="buckinghamshire">Buckinghamshire</li>
+					<li class="incorrect" id="buteshire">Buteshire</li>
+
+					<li class="incorrect" id="caernarfonshire">Caernarfonshire</li>
+					<li class="incorrect" id="caithness">Caithness</li>
+					<li class="incorrect" id="cambridgeshire">Cambridgeshire</li>
+					<li class="incorrect" id="cardiganshire">Cardiganshire</li>
+					<li class="incorrect" id="carmarthenshire">Carmarthenshire</li>
+					<li class="incorrect" id="cheshire">Cheshire</li>
+					<li class="incorrect" id="clackmannanshire">Clackmannanshire</li>
+					<li class="incorrect" id="cromartyshire">Cromartyshire</li>
+					<li class="incorrect" id="cumberland">Cumberland</li>
+					<li class="incorrect" id="denbighshire">Denbighshire</li>
+
+					<li class="incorrect" id="derbyshire">Derbyshire</li>
+					<li class="incorrect" id="devon">Devon</li>
+					<li class="incorrect" id="dorset">Dorset</li>
+					<li class="incorrect" id="dumfriesshire">Dumfriesshire</li>
+					<li class="incorrect" id="dunbartonshire">Dunbartonshire</li>
+					<li class="incorrect" id="durham">Durham</li>
+					<li class="incorrect" id="east_lothian">East Lothian</li>
+					<li class="incorrect" id="essex">Essex</li>
+					<li class="incorrect" id="fifeshire">Fifeshire</li>
+					<li class="incorrect" id="flintshire">Flintshire</li>
+					<li class="incorrect" id="glamorganshire">Glamorganshire</li>
+					<li class="incorrect" id="hampshire">Hampshire</li>
+					<li class="incorrect" id="herefordshire">Herefordshire</li>
+					<li class="incorrect" id="hertfordshire">Hertfordshire</li>
+					<li class="incorrect" id="inverness_shire">Inverness-shire</li>
+					<li class="incorrect" id="kent">Kent</li>
+					<li class="incorrect" id="kincardineshire">Kincardineshire</li>
+					<li class="incorrect" id="kinross_shire">Kinross-shire</li>
+					<li class="incorrect" id="kirkcudbrightshire">Kirkcudbrightshire</li>
+
+					<li class="incorrect" id="lanarkshire">Lanarkshire</li>
+					<li class="incorrect" id="lancashire">Lancashire</li>
+					<li class="incorrect" id="leicestershire">Leicestershire</li>
+					<li class="incorrect" id="lincolnshire">Lincolnshire</li>
+					<li class="incorrect" id="merionethshire">Merionethshire</li>
+					<li class="incorrect" id="middlesex">Middlesex</li>
+					<li class="incorrect" id="midlothian">Midlothian</li>
+					<li class="incorrect" id="monmouthshire">Monmouthshire</li>
+					<li class="incorrect" id="montgomeryshire">Montgomeryshire</li>
+					<li class="incorrect" id="morayshire">Morayshire</li>
+					<li class="incorrect" id="nairnshire">Nairnshire</li>
+					<li class="incorrect" id="norfolk">Norfolk</li>
+
+					<li class="incorrect" id="northamptonshire">Northamptonshire</li>
+					<li class="incorrect" id="northumberland">Northumberland</li>
+					<li class="incorrect" id="nottinghamshire">Nottinghamshire</li>
+					<li class="incorrect" id="orkney">Orkney</li>
+
+					<li class="incorrect" id="oxfordshire">Oxfordshire</li>
+					<li class="incorrect" id="peeblesshire">Peeblesshire</li>
+					<li class="incorrect" id="pembrokeshire">Pembrokeshire</li>
+					<li class="incorrect" id="perthshire">Perthshire</li>
+					<li class="incorrect" id="radnorshire">Radnorshire</li>
+					<li class="incorrect" id="renfrewshire">Renfrewshire</li>
+					<li class="incorrect" id="ross_shire">Ross-shire</li>
+
+					<li class="incorrect" id="roxburghshire">Roxburghshire</li>
+					<li class="incorrect" id="rutland">Rutland</li>
+					<li class="incorrect" id="selkirkshire">Selkirkshire</li>
+					<li class="incorrect" id="shetland">Shetland</li>
+
+					<li class="incorrect" id="shropshire">Shropshire</li>
+					<li class="incorrect" id="somerset">Somerset</li>
+					
+
+					<li class="incorrect" id="stirlingshire">Stirlingshire</li>
+					<li class="incorrect" id="suffolk">Suffolk</li>
+					<li class="incorrect" id="surrey">Surrey</li>
+					<li class="incorrect" id="sussex">Sussex</li>
+					<li class="incorrect" id="sutherland">Sutherland</li>
+					<li class="incorrect" id="warwickshire">Warwickshire</li>
+					<li class="incorrect" id="west_lothian">West Lothian</li>
+					<li class="incorrect" id="westmorland">Westmorland</li>
+					<li class="incorrect" id="wigtownshire">Wigtownshire</li>
+					<li class="incorrect" id="wiltshire">Wiltshire</li>
+					<li class="incorrect" id="yorkshire">Yorkshire</li>
+			
+					<li class="incorrect" id="worcestershire">Worcestershire</li>
+					<li class="incorrect" id="gloucestershire">Gloucestershire</li>
+					<li class="incorrect" id="bedfordshire">Bedfordshire</li>
+					<li class="incorrect" id="cornwall">Cornwall</li>
+					<li class="incorrect" id="huntingdonshire">Huntingdonshire</li>
+					<li class="incorrect" id="staffordshire">Staffordshire</li>
+
+					<li class="incorrect" id="county_monaghan">County Monaghan</li>
+					<li class="incorrect" id="county_cavan">County Cavan</li>
+					<li class="incorrect" id="county_wicklow">County Wicklow</li>
+					<li class="incorrect" id="county_louth">County Louth</li>
+					<li class="incorrect" id="county_laois">County Laois</li>
+					<li class="incorrect" id="county_longford">County Longford</li>
+					<li class="incorrect" id="county_tipperary">County Tipperary</li>
+					<li class="incorrect" id="county_cork">County Cork</li>
+					<li class="incorrect" id="county_leitrim">County Leitrim</li>
+					<li class="incorrect" id="county_roscommon">County Roscommon</li>
+					<li class="incorrect" id="county_armagh">County Armagh</li>
+					<li class="incorrect" id="county_londonderry">County Londonderry</li>
+
+			
+					<li class="incorrect" id="county_meath">County Meath</li>
+					<li class="incorrect" id="county_donegal">County Donegal</li>
+					<li class="incorrect" id="county_wexford">County Wexford</li>
+					<li class="incorrect" id="county_dublin">County Dublin</li>
+					<li class="incorrect" id="county_kildare">County Kildare</li>
+					<li class="incorrect" id="county_carlow">County Carlow</li>
+					<li class="incorrect" id="county_kilkenny">County Kilkenny</li>
+					<li class="incorrect" id="county_westmeath">County Westmeath</li>
+					<li class="incorrect" id="county_offaly">County Offaly</li>
+					<li class="incorrect" id="county_clare">County Clare</li>
+					<li class="incorrect" id="county_kerry">County Kerry</li>
+					<li class="incorrect" id="county_limerick">County Limerick</li>
+					<li class="incorrect" id="county_waterford">County Waterford</li>
+					<li class="incorrect" id="county_sligo">County Sligo</li>
+					<li class="incorrect" id="county_mayo">County Mayo</li>
+					<li class="incorrect" id="county_galway">County Galway</li>
+					<li class="incorrect" id="county_fermanagh">County Fermanagh</li>
+					<li class="incorrect" id="county_antrim">County Antrim</li>
+					<li class="incorrect" id="county_down">County Down</li>
+					<li class="incorrect" id="county_tyrone">County Tyrone</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
