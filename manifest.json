@@ -5,8 +5,9 @@
   "background_color": "#fff",
   "icons": [
     {
-      "src": "assets/logo.svg",
-      "sizes": "any"
+      "src": "assets/logo.png",
+      "sizes": "400x400",
+      "type": "image/png"
     }
   ]
 }
